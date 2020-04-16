@@ -1,0 +1,156 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Bank details and Resgistration formula",
+    "description" : "Bank details and Resgistration formula"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/payment" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-payment",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/paymentRequest"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a paymentResponse to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/paymentResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "paymentResponse" : {
+      "type" : "object",
+      "required" : [ "paymentStatus" ],
+      "properties" : {
+        "paymentStatus" : {
+          "type" : "string"
+        }
+      }
+    },
+    "bankDetails" : {
+      "type" : "object",
+      "required" : [ "userCardNumber", "userCardExpirationDate", "userCardType", "userCardCVV", "userCardName" ],
+      "properties" : {
+        "userCardName" : {
+          "type" : "string"
+        },
+        "userCardNumber" : {
+          "type" : "string"
+        },
+        "userCardExpirationDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "userCardCVV" : {
+          "type" : "string"
+        },
+        "userCardType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "registrationRequest" : {
+      "type" : "object",
+      "required" : [ "selectedProgramId", "customer" ],
+      "properties" : {
+        "customer" : {
+          "$ref" : "#/definitions/customer"
+        },
+        "selectedProgramId" : {
+          "type" : "string"
+        },
+        "selectedOptionalServicesId" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "uniqueItems" : false
+          }
+        },
+        "userSpecificDemand" : {
+          "type" : "string"
+        }
+      }
+    },
+    "paymentRequest" : {
+      "type" : "object",
+      "required" : [ "bankDetails" ],
+      "properties" : {
+        "registrationRequest" : {
+          "$ref" : "#/definitions/registrationRequest"
+        },
+        "bankDetails" : {
+          "$ref" : "#/definitions/bankDetails"
+        }
+      }
+    },
+    "customer" : {
+      "type" : "object",
+      "required" : [ "userCity", "passportNumber", "userPhone", "userSurName", "passportEmissionDate", "userCountry", "userCivility", "passportExpirationDate", "userFirstname", "userNationality", "userEmail", "userPostalCode", "userAddress1" ],
+      "properties" : {
+        "userSurName" : {
+          "type" : "string"
+        },
+        "userFirstname" : {
+          "type" : "string"
+        },
+        "userAddress1" : {
+          "type" : "string"
+        },
+        "userAddress2" : {
+          "type" : "string"
+        },
+        "userPostalCode" : {
+          "type" : "string"
+        },
+        "userCity" : {
+          "type" : "string"
+        },
+        "userCountry" : {
+          "type" : "string"
+        },
+        "userPhone" : {
+          "type" : "string"
+        },
+        "userEmail" : {
+          "type" : "string"
+        },
+        "userCivility" : {
+          "type" : "string"
+        },
+        "userNationality" : {
+          "type" : "string"
+        },
+        "passportNumber" : {
+          "type" : "string"
+        },
+        "passportEmissionDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "passportExpirationDate" : {
+          "type" : "string",
+          "format" : "date"
+        }
+      }
+    }
+  }
+}

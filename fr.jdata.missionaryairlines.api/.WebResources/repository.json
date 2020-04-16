@@ -1,0 +1,17 @@
+{
+    "records": [],
+    "resources": [
+        {
+            "location": "Service Descriptors/fr.jdata.missionaryairlines.api.Initialisation-Initialisation.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/fr.jdata.missionaryairlines.api.Registration-Registration.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/fr.jdata.missionaryairlines.api.Payment-Payment.json",
+            "type": "generated"
+        }
+    ]
+}
