@@ -1,0 +1,42 @@
+{
+  "name": "directory_template",
+  "title": "Directory – Directory & Listing Bootstrap 4 Theme",
+  "version": "1.4.0",
+  "description": "",
+  "homepage": "https://themes.getbootstrap.com/product/directory-directory-listing-bootstrap-4-theme/",
+  "author": "Bootstrapious - https://bootstrapious.com",
+  "contact": "hello@bootstrapious.com",
+  "bugs": "",
+  "keywords": [],
+  "contributors": [
+    "Bootstrapious <hello@bootstrapious.com>"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "bootstrap-select": "^1.13.12",
+    "dropzone": "^5.5.1",
+    "jquery": "^3.4.1",
+    "jquery.cookie": "^1.4.1",
+    "leaflet": "^1.6.0",
+    "magnific-popup": "^1.1.0",
+    "nouislider": "^14.1.1",
+    "object-fit-images": "^3.2.4",
+    "prismjs": "^1.17.1",
+    "smooth-scroll": "^16.1.0",
+    "swiper": "^4.5.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "chalk": "^3.0.0",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cdnizer": "^2.2.0",
+    "gulp-changed": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-npm-dist": "^1.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}

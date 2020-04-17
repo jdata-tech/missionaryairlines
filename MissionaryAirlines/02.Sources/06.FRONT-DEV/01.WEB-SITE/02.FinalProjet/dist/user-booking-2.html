@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Missionary Airlines : Allez donc dans le monde entier...</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="all,follow">
+		<!-- Price Slider Stylesheets -->
+		<link rel="stylesheet" href="vendor/nouislider/nouislider.css">
+		<!-- Google fonts - Playfair Display-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
+		<!-- Google fonts - Poppins-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
+		<!-- swiper-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+		<!-- Magnigic Popup-->
+		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
+		<!-- Leaflet Maps-->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
+		<!-- theme stylesheet-->
+		<link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+		<!-- Custom stylesheet - for your changes-->
+		<link rel="stylesheet" href="css/custom.css">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/favicon.png">
+		<!-- Tweaks for older IEs--><!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+		<!-- Font Awesome CSS-->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	</head>
+	<body style="padding-top: 72px;">
+		<header class="header">
+			<!-- Navbar-->
+			<nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
+				<div class="container-fluid">
+					<div class="d-flex align-items-center"><a href="index.html" class="navbar-brand py-1"><img src="img/logo.svg" alt="Missionary Airlines logo"></a>
+					</div>
+					<!-- Navbar Collapse -->
+					<div id="navbarCollapse" class="collapse navbar-collapse">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item"><a href="index.html" class="nav-link">Accueil</a>
+							</li>
+							<!-- Megamenu-->
+							<li class="nav-item dropdown position-static">
+								<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">Nos Offres</a>
+								<div class="dropdown-menu megamenu py-lg-0">
+									<div class="row">
+										<div class="col-lg-9">
+											<div class="row p-3 pr-lg-0 pl-lg-5 pt-lg-5">
+												<div class="col-lg-3">
+													<!-- Megamenu list-->
+													<h6 class="text-uppercase">UMPJ</h6>
+													<ul class="megamenu-list list-unstyled">
+														<li class="megamenu-list-item"><a href="offre-umpj-pasteurs-missionnaires.html" class="megamenu-list-link">Pasteurs & Missionnaires   </a></li>
+														<li class="megamenu-list-item"><a href="offre-umpj-etudiants-jeunes.html" class="megamenu-list-link">Étudiants & Jeunes   </a></li>
+														<li class="megamenu-list-item"><a href="offre-umpj-enfants.html" class="megamenu-list-link">Enfants de 10 à 18 ans</a></li>
+														<li class="megamenu-list-item"><a href="offre-umpj-cours-trois-ans-1.html" class="megamenu-list-link">Cours de 3 ans sur la Prière<span class="badge badge-info-light ml-1">Session 1</span></a></li>
+														<li class="megamenu-list-item"><a href="offre-umpj-priere.html" class="megamenu-list-link">Cours Général sur la Prière</a></li>
+														<li class="megamenu-list-item"><a href="offre-umpj-louange.html" class="megamenu-list-link">Ministres de Louange</a></li>
+														<li class="megamenu-list-item"><a href="offre-umpj-dirigeant-priere.html" class="megamenu-list-link">Dirigeants de Chambre de Prière</a></li>
+														<li class="megamenu-list-item"><a href="offre-umpj-finances.html" class="megamenu-list-link">Ministres de Finance</a></li>
+														<li class="megamenu-list-item"><a href="offre-umpj-cours-trois-ans-2.html" class="megamenu-list-link">Cours de 3 ans sur la Prière<span class="badge badge-info-light ml-1">Session 2</span></a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3">
+													<!-- Megamenu list-->
+													<h6 class="text-uppercase">CAMPS BIBLIQUES</h6>
+													<ul class="megamenu-list list-unstyled">
+														<li class="megamenu-list-item"><a href="offre-camp-enfants.html" class="megamenu-list-link">Camp des Enfants   </a></li>
+														<li class="megamenu-list-item"><a href="offre-camp-etudiants.html" class="megamenu-list-link">Camp des Étudiants   </a></li>
+														<li class="megamenu-list-item"><a href="offre-camp-dirigeants-jeunes.html" class="megamenu-list-link">Retraite des Dirigeants de Jeunes</a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3">
+													<!-- Megamenu list-->
+													<h6 class="text-uppercase">HORS PROGRAMME</h6>
+													<ul class="megamenu-list list-unstyled">
+														<li class="megamenu-list-item"><a href="offre-ecsd.html" class="megamenu-list-link">Ecole de la Connaissance et du Service de Dieu<span class="badge badge-info-light ml-1">A Venir</span></a></li>
+													</ul>
+												</div>
+												<div class="col-lg-3">
+													<!-- Megamenu list-->
+													<h6 class="text-uppercase">RÉSERVATIONS<span class="badge badge-info-light ml-1">A Venir</span></h6>
+													<ul class="megamenu-list list-unstyled">
+														<li class="megamenu-list-item">Paris - Koumé</li>
+														<li class="megamenu-list-item">Berlin - Koumé</li>
+														<li class="megamenu-list-item">Londres - Koumé</li>
+														<li class="megamenu-list-item">Montréal - Koumé</li>
+													</ul>
+												</div>
+											</div>
+											<div class="row megamenu-services d-none d-lg-flex pl-lg-5">
+												<div class="col-xl-3 col-lg-6 d-flex">
+													<div class="megamenu-services-item">
+														<svg class="svg-icon megamenu-services-icon">
+															<use xlink:href="#destination-map-1"> </use>
+														</svg>
+														<div>
+															<h6 class="text-uppercase">Bus VIP</h6>
+															<p class="mb-0 text-muted text-sm">Des bus reliant l'Aéroport de Yaoundé Nsimalen à KOUMÉ</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6 d-flex">
+													<div class="megamenu-services-item">
+														<svg class="svg-icon megamenu-services-icon">
+															<use xlink:href="#store-1"> </use>
+														</svg>
+														<div>
+															<h6 class="text-uppercase">HÉBERGEMENT</h6>
+															<p class="mb-0 text-muted text-sm">Couchette garantie, Litterie, Eau Minérale, etc.</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6 d-flex">
+													<div class="megamenu-services-item">
+														<svg class="svg-icon megamenu-services-icon">
+															<use xlink:href="#customer-support-1"> </use>
+														</svg>
+														<div>
+															<h6 class="text-uppercase">(+33) 877-093-400</h6>
+															<p class="mb-0 text-muted text-sm">Support Disponible 24/7 durant tout votre séjour</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-xl-3 col-lg-6 d-flex">
+													<div class="megamenu-services-item">
+														<svg class="svg-icon megamenu-services-icon">
+															<use xlink:href="#secure-payment-1"> </use>
+														</svg>
+														<div>
+															<h6 class="text-uppercase">Paiment Sécurisé</h6>
+															<p class="mb-0 text-muted text-sm">Paiement x3, x4, x5 </br>Zéro Crédit</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-3 d-none d-lg-block"><img src="img/photo/ztf.jpg" alt="" class="bg-image"></div>
+									</div>
+								</div>
+							</li>
+							<!-- /Megamenu end-->
+							<li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a>
+							</li>
+							<!-- <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block"><a href="user-add-0.html" class="btn btn-primary">OFFRES À SAISIR</a></li> -->
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- /Navbar -->
+		</header>
+		<div style="height: 8px; top: 71px;" class="progress rounded-0 sticky-top">
+			<div role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" class="progress-bar"></div>
+		</div>
+		<section class="py-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7">
+						<p class="subtitle text-primary">Réservez votre Programme à Koumé</p>
+						<h1 class="h2 mb-5"> Informations Personnelles <span class="text-muted float-right">Étape 2</span>      </h1>
+						<!-- <div class="text-block">
+							<div class="alert alert-warning text-sm mb-3">
+							  <div class="media align-items-center">
+							    <svg class="svg-icon svg-icon svg-icon-light w-2rem h-2rem mr-3 text-reset">
+							      <use xlink:href="#heart-1"> </use>
+							    </svg>
+							    <div class="media-body"><strong>This home is on people’s minds.</strong> It’s been viewed 43 times in the past week.</div>
+							  </div>
+							</div>
+							</div> -->
+						<div class="text-block">
+							<!-- <label for="form_guests" class="h5">Participant</label>
+								<p class="text-sm text-muted">Veuillez remplir les champs ci-dessous tel que cela figure sur votre passeport, ou tout autre document de voyage.</p> -->
+							<!-- <div class="row">
+								<div class="col-lg-6 mb-3">
+								  <select name="guests" id="form_guests" data-style="btn-selectpicker" title=" " class="selectpicker form-control">
+								    <option value="guests_0">1</option>
+								    <option value="guests_1">2</option>
+								    <option value="guests_2" selected>3</option>
+								    <option value="guests_3">4</option>
+								    <option value="guests_4">5</option>
+								  </select>
+								</div>
+								</div> -->
+							<form>
+								<div class="row form-block">
+									<div class="col-lg-4">
+										<label for="form_guests" class="h5">Mon Identité</label>
+										<!-- <h5>Basic</h5> -->
+										<p class="text-muted text-sm">Veuillez remplir les champs tel que cela figure sur votre passeport</p>
+									</div>
+									<div class="col-lg-7 ml-auto">
+										<div class="form-group"></div>
+										<div class="form-group">
+											<label for="form_name" class="form-label">Nom</label>
+											<input name="name" id="form_name" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="form_firstname" class="form-label">Prénom</label>
+											<input name="firstname" id="form_firstname" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="form_type" class="form-label">Nationalité</label>
+											<select name="country" id="form_country" data-style="btn-selectpicker" title=" " data-live-search="true" class="selectpicker form-control">
+												<option value="country_1">Afghanistan</option>
+												<option value="country_2">Afrique du Sud</option>
+												<option value="country_3">Albanie</option>
+												<option value="country_4">Algérie</option>
+												<option value="country_5">Allemagne</option>
+												<option value="country_6">Andorre</option>
+												<option value="country_7">Angola</option>
+												<option value="country_8">Anguilla</option>
+												<option value="country_9">Antigua-et-Barbuda</option>
+												<option value="country_10">Antilles Françaises</option>
+												<option value="country_11">Antilles Néerlandaises</option>
+												<option value="country_12">Arabie Saoudite</option>
+												<option value="country_13">Argentine</option>
+												<option value="country_14">Arménie</option>
+												<option value="country_15">Aruba</option>
+												<option value="country_16">Australie</option>
+												<option value="country_17">Autriche</option>
+												<option value="country_18">Azerbaïdjan</option>
+												<option value="country_19">Bahamas</option>
+												<option value="country_20">Bahrein</option>
+												<option value="country_21">Bangladesh</option>
+												<option value="country_22">Barbade</option>
+												<option value="country_23">Belgique</option>
+												<option value="country_24">Belize</option>
+												<option value="country_25">Bénin</option>
+												<option value="country_26">Bermudes</option>
+												<option value="country_27">Bhoutan</option>
+												<option value="country_28">Biélorussie</option>
+												<option value="country_29">Bolivie</option>
+												<option value="country_30">Bosnie-Herzégovine</option>
+												<option value="country_31">Botswana</option>
+												<option value="country_32">Brésil</option>
+												<option value="country_33">Brunei</option>
+												<option value="country_34">Bulgarie</option>
+												<option value="country_35">Burkina Faso</option>
+												<option value="country_36">Burundi</option>
+												<option value="country_37">Cambodge</option>
+												<option value="country_38">Cameroun</option>
+												<option value="country_39">Cap-Vert</option>
+												<option value="country_40">Chili</option>
+												<option value="country_41">Chine</option>
+												<option value="country_42">Chypre</option>
+												<option value="country_43">Colombie</option>
+												<option value="country_44">Congo</option>
+												<option value="country_45">Corée du Sud</option>
+												<option value="country_46">Costa Rica</option>
+												<option value="country_47">Cote D'Ivoire</option>
+												<option value="country_48">Croatie</option>
+												<option value="country_49">Cuba</option>
+												<option value="country_50">Danemark</option>
+												<option value="country_51">Djibouti</option>
+												<option value="country_52">Dominique</option>
+												<option value="country_53">Egypte</option>
+												<option value="country_54">Emirats Arabes Unis</option>
+												<option value="country_55">Équateur</option>
+												<option value="country_56">Espagne</option>
+												<option value="country_57">Estonie</option>
+												<option value="country_58">Ethiopie</option>
+												<option value="country_59">Fidji</option>
+												<option value="country_60">Finlande</option>
+												<option value="country_61">France</option>
+												<option value="country_62">Gabon</option>
+												<option value="country_63">Gambie</option>
+												<option value="country_64">Géorgie</option>
+												<option value="country_65">Ghana</option>
+												<option value="country_66">Gibraltar</option>
+												<option value="country_67">Grèce</option>
+												<option value="country_68">Grenade</option>
+												<option value="country_69">Groenland</option>
+												<option value="country_70">Guam</option>
+												<option value="country_71">Guatemala</option>
+												<option value="country_72">Guernesey</option>
+												<option value="country_73">Guinée</option>
+												<option value="country_74">Guinée Bissau</option>
+												<option value="country_75">Guinée Équatoriale</option>
+												<option value="country_76">Guyane</option>
+												<option value="country_77">Haïti</option>
+												<option value="country_78">Honduras</option>
+												<option value="country_79">Hong Kong</option>
+												<option value="country_80">Hongrie</option>
+												<option value="country_81">île de Man</option>
+												<option value="country_82">Îles Caïmans</option>
+												<option value="country_83">Îles Cook</option>
+												<option value="country_84">îles Falkland</option>
+												<option value="country_85">Îles Féroé</option>
+												<option value="country_86">Îles Turques et Caïques</option>
+												<option value="country_87">Îles Vierges (États-Unis)</option>
+												<option value="country_88">Îles Vierges britanniques</option>
+												<option value="country_89">Inde</option>
+												<option value="country_90">Indonésie</option>
+												<option value="country_91">Irak</option>
+												<option value="country_92">Iran</option>
+												<option value="country_93">Irlande</option>
+												<option value="country_94">Islande</option>
+												<option value="country_95">Israël</option>
+												<option value="country_96">Italie</option>
+												<option value="country_97">Jamaïque</option>
+												<option value="country_98">Japon</option>
+												<option value="country_99">Jersey</option>
+												<option value="country_100">Jordan</option>
+												<option value="country_101">Kazakhstan</option>
+												<option value="country_102">Kenya</option>
+												<option value="country_103">Kirghizistan</option>
+												<option value="country_104">Koweit</option>
+												<option value="country_105">Laos</option>
+												<option value="country_106">Lesotho</option>
+												<option value="country_107">Lettonie</option>
+												<option value="country_108">Liban</option>
+												<option value="country_109">Libéria</option>
+												<option value="country_110">Libye</option>
+												<option value="country_111">Liechtenstein</option>
+												<option value="country_112">Lituanie</option>
+												<option value="country_113">Luxembourg</option>
+												<option value="country_114">Macao</option>
+												<option value="country_115">Macédoine</option>
+												<option value="country_116">Madagascar</option>
+												<option value="country_117">Malaisie</option>
+												<option value="country_118">Malawi</option>
+												<option value="country_119">Maldives</option>
+												<option value="country_120">Mali</option>
+												<option value="country_121">Malte</option>
+												<option value="country_122">Maroc</option>
+												<option value="country_123">Maurice</option>
+												<option value="country_124">Mauritanie</option>
+												<option value="country_125">Mexique</option>
+												<option value="country_126">Moldova</option>
+												<option value="country_127">Monaco</option>
+												<option value="country_128">Mongolie</option>
+												<option value="country_129">Monténégro</option>
+												<option value="country_130">Montserrat</option>
+												<option value="country_131">Mozambique</option>
+												<option value="country_132">Namibie</option>
+												<option value="country_133">Népal</option>
+												<option value="country_134">Nicaragua</option>
+												<option value="country_135">Niger</option>
+												<option value="country_136">Nigeria</option>
+												<option value="country_137">Norvège</option>
+												<option value="country_138">Nouvelle Calédonie</option>
+												<option value="country_139">Nouvelle-Zélande</option>
+												<option value="country_140">Oman</option>
+												<option value="country_141">Ouganda</option>
+												<option value="country_142">Ouzbékistan</option>
+												<option value="country_143">Pakistan</option>
+												<option value="country_144">Palestine</option>
+												<option value="country_145">Panama</option>
+												<option value="country_146">Papouasie Nouvelle Guinée</option>
+												<option value="country_147">Paraguay</option>
+												<option value="country_148">Pays-Bas</option>
+												<option value="country_149">Pérou</option>
+												<option value="country_150">Philippines</option>
+												<option value="country_151">Pologne</option>
+												<option value="country_152">Polynésie Française</option>
+												<option value="country_153">Porto Rico</option>
+												<option value="country_154">Portugal</option>
+												<option value="country_155">Qatar</option>
+												<option value="country_156">République Dominicaine</option>
+												<option value="country_157">République Tchèque</option>
+												<option value="country_158">Réunion</option>
+												<option value="country_159">Roumanie</option>
+												<option value="country_160">Royaume-Uni</option>
+												<option value="country_161">Russie</option>
+												<option value="country_162">Rwanda</option>
+												<option value="country_163">Saint Marin</option>
+												<option value="country_164">Sainte Lucie</option>
+												<option value="country_165">Sainte Lucie</option>
+												<option value="country_166">Saint-Kitts-et-Nevis</option>
+												<option value="country_167">Saint-Pierre-et-Miquelon</option>
+												<option value="country_168">Salvador</option>
+												<option value="country_169">Samoa</option>
+												<option value="country_170">Sénégal</option>
+												<option value="country_171">Serbie</option>
+												<option value="country_172">Seychelles</option>
+												<option value="country_173">Sierra Leone</option>
+												<option value="country_174">Singapour</option>
+												<option value="country_175">Slovaquie</option>
+												<option value="country_176">Slovénie</option>
+												<option value="country_177">Soudan</option>
+												<option value="country_178">Sri Lanka</option>
+												<option value="country_179">St Vincent</option>
+												<option value="country_180">Suède</option>
+												<option value="country_181">Suisse</option>
+												<option value="country_182">Suriname</option>
+												<option value="country_183">Swaziland</option>
+												<option value="country_184">Syrie</option>
+												<option value="country_185">Tadjikistan</option>
+												<option value="country_186">Taïwan</option>
+												<option value="country_187">Tanzanie</option>
+												<option value="country_188">Tchad</option>
+												<option value="country_189">Thaïlande</option>
+												<option value="country_190">Timor L'Este</option>
+												<option value="country_191">Togo</option>
+												<option value="country_192">Tonga</option>
+												<option value="country_193">Trinité-et-Tobago</option>
+												<option value="country_194">Tunisie</option>
+												<option value="country_195">Turkménistan</option>
+												<option value="country_196">Turquie</option>
+												<option value="country_197">Ukraine</option>
+												<option value="country_198">Uruguay</option>
+												<option value="country_199">Venezuela</option>
+												<option value="country_200">Vietnam</option>
+												<option value="country_201">Yémen</option>
+												<option value="country_202">Zambie</option>
+												<option value="country_203">Zimbabwe</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row form-block">
+									<div class="col-lg-4">
+										<label for="form_guests" class="h5">Mon Passeport</label>
+										<!-- <h5>Basic</h5> -->
+										<p class="text-muted text-sm">Attention ! Pensez à vérifier que votre passeport aura au moins <strong>6 mois</strong> de validité à la date du voyage</p>
+									</div>
+									<div class="col-lg-7 ml-auto">
+										<div class="form-group"></div>
+										<div class="form-group">
+											<label for="form_passport" class="form-label">Numéro de Passeport</label>
+											<input name="passport" id="form_passport" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="form_date_emission" class="form-label">Date d'émission</label>
+											<input type="date" name="date_emission" id="form_date_emission" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="form_date_expiration" class="form-label">Date d'expiration</label>
+											<input type="date" name="date_expiration" id="form_date_expiration" class="form-control">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Souhaitez-vous une assistance pour l'obtention du Visa d'entrée ?</label>
+											<div class="custom-control custom-radio">
+												<input type="radio" id="guests_0" name="guests" class="custom-control-input">
+												<label for="guests_0" class="custom-control-label">Oui, avec plaisir</label>
+											</div>
+											<div class="custom-control custom-radio">
+												<input type="radio" id="guests_1" name="guests" class="custom-control-input">
+												<label for="guests_1" class="custom-control-label">Non, pas besoin !</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row form-block">
+									<div class="col-lg-4">
+										<label for="form_guests" class="h5">Mon Adresse</label>
+										<p class="text-muted text-sm">Comment pouvons-nous vous joindre ?</p>
+									</div>
+									<div class="col-lg-7 ml-auto">
+										<!-- Email-->
+										<div class="form-group">
+											<label for="form_email" class="form-label">Adresse Mail*</label>
+											<input name="email" type="email" id="form_email" class="form-control">
+										</div>
+										<!-- Country-->
+										<div class="form-group">
+											<label for="form_country" class="form-label">Pays</label>
+											<select name="country" id="form_country" data-style="btn-selectpicker" title=" " data-live-search="true" class="selectpicker form-control">
+												<option value="country_1">Afghanistan</option>
+												<option value="country_2">Afrique du Sud</option>
+												<option value="country_3">Albanie</option>
+												<option value="country_4">Algérie</option>
+												<option value="country_5">Allemagne</option>
+												<option value="country_6">Andorre</option>
+												<option value="country_7">Angola</option>
+												<option value="country_8">Anguilla</option>
+												<option value="country_9">Antigua-et-Barbuda</option>
+												<option value="country_10">Antilles Françaises</option>
+												<option value="country_11">Antilles Néerlandaises</option>
+												<option value="country_12">Arabie Saoudite</option>
+												<option value="country_13">Argentine</option>
+												<option value="country_14">Arménie</option>
+												<option value="country_15">Aruba</option>
+												<option value="country_16">Australie</option>
+												<option value="country_17">Autriche</option>
+												<option value="country_18">Azerbaïdjan</option>
+												<option value="country_19">Bahamas</option>
+												<option value="country_20">Bahrein</option>
+												<option value="country_21">Bangladesh</option>
+												<option value="country_22">Barbade</option>
+												<option value="country_23">Belgique</option>
+												<option value="country_24">Belize</option>
+												<option value="country_25">Bénin</option>
+												<option value="country_26">Bermudes</option>
+												<option value="country_27">Bhoutan</option>
+												<option value="country_28">Biélorussie</option>
+												<option value="country_29">Bolivie</option>
+												<option value="country_30">Bosnie-Herzégovine</option>
+												<option value="country_31">Botswana</option>
+												<option value="country_32">Brésil</option>
+												<option value="country_33">Brunei</option>
+												<option value="country_34">Bulgarie</option>
+												<option value="country_35">Burkina Faso</option>
+												<option value="country_36">Burundi</option>
+												<option value="country_37">Cambodge</option>
+												<option value="country_38">Cameroun</option>
+												<option value="country_39">Cap-Vert</option>
+												<option value="country_40">Chili</option>
+												<option value="country_41">Chine</option>
+												<option value="country_42">Chypre</option>
+												<option value="country_43">Colombie</option>
+												<option value="country_44">Congo</option>
+												<option value="country_45">Corée du Sud</option>
+												<option value="country_46">Costa Rica</option>
+												<option value="country_47">Cote D'Ivoire</option>
+												<option value="country_48">Croatie</option>
+												<option value="country_49">Cuba</option>
+												<option value="country_50">Danemark</option>
+												<option value="country_51">Djibouti</option>
+												<option value="country_52">Dominique</option>
+												<option value="country_53">Egypte</option>
+												<option value="country_54">Emirats Arabes Unis</option>
+												<option value="country_55">Équateur</option>
+												<option value="country_56">Espagne</option>
+												<option value="country_57">Estonie</option>
+												<option value="country_58">Ethiopie</option>
+												<option value="country_59">Fidji</option>
+												<option value="country_60">Finlande</option>
+												<option value="country_61">France</option>
+												<option value="country_62">Gabon</option>
+												<option value="country_63">Gambie</option>
+												<option value="country_64">Géorgie</option>
+												<option value="country_65">Ghana</option>
+												<option value="country_66">Gibraltar</option>
+												<option value="country_67">Grèce</option>
+												<option value="country_68">Grenade</option>
+												<option value="country_69">Groenland</option>
+												<option value="country_70">Guam</option>
+												<option value="country_71">Guatemala</option>
+												<option value="country_72">Guernesey</option>
+												<option value="country_73">Guinée</option>
+												<option value="country_74">Guinée Bissau</option>
+												<option value="country_75">Guinée Équatoriale</option>
+												<option value="country_76">Guyane</option>
+												<option value="country_77">Haïti</option>
+												<option value="country_78">Honduras</option>
+												<option value="country_79">Hong Kong</option>
+												<option value="country_80">Hongrie</option>
+												<option value="country_81">île de Man</option>
+												<option value="country_82">Îles Caïmans</option>
+												<option value="country_83">Îles Cook</option>
+												<option value="country_84">îles Falkland</option>
+												<option value="country_85">Îles Féroé</option>
+												<option value="country_86">Îles Turques et Caïques</option>
+												<option value="country_87">Îles Vierges (États-Unis)</option>
+												<option value="country_88">Îles Vierges britanniques</option>
+												<option value="country_89">Inde</option>
+												<option value="country_90">Indonésie</option>
+												<option value="country_91">Irak</option>
+												<option value="country_92">Iran</option>
+												<option value="country_93">Irlande</option>
+												<option value="country_94">Islande</option>
+												<option value="country_95">Israël</option>
+												<option value="country_96">Italie</option>
+												<option value="country_97">Jamaïque</option>
+												<option value="country_98">Japon</option>
+												<option value="country_99">Jersey</option>
+												<option value="country_100">Jordan</option>
+												<option value="country_101">Kazakhstan</option>
+												<option value="country_102">Kenya</option>
+												<option value="country_103">Kirghizistan</option>
+												<option value="country_104">Koweit</option>
+												<option value="country_105">Laos</option>
+												<option value="country_106">Lesotho</option>
+												<option value="country_107">Lettonie</option>
+												<option value="country_108">Liban</option>
+												<option value="country_109">Libéria</option>
+												<option value="country_110">Libye</option>
+												<option value="country_111">Liechtenstein</option>
+												<option value="country_112">Lituanie</option>
+												<option value="country_113">Luxembourg</option>
+												<option value="country_114">Macao</option>
+												<option value="country_115">Macédoine</option>
+												<option value="country_116">Madagascar</option>
+												<option value="country_117">Malaisie</option>
+												<option value="country_118">Malawi</option>
+												<option value="country_119">Maldives</option>
+												<option value="country_120">Mali</option>
+												<option value="country_121">Malte</option>
+												<option value="country_122">Maroc</option>
+												<option value="country_123">Maurice</option>
+												<option value="country_124">Mauritanie</option>
+												<option value="country_125">Mexique</option>
+												<option value="country_126">Moldova</option>
+												<option value="country_127">Monaco</option>
+												<option value="country_128">Mongolie</option>
+												<option value="country_129">Monténégro</option>
+												<option value="country_130">Montserrat</option>
+												<option value="country_131">Mozambique</option>
+												<option value="country_132">Namibie</option>
+												<option value="country_133">Népal</option>
+												<option value="country_134">Nicaragua</option>
+												<option value="country_135">Niger</option>
+												<option value="country_136">Nigeria</option>
+												<option value="country_137">Norvège</option>
+												<option value="country_138">Nouvelle Calédonie</option>
+												<option value="country_139">Nouvelle-Zélande</option>
+												<option value="country_140">Oman</option>
+												<option value="country_141">Ouganda</option>
+												<option value="country_142">Ouzbékistan</option>
+												<option value="country_143">Pakistan</option>
+												<option value="country_144">Palestine</option>
+												<option value="country_145">Panama</option>
+												<option value="country_146">Papouasie Nouvelle Guinée</option>
+												<option value="country_147">Paraguay</option>
+												<option value="country_148">Pays-Bas</option>
+												<option value="country_149">Pérou</option>
+												<option value="country_150">Philippines</option>
+												<option value="country_151">Pologne</option>
+												<option value="country_152">Polynésie Française</option>
+												<option value="country_153">Porto Rico</option>
+												<option value="country_154">Portugal</option>
+												<option value="country_155">Qatar</option>
+												<option value="country_156">République Dominicaine</option>
+												<option value="country_157">République Tchèque</option>
+												<option value="country_158">Réunion</option>
+												<option value="country_159">Roumanie</option>
+												<option value="country_160">Royaume-Uni</option>
+												<option value="country_161">Russie</option>
+												<option value="country_162">Rwanda</option>
+												<option value="country_163">Saint Marin</option>
+												<option value="country_164">Sainte Lucie</option>
+												<option value="country_165">Sainte Lucie</option>
+												<option value="country_166">Saint-Kitts-et-Nevis</option>
+												<option value="country_167">Saint-Pierre-et-Miquelon</option>
+												<option value="country_168">Salvador</option>
+												<option value="country_169">Samoa</option>
+												<option value="country_170">Sénégal</option>
+												<option value="country_171">Serbie</option>
+												<option value="country_172">Seychelles</option>
+												<option value="country_173">Sierra Leone</option>
+												<option value="country_174">Singapour</option>
+												<option value="country_175">Slovaquie</option>
+												<option value="country_176">Slovénie</option>
+												<option value="country_177">Soudan</option>
+												<option value="country_178">Sri Lanka</option>
+												<option value="country_179">St Vincent</option>
+												<option value="country_180">Suède</option>
+												<option value="country_181">Suisse</option>
+												<option value="country_182">Suriname</option>
+												<option value="country_183">Swaziland</option>
+												<option value="country_184">Syrie</option>
+												<option value="country_185">Tadjikistan</option>
+												<option value="country_186">Taïwan</option>
+												<option value="country_187">Tanzanie</option>
+												<option value="country_188">Tchad</option>
+												<option value="country_189">Thaïlande</option>
+												<option value="country_190">Timor L'Este</option>
+												<option value="country_191">Togo</option>
+												<option value="country_192">Tonga</option>
+												<option value="country_193">Trinité-et-Tobago</option>
+												<option value="country_194">Tunisie</option>
+												<option value="country_195">Turkménistan</option>
+												<option value="country_196">Turquie</option>
+												<option value="country_197">Ukraine</option>
+												<option value="country_198">Uruguay</option>
+												<option value="country_199">Venezuela</option>
+												<option value="country_200">Vietnam</option>
+												<option value="country_201">Yémen</option>
+												<option value="country_202">Zambie</option>
+												<option value="country_203">Zimbabwe</option>
+											</select>
+										</div>
+										<!-- Street-->
+										<div class="form-group">
+											<label for="form_street" class="form-label">Adresse</label>
+											<input name="name" id="form_street" class="form-control">
+										</div>
+										<!-- City + ZIP Code-->
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label for="form_city" class="form-label">Ville</label>
+													<input name="name" id="form_city" class="form-control">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label for="form_zip" class="form-label">Code Postal</label>
+													<input name="name" id="form_zip" class="form-control">
+												</div>
+											</div>
+										</div>
+										<!-- Phone-->
+										<div class="form-group">
+											<label for="form_phone" class="form-label">Téléphone*</label>
+											<input name="name" type="tel" id="form_phone" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="text-block">
+									<div class="media">
+										<div class="media-body">
+											<h5>Une requête spéciale ?</h5>
+											<p class="text-sm text-muted">Faites-nous part de toute spécificité relative à votre voyage ou à votre séjour et nous reviendrons vers vous .</p>
+										</div>
+										<img src="img/avatar/hermine.jpg" alt="Hermine" class="avatar ml-4">
+									</div>
+									<textarea name="specific_demand" rows="4" class="form-control"></textarea>
+								</div>
+								<!-- <div class="row form-block flex-column flex-sm-row">
+									<div class="col text-center text-sm-left">
+									</div>
+									<div class="col text-center text-sm-right"><a href="user-add-2.html" class="btn btn-primary px-3">
+									     
+									    Next step<i class="fa-chevron-right fa ml-2"></i></a></div>
+									</div> -->
+							</form>
+						</div>
+						<!-- <div class="text-block">
+							<h5>What's the main purpose of this trip?</h5>
+							<p class="text-sm text-muted">The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pit.</p>
+							<ul class="list-unstyled">
+							  <li>
+							    <div class="custom-control custom-radio">
+							      <input type="radio" id="purpose_0" name="purpose" class="custom-control-input">
+							      <label for="purpose_0" class="custom-control-label">Personal travel      </label>
+							    </div>
+							  </li>
+							  <li>
+							    <div class="custom-control custom-radio">
+							      <input type="radio" id="purpose_1" name="purpose" class="custom-control-input">
+							      <label for="purpose_1" class="custom-control-label">Business travel      </label>
+							    </div>
+							  </li>
+							</ul>
+							</div> -->
+						<!-- <div class="text-block">
+							<div class="media">
+							  <div class="media-body">
+							    <h5>Say hello to your host</h5>
+							    <p class="text-sm text-muted">His room, a proper human room although a little too small, lay peacefully between its four familiar .</p>
+							  </div><img src="img/avatar/avatar-10.jpg" alt="Jack London" class="avatar ml-4">
+							</div>
+							<textarea name="hello" rows="4" class="form-control"></textarea>
+							</div> -->
+						<div class="row form-block flex-column flex-sm-row">
+							<div class="col text-center text-sm-left">
+								<form id="booking-form" method="get" action="user-booking-1.html" autocomplete="off" class="form">
+									<div id="LastID"></div>
+									<button class="btn btn-link text-muted"><i class="fa-chevron-left fa mr-2"></i>Retour</button>
+								</form>
+							</div>
+							<div class="col text-center text-sm-right">
+								<form id="booking-form" method="get" action="user-booking-3.html" autocomplete="off" class="form">
+									<div id="NextID"></div>
+									<button type="submit" class="btn btn-primary px-3">Étape Suivante<i class="fa-chevron-right fa ml-2"></i></button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5 pl-xl-5">
+						<div class="card border-0 shadow">
+							<div class="card-body p-4">
+								<div class="text-block pb-3">
+									<div class="media align-items-center">
+										<div class="media-body">
+											<h6> <p id="ProgramResumeName"></p><!-- <a href="offre-umpj-pasteurs-missionnaires.html" class="text-reset"> <p id="ProgramName2"></p> </a> --></h6>
+											<p class="text-muted text-sm mb-0"><a id="ProgramResumeSubName"></a></p>
+											<div id="ProgramBlueuStars"></div>
+										</div>
+										<div id="ProgramImage"></div>										
+										<!-- <a href="offre-umpj-pasteurs-missionnaires.html"><img src="img/photo/umpj-2.jpg" alt="" width="100" class="ml-3 rounded"></a> -->
+									</div>
+								</div>
+								<div class="text-block py-3">
+									<ul class="list-unstyled mb-0">
+										<li class="mb-3"><i class="fas fa-users fa-fw text-muted mr-2"></i>1 participant</li>
+										<li class="mb-0"><i class="far fa-calendar fa-fw text-muted mr-2"></i><a id="ProgramResumeDepartureDay"></a> <a id="ProgramResumeDepartureMonth"></a> <a id="ProgramResumeDepartureYear"></a> <i class="fas fa-arrow-right fa-fw text-muted mx-3"></i><a id="ProgramResumeReturnDay"></a> <a id="ProgramResumeReturnMonth"></a> <a id="ProgramResumeReturnYear"></a></li>
+									</ul>
+								</div>
+								<div class="text-block pt-3 pb-0">
+									<table class="w-100">
+										<tbody>
+											<tr>
+												<th class="font-weight-normal py-2"><a id="ProgramMonthlyPrice"></a>€ x <a id="ProgramMonthlyPeriod"></a> mensualités</th>
+												<td class="text-right py-2"><a id="ProgramAirTicketPrice"></a>€</td>
+											</tr>
+											<tr>
+												<th class="font-weight-normal pt-2 pb-3">Frais de Service</th>
+												<td class="text-right pt-2 pb-3"><a id="ProgramServicePrice"></a>€</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr class="border-top">
+												<th class="pt-3">Total</th>
+												<td class="font-weight-bold text-right pt-3"><a id="ProgramTotalPrice"></a>€</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+							<div class="card-footer bg-primary-light py-4 border-0">
+								<div class="media align-items-center">
+									<div class="media-body">
+										<h6 class="text-primary">Flexible - Annulation Gratuite</h6>
+										<p class="text-sm text-primary opacity-8 mb-0">Annulez dans les 48 heures suivant la réservation pour obtenir un remboursement complet.</p>
+										<form class="text-block pt-3 pb-0">
+											<button type="button" data-toggle="collapse" data-target="#moreDetails" aria-expanded="false" aria-controls="moreDetails" data-expanded-text="Fermer" data-collapsed-text="Plus de détails" class="btn btn-link btn-collapse pl-0 text-muted">Plus de détails</button>
+											<div id="moreDetails" class="media align-items-center collapse">
+												<div class="media align-items-center">
+													<p class="text-sm text-primary opacity-8 mb-0">Envoyer un mail avec votre Nom & Prénom à : <strong><a href="mailto:annulation@missionaryairlines.com"> annulation@missionaryairlines.com</a></strong> </p>
+												</div>
+											</div>
+										</form>
+									</div>
+									<svg class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-2 text-primary">
+										<use xlink:href="#diploma-1"> </use>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Footer-->
+		<footer class="position-relative z-index-10 d-print-none">
+			<!-- Main block - menus, subscribe form-->
+			<div class="py-6 bg-gray-200 text-muted">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 mb-5 mb-lg-0">
+							<div class="font-weight-bold text-uppercase text-dark mb-3">Missionary Airlines</div>
+							<p>Allez donc dans le monde entier...</p>
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="#" target="_blank" title="twitter" class="text-muted text-hover-primary"><i class="fab fa-twitter"></i></a></li>
+								<li class="list-inline-item"><a href="#" target="_blank" title="facebook" class="text-muted text-hover-primary"><i class="fab fa-facebook"></i></a></li>
+								<li class="list-inline-item"><a href="#" target="_blank" title="instagram" class="text-muted text-hover-primary"><i class="fab fa-instagram"></i></a></li>
+							</ul>
+						</div>
+						<div class="col-lg-2 col-md-6 mb-5 mb-lg-0">              
+						</div>
+						<div class="col-lg-2 col-md-6 mb-5 mb-lg-0">              
+						</div>
+						<div class="col-lg-4">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Copyright section of the footer-->
+			<div class="py-4 font-weight-light bg-gray-800 text-gray-300">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-md-6 text-center text-md-left">
+							<p class="text-sm mb-md-0">&copy; 2020 Missionary Airlines.  All rights reserved.</p>
+						</div>
+						<div class="col-md-6">
+							<ul class="list-inline mb-0 mt-2 mt-md-0 text-center text-md-right">
+								<li class="list-inline-item"><img src="img/visa.svg" alt="..." class="w-2rem"></li>
+								<li class="list-inline-item"><img src="img/mastercard.svg" alt="..." class="w-2rem"></li>
+								<li class="list-inline-item"><img src="img/paypal.svg" alt="..." class="w-2rem"></li>
+								<!-- <li class="list-inline-item"><img src="img/western-union.svg" alt="..." class="w-2rem"></li> -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- /Footer end-->
+		<!-- JavaScript files-->
+		<script>
+			// ------------------------------------------------------- //
+			//   Inject SVG Sprite - 
+			//   see more here 
+			//   https://css-tricks.com/ajaxing-svg-sprite/
+			// ------------------------------------------------------ //
+			function injectSvgSprite(path) {
+			
+			    var ajax = new XMLHttpRequest();
+			    ajax.open("GET", path, true);
+			    ajax.send();
+			    ajax.onload = function(e) {
+			    var div = document.createElement("div");
+			    div.className = 'd-none';
+			    div.innerHTML = ajax.responseText;
+			    document.body.insertBefore(div, document.body.childNodes[0]);
+			    }
+			}    
+			// to avoid CORS issues when viewing using file:// protocol, using the demo URL for the SVG sprite
+			// use your own URL in production, please :)
+			// https://demo.bootstrapious.com/directory/1-0/icons/orion-svg-sprite.svg
+			//- injectSvgSprite('icons/orion-svg-sprite.svg'); 
+			injectSvgSprite('https://demo.bootstrapious.com/directory/1-4/icons/orion-svg-sprite.svg'); 
+			
+		</script>
+		<!-- jQuery-->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<!-- Bootstrap JS bundle - Bootstrap + PopperJS-->
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Magnific Popup - Lightbox for the gallery-->
+		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<!-- Smooth scroll-->
+		<script src="vendor/smooth-scroll/smooth-scroll.polyfills.min.js"></script>
+		<!-- Bootstrap Select-->
+		<script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+		<!-- Object Fit Images - Fallback for browsers that don't support object-fit-->
+		<script src="vendor/object-fit-images/ofi.min.js"></script>
+		<!-- Swiper Carousel                       -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+		<script>var basePath = ''</script>
+		<!-- Main Theme JS file    -->
+		<script src="js/theme.js"></script>		
+		<script src="js/booking.js"></script>		
+		<script>
+			var currentProgramID = getUrlVars()["prg"];
+			setProgramResumeFields(currentProgramID);
+			
+			document.getElementById("LastID").innerHTML = '<input type="hidden" name="prg" value="' + currentProgramID + '" />';
+			document.getElementById("NextID").innerHTML = '<input type="hidden" name="prg" value="' + currentProgramID + '" />';
+		</script>
+		<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+	</body>
+</html>
