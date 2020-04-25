@@ -83,10 +83,26 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//fr.jdata.missionaryairlines.api///http/port</name>
-			<value>7700</value>
+			<value>7701</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//fr.jdata.missionaryairlines.api///ems/url</name>
+			<value>tibjmsnaming://localhost:7222</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//fr.jdata.missionaryairlines.api///ems/startQueue</name>
+			<value>WEB.IN.PAYMENT</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
 			<isOverride>false</isOverride>
 		</globalVariable>
 	</globalVariables>

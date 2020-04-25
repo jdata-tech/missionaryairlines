@@ -52,6 +52,7 @@
 									  <!-- Megamenu list-->
 									  <h6 class="text-uppercase">UMPJ</h6>
 									  <ul class="megamenu-list list-unstyled">
+										<li class="megamenu-list-item"><a href="program.html?id=1" class="megamenu-list-link">Ministres aux Enfants   </a></li>
 										<li class="megamenu-list-item"><a href="program.html?id=1" class="megamenu-list-link">Pasteurs & Missionnaires   </a></li>
 										<li class="megamenu-list-item"><a href="program.html?id=2" class="megamenu-list-link">Étudiants & Jeunes   </a></li>
 										<li class="megamenu-list-item"><a href="program.html?id=3" class="megamenu-list-link">Enfants de 10 à 18 ans</a></li>
@@ -337,7 +338,7 @@
 							</div>
 							</br>
 							<form id="booking-form" method="get" action="user-booking-1.html" autocomplete="off" class="form">
-								<input type="hidden" name="prg" value="11" />
+								<a id="prg-booking-page"></a>
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary btn-block">Souscrire au Voyage</button>
 								</div>
@@ -647,6 +648,9 @@
 			
 			todayDate = new Date();
 			programData = programDataById(currentProgramID);
+
+			
+			document.getElementById("prg-booking-page").innerHTML = '<input type="hidden" name="prg" value="' + currentProgramID +'" />';
 			
 			document.getElementById("expiration-date").innerHTML = Math.floor((programData.endDateOffer - todayDate)/86400000);
 			document.getElementById("program-badge").innerHTML = programData.badge;

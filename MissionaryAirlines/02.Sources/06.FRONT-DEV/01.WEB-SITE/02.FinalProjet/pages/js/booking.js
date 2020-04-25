@@ -60,6 +60,21 @@ function programDataById(programID){
 	
 	switch (programID) {
 		case "1" :
+			programData.name = "Ministres aux Enfants";
+			programData.fullName = "UMPJ des Ministres aux Enfants";
+			programData.subName = "Ministres aux Enfants";
+			programData.startDate = new Date('2021-01-30');
+			programData.endDate = new Date('2021-02-06');
+			programData.endDateOffer = new Date('2020-12-30 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		case "2" :
 			programData.name = "Pasteurs & Missionnaires";
 			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
 			programData.subName = "Leaders et Dirigeants";
@@ -74,61 +89,185 @@ function programDataById(programID){
 			programData.backgroundImage = "img/photo/camp-biblique.jpg";
 			programData.badge = "Formation UMPJ";
 			break;
-		case "2" :
-			programData.endDateOffer = new Date('2020-06-31 23:59:59');
-			programData.paypalKey = "6YQUEJSY88R9U";
-			break;
 		case "3" :
+			programData.name = "Étudiants & Jeunes";
+			programData.fullName = "UMPJ des Étudiants & Jeunes";
+			programData.subName = "Étudiants & Jeunes";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
 			programData.endDateOffer = new Date('2020-06-31 23:59:59');
 			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
 			break;
 		case "4" :
-			programData.endDateOffer = new Date('2020-06-31 23:59:59');
-			programData.paypalKey = "6YQUEJSY88R9U";
-			break;
-		case "5" :
-			programData.endDateOffer = new Date('2020-06-31 23:59:59');
-			programData.paypalKey = "6YQUEJSY88R9U";
-			break;
-		case "6" :
-			programData.endDateOffer = new Date('2020-06-31 23:59:59');
-			programData.paypalKey = "6YQUEJSY88R9U";
-			break;
-		case "7" :
-			programData.endDateOffer = new Date('2020-06-31 23:59:59');
-			programData.paypalKey = "6YQUEJSY88R9U";
-			break;
-		case "8" :
-			programData.endDateOffer = new Date('2020-06-31 23:59:59');
-			programData.paypalKey = "6YQUEJSY88R9U";
-			break;
-		case "9" :
-			programData.endDateOffer = new Date('2020-06-31 23:59:59');
-			programData.paypalKey = "6YQUEJSY88R9U";
-			break;
-		case "10" :
-			programData.endDateOffer = new Date('2020-06-31 23:59:59');
-			programData.paypalKey = "6YQUEJSY88R9U";
-			break;
-		case "11" :
-			programData.endDateOffer = new Date('2020-06-31 23:59:59');
-			programData.paypalKey = "6YQUEJSY88R9U";
-			break;
-		case "12" :
-			programData.endDateOffer = new Date('2020-06-31 23:59:59');
-			programData.paypalKey = "6YQUEJSY88R9U";
-			break;
-		default:
-			programData.name = "UMPJ Pasteurs & Missionnaires";
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
 			programData.subName = "Leaders et Dirigeants";
 			programData.startDate = new Date('2020-03-26');
 			programData.endDate = new Date('2020-04-06');
 			programData.endDateOffer = new Date('2020-06-31 23:59:59');
 			programData.paypalKey = "6YQUEJSY88R9U";
-			programData.price = 500;
+			programData.totalPrice = 600;
 			programData.fees = 90;
-			programData.currency = "euro";
+			programData.currency = "€";
 			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		case "5" :
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
+			programData.subName = "Leaders et Dirigeants";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
+			programData.endDateOffer = new Date('2020-06-31 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		case "6" :
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
+			programData.subName = "Leaders et Dirigeants";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
+			programData.endDateOffer = new Date('2020-06-31 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		case "7" :
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
+			programData.subName = "Leaders et Dirigeants";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
+			programData.endDateOffer = new Date('2020-06-31 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		case "8" :
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
+			programData.subName = "Leaders et Dirigeants";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
+			programData.endDateOffer = new Date('2020-06-31 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		case "9" :
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
+			programData.subName = "Leaders et Dirigeants";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
+			programData.endDateOffer = new Date('2020-06-31 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		case "10" :
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
+			programData.subName = "Leaders et Dirigeants";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
+			programData.endDateOffer = new Date('2020-06-31 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		case "11" :
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
+			programData.subName = "Leaders et Dirigeants";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
+			programData.endDateOffer = new Date('2020-06-31 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		case "12" :
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
+			programData.subName = "Leaders et Dirigeants";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
+			programData.endDateOffer = new Date('2020-06-31 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		case "13" :
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
+			programData.subName = "Leaders et Dirigeants";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
+			programData.endDateOffer = new Date('2020-06-31 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
+			break;
+		default:
+			programData.name = "Pasteurs & Missionnaires";
+			programData.fullName = "UMPJ des Pasteurs & Missionnaires";
+			programData.subName = "Leaders et Dirigeants";
+			programData.startDate = new Date('2020-03-26');
+			programData.endDate = new Date('2020-04-06');
+			programData.endDateOffer = new Date('2020-06-31 23:59:59');
+			programData.paypalKey = "6YQUEJSY88R9U";
+			programData.totalPrice = 600;
+			programData.fees = 90;
+			programData.currency = "€";
+			programData.stars = 5;
+			programData.backgroundImage = "img/photo/camp-biblique.jpg";
+			programData.badge = "Formation UMPJ";
 	}
 	
 	return programData;

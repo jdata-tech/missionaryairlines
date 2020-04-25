@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_LqtgcIAlEeqX8vi2YfQJrg" targetNamespace="http://tns.tibco.com/bw/composite/fr.jdata.missionaryairlines.api" name="fr.jdata.missionaryairlines.api" compositeext:version="1.0.0" compositeext:formatVersion="2">
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:parameters="http://xmlns.example.com/Payment/parameters" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_LqtgcIAlEeqX8vi2YfQJrg" targetNamespace="http://tns.tibco.com/bw/composite/fr.jdata.missionaryairlines.api" name="fr.jdata.missionaryairlines.api" compositeext:version="1.0.0" compositeext:formatVersion="2">
   <sca:service xmi:id="_3CIdcIAlEeqg1pzoVRCfVg" name="initialisation" promote="ComponentInitialisation/initialisation">
     <sca:interface.wsdl xmi:id="_3CZjMIAlEeqg1pzoVRCfVg" interface="http://xmlns.example.com/20200416230427PLT#wsdl.interface(initialisation)" scaext:wsdlLocation="../Processes/fr/jdata/missionaryairlines/api/Initialisation.bwp"/>
     <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_3ClwcIAlEeqg1pzoVRCfVg" name="RestService" path="/initialisation" docBasePath="http://localhost:7777/fr.jdata.missionaryairlines.api" docResourcePath="Initialisation" basePath="/" connector="fr.jdata.missionaryairlines.api.transport" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/fr.jdata.missionaryairlines.api.Initialisation-Initialisation.json">
@@ -28,6 +28,7 @@
     <sca:interface.wsdl xmi:id="_m2_nZIAsEeqg1pzoVRCfVg" interface="http://xmlns.example.com/20200416235246PLT#wsdl.interface(payment)" scaext:wsdlLocation="../Processes/fr/jdata/missionaryairlines/api/Payment.bwp"/>
     <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_m3AOcIAsEeqg1pzoVRCfVg" name="RestService2" path="/payment" docBasePath="http://localhost:7777/fr.jdata.missionaryairlines.api" docResourcePath="Payment" basePath="/" connector="fr.jdata.missionaryairlines.api.transport" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/fr.jdata.missionaryairlines.api.Payment-Payment.json">
       <operation xmi:id="_m3A1gIAsEeqg1pzoVRCfVg" operationName="post" nickname="post-payment" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <parameters xmi:id="_dnXbMIVzEeqqAcoEJgZS9w" formElement="parameters:paymentPostForm"/>
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
@@ -47,6 +48,8 @@
   <sca:property xmi:id="_MpI3kIAlEeqX8vi2YfQJrg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_BnCmoIAmEeqg1pzoVRCfVg" name="/http/hostname" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_Ms5gwIAmEeqg1pzoVRCfVg" name="/http/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="__WRLgIMSEeqhgMsvK7PO2w" name="/ems/url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_eK-O0IMTEeqhgMsvK7PO2w" name="/ems/startQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_3Bx4IIAlEeqg1pzoVRCfVg" name="ComponentInitialisation" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_3Bx4IYAlEeqg1pzoVRCfVg" processName="fr.jdata.missionaryairlines.api.Initialisation"/>
     <sca:service xmi:id="_3B7CEIAlEeqg1pzoVRCfVg" name="initialisation">
@@ -64,5 +67,8 @@
     <sca:service xmi:id="_m2_AUoAsEeqg1pzoVRCfVg" name="payment">
       <sca:interface.wsdl xmi:id="_m2_AU4AsEeqg1pzoVRCfVg" interface="http://xmlns.example.com/20200416235246PLT#wsdl.interface(payment)" scaext:wsdlLocation="../Processes/fr/jdata/missionaryairlines/api/Payment.bwp"/>
     </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_8J-0wITKEeqqAcoEJgZS9w" name="ComponentTest" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_8J-0wYTKEeqqAcoEJgZS9w" processName="fr.jdata.missionaryairlines.api.subprocesses.Test"/>
   </sca:component>
 </sca:composite>
