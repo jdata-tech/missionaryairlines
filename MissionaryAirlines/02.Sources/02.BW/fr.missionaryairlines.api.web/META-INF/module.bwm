@@ -21,6 +21,11 @@
   <sca:property xmi:id="_1fpJoIouEeqmRao7E-_WLg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_1fvQQIouEeqmRao7E-_WLg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_1f0IwIouEeqmRao7E-_WLg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_WUwggIpmEeqtkudMqsCtIQ" name="/ems/connection/url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_amWRgIpmEeqtkudMqsCtIQ" name="/ems/queues/inputPaymentQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ZJMXAIpmEeqtkudMqsCtIQ" name="/ems/topics/newProperty" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Tep2EIpmEeqtkudMqsCtIQ" name="/http/newProperty" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_KShy0IpoEeqtkudMqsCtIQ" name="/file/failedStartRepository" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_AVwXkIovEeqmRao7E-_WLg" name="ComponentPayment" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_AVwXkYovEeqmRao7E-_WLg" processName="fr.missionaryairlines.api.web.Payment"/>
     <sca:service xmi:id="_AWIyEIovEeqmRao7E-_WLg" name="payment">

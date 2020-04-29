@@ -73,5 +73,45 @@
 			<type>String</type>
 			<isOverride>false</isOverride>
 		</globalVariable>
+		<globalVariable>
+			<name>/ems/connection/url</name>
+			<value>tibjmsnaming://localhost:7222</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/ems/queues/inputPaymentQueue</name>
+			<value>WEB.IN.PAYMENT</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/ems/topics/newProperty</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/http/newProperty</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/file/failedStartRepository</name>
+			<value>C:\app\data\SaveFailedJMSStartData\</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
 	</globalVariables>
 </repository>

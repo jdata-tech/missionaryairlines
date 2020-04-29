@@ -20,6 +20,7 @@
   		</complexType>
   	</element>
   	
+  	<element name="Response" type="tns:ResponseType"/>
   	<element name="PaymentResponse" type="tns:ResponseType"/>
   	<element name="RegistrationResponse" type="tns:ResponseType"/>
 

@@ -65,6 +65,41 @@
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
+    <packaging:property>
+      <packaging:name>//fr.missionaryairlines.api.web///ems/topics/newProperty</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//fr.missionaryairlines.api.web///ems/connection/url</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//fr.missionaryairlines.api.web///http/newProperty</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//fr.missionaryairlines.api.web///ems/queues/inputPaymentQueue</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//fr.missionaryairlines.api.web///file/failedStartRepository</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
   </packaging:properties>
   <packaging:modules>
     <packaging:module>

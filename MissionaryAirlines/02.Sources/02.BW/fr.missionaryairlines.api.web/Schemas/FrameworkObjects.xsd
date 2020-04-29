@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.jdata.fr/schemas/FrameworkObjects" elementFormDefault="qualified" targetNamespace="http://www.jdata.fr/schemas/FrameworkObjects">
+  	
+  	<element name="CustomedError" type="tns:CustomedErrorType"/>
+    
+    <complexType name="CustomedErrorType">
+    	<sequence>
+    		<element name="ID" type="string" minOccurs="0"/>
+    		<element name="flowID" type="string" minOccurs="0"/>
+    		<element name="technicalError" minOccurs="0">
+	    		<complexType>
+			    	<sequence>
+			    		<element name="errorCode" type="string" minOccurs="0"/>
+			    		<element name="errorMessage" type="string" minOccurs="0"/>
+			    	</sequence>
+    			</complexType>
+    		</element>
+    		<element name="functionnalError" minOccurs="0">
+	    		<complexType>
+			    	<sequence>
+			    		<element name="errorCode" type="string" minOccurs="0"/>
+			    		<element name="errorMessage" type="string" minOccurs="0"/>
+			    	</sequence>
+    			</complexType>
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

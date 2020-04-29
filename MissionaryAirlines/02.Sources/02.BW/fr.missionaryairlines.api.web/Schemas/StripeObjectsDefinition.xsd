@@ -78,7 +78,18 @@
 		<sequence>
 			<element name="id" type="string" minOccurs="0"/>
 			<element name="object" type="string" minOccurs="0"/>
-			<element name="address" type="string" minOccurs="0"/>
+			<element name="address" minOccurs="0">
+				<complexType>
+					<sequence>
+						<element name="line1" type="string" minOccurs="0"/>
+						<element name="line2" type="string" minOccurs="0"/>
+						<element name="city" type="string" minOccurs="0"/>
+						<element name="state" type="string" minOccurs="0"/>
+						<element name="postal_code" type="string" minOccurs="0"/>
+						<element name="country" type="string" minOccurs="0"/>
+					</sequence>
+				</complexType>
+			</element>
 			<element name="balance" type="int" minOccurs="0"/>
 			<element name="created" type="int" minOccurs="0"/>
 			<element name="currency" type="string" minOccurs="0"/>
