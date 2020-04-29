@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.jdata.fr/schemas/WebObjectsDefinition" elementFormDefault="qualified" targetNamespace="http://www.jdata.fr/schemas/WebObjectsDefinition">
+	
+	<element name="PaymentRequest">
+		<complexType>
+	    	<sequence>
+	    		<element ref="tns:UserDetails"/>
+	    		<element ref="tns:ProgramDetails"/>
+	    		<element ref="tns:BankDetails"/>
+	    	</sequence>
+  		</complexType>
+  	</element>
+  	
+  	<element name="RegistrationRequest">
+		<complexType>
+	    	<sequence>
+	    		<element ref="tns:UserDetails"/>
+	    		<element ref="tns:ProgramDetails"/>
+	    	</sequence>
+  		</complexType>
+  	</element>
+  	
+  	<element name="PaymentResponse" type="tns:ResponseType"/>
+  	<element name="RegistrationResponse" type="tns:ResponseType"/>
+
+    <element name="BankDetails" type="tns:BankDetailsType"/>
+    <element name="UserDetails" type="tns:UserDetailsType"/>
+    <element name="ProgramDetails" type="tns:ProgramDetailsType"/>
+    
+    <complexType name="UserDetailsType">
+    	<sequence>
+    		<element name="userName" type="string"/>
+    		<element name="userFirstname" type="string"/>
+    		<element name="userNationality" type="string"/>
+    		<element name="userPassportInfos">
+	    		<complexType>
+			    	<sequence>
+			    		<element name="passeportNumber" type="string"/>
+			    		<element name="passeportIssueDate" type="date"/>
+			    		<element name="passeportExpirationDate" type="date"/>
+			    		<element name="visaApplianceWarranty" type="boolean"/>
+			    	</sequence>
+    			</complexType>
+    		</element>
+    		<element name="userAddressInfos">
+	    		<complexType>
+			    	<sequence>
+			    		<element name="email" type="string"/>
+			    		<element name="phone" type="string"/>
+			    		<element name="country" type="string"/>
+			    		<element name="address" type="string"/>
+			    		<element name="postalCode" type="string"/>
+			    		<element name="city" type="string"/>
+			    	</sequence>
+    			</complexType>
+    		</element>
+    		<element name="userSpecificRequest" type="string"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="BankDetailsType">
+    	<sequence>
+    		<element name="userCardName" type="string" minOccurs="0" />
+    		<element name="userCardNumber" type="string"/>
+    		<element name="userCardExpirationMonth" type="string" minOccurs="0" />
+    		<element name="userCardExpirationYear" type="string" minOccurs="0"/>
+    		<element name="userCardCVC" type="string" minOccurs="0"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="ProgramDetailsType">
+    	<sequence>
+    		<element name="chosenProgramID" type="string"/>
+    		<element name="chosenFinancialPlanID" type="string"/>
+    		<element name="optionalServices" maxOccurs="unbounded" minOccurs="0">
+	    		<complexType>
+			    	<sequence>
+			    		<element name="ID" type="string"/>
+			    		<element name="amount" type="string"/>
+			    	</sequence>
+    			</complexType>
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="ResponseType">
+    	<sequence>
+    		<element name="status" type="string"/>
+    		<element name="message" type="string" minOccurs="0"/>
+    	</sequence>
+ 	</complexType>
+</schema>
