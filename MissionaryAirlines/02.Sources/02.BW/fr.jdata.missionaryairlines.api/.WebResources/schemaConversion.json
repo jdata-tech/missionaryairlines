@@ -1,5 +1,0 @@
-{"records": [{
-    "jsonSchemaLocation": "/fr.jdata.missionaryairlines.api/Service Descriptors/fr.jdata.missionaryairlines.api.Payment-Payment.json",
-    "conversionType": "linked",
-    "xsdSchemaTargetNamespace": "http://www.jdata.fr/namespaces/tns/api"
-}]}
