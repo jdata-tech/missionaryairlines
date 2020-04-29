@@ -85,7 +85,7 @@
     
     <complexType name="ResponseType">
     	<sequence>
-    		<element name="status" type="string"/>
+    		<element name="status" type="int"/>
     		<element name="message" type="string" minOccurs="0"/>
     	</sequence>
  	</complexType>

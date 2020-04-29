@@ -3,7 +3,7 @@
   <sca:service xmi:id="_AWbF8IovEeqmRao7E-_WLg" name="payment" promote="ComponentPayment/payment">
     <sca:interface.wsdl xmi:id="_AXF0UIovEeqmRao7E-_WLg" interface="http://xmlns.example.com/20200429173507PLT#wsdl.interface(payment)" scaext:wsdlLocation="../Processes/fr/missionaryairlines/api/web/Payment.bwp"/>
     <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_AXeO0IovEeqmRao7E-_WLg" name="RestService" path="/payment" docBasePath="http://localhost:7777/fr.missionaryairlines.api.web" docResourcePath="Payment" basePath="/" connector="fr.missionaryairlines.api.web.Payment" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/fr.missionaryairlines.api.web.Payment-Payment.json">
-      <operation xmi:id="_AXqcEIovEeqmRao7E-_WLg" operationName="post" nickname="post-payment" httpMethod="POST" responseStyle="element">
+      <operation xmi:id="_AXqcEIovEeqmRao7E-_WLg" operationName="post" nickname="post-payment" httpMethod="POST" responseStyle="element" requestStyle="element" useNullForEmptyValuesRequest="true" ignoreAdditionalJsonFields="true">
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
