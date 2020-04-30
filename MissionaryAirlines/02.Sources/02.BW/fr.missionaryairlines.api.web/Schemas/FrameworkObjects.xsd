@@ -6,7 +6,9 @@
     <complexType name="CustomedErrorType">
     	<sequence>
     		<element name="ID" type="string" minOccurs="0"/>
-    		<element name="flowID" type="string" minOccurs="0"/>
+    		<element name="jobID" type="string" minOccurs="0"/>
+    		<element name="processInstanceID" type="string" minOccurs="0"/>
+    		<element name="parentProcessInstanceID" type="string" minOccurs="0"/>
     		<element name="technicalError" minOccurs="0">
 	    		<complexType>
 			    	<sequence>

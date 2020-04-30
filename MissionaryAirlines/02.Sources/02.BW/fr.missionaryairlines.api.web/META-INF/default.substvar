@@ -98,11 +98,59 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
-			<name>/http/newProperty</name>
-			<value></value>
+			<name>/http/stripe/url</name>
+			<value>api.stripe.com</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/http/stripe/ssl-port</name>
+			<value>443</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/http/stripe/token</name>
+			<value>sk_test_5d8VgtBk2HDICrpGb01kKHc400wTPfWtho</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/http/stripe/maxTotalConnections</name>
+			<value>200</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/http/stripe/maxTotalConnectionsPerHost</name>
+			<value>20</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/http/keystore/url</name>
+			<value>C:\GitHub\missionaryairlines\MissionaryAirlines\03.Configuration\1.KeyStore\missionaryairlines.jks</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/http/keystore/password</name>
+			<value>#!+/aDyg/XXR/yUoLtTHbIAIA3Nw1+w36F5AQuk4QpfXk=</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>

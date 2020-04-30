@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient" xmlns:id="http://www.tibco.com/ws/2013/11/identity" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:sca_ext="http://www.tibco.com/ns/sca/201311" xmlns:sslclient="http://xsd.tns.tibco.com/bw/sharedresource/trinity/models/sslclient" xmi:id="_34PgcYp1EeqtkudMqsCtIQ" name="fr.missionaryairlines.api.web.HttpClientResource" type="http:HttpClientConfiguration">
+  <identitySet xmi:id="_yz0c8Ip4EeqtkudMqsCtIQ" appliesTo="namedResource" name="HttpClientIdentitySet" provides="confidentiality">
+    <sca_ext:intentMap xmi:id="_yz0c8Yp4EeqtkudMqsCtIQ" provides="sca_ext:confidentiality">
+      <sca_ext:qualifier xmi:id="_yz0c8op4EeqtkudMqsCtIQ" name="transport">
+        <id:IdentityReference xmi:id="_yz1rEIp4EeqtkudMqsCtIQ" URI="fr.missionaryairlines.api.web.SSLClientResource" type="sslclient:SSLClientConfiguration"/>
+      </sca_ext:qualifier>
+    </sca_ext:intentMap>
+  </identitySet>
+  <jndi:configuration xsi:type="http:HttpClientConfiguration" xmi:id="_34hNQIp1EeqtkudMqsCtIQ" useSSL="true" httpClientVersion="httpcomponents" retryCount="3" idleConnectionTimeout="3000" cmdExecutionIsolationStrategy="THREAD" cmdExecutionIsolationTimeout="1000" cmdExecutionTimeoutEnabled="true" cmdExecutionIsolationInterruptOnTimeout="true" cmdExecutionIsolationSemaphoreMaxConcRequests="8" cmdCircuitBreakerRequestVolumeThreshold="20" cmdCircuitBreakerSleepWindow="5000" cmdCircuitBreakerErrorThresholdPercentage="50" cmdMetricsRollingStatsTime="10000" cmdMetricsRollingStatsNumBuckets="10" cmdMetricsHealthSnapshotInterval="500" cmdRequestLogEnabled="true" tpCoreSize="10" tpMaxQueueSize="-1" tpQueueSizeRejectionThreshold="5" tpKeepAliveTime="1">
+    <substitutionBindings xmi:id="__VsekIp3EeqtkudMqsCtIQ" template="maxTotalConnections" propName="/http/stripe/maxTotalConnections"/>
+    <substitutionBindings xmi:id="_AIz9kIp4EeqtkudMqsCtIQ" template="maxTotalConnectionsPerHost" propName="/http/stripe/maxTotalConnectionsPerHost"/>
+    <tcpDetails xmi:id="_34pJEIp1EeqtkudMqsCtIQ">
+      <substitutionBindings xmi:id="_r3muMIp3EeqtkudMqsCtIQ" template="host" propName="/http/stripe/url"/>
+      <substitutionBindings xmi:id="_s_BCMIp3EeqtkudMqsCtIQ" template="port" propName="/http/stripe/ssl-port"/>
+    </tcpDetails>
+  </jndi:configuration>
+</jndi:namedResource>
