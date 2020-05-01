@@ -2,5 +2,27 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.jdata.fr/schemas/ProjectObjects" elementFormDefault="qualified" targetNamespace="http://www.jdata.fr/schemas/ProjectObjects">
   	
   	<element name="ID" type="string"/>
-    
+  	
+  	<element name="Programs">
+		<complexType>
+	    	<sequence>
+	    		<element ref="tns:Program" maxOccurs="unbounded" minOccurs="0"/>
+	    	</sequence>
+  		</complexType>
+  	</element>
+  	<element name="Program" type="tns:ProgramType"/>
+  	
+  	<complexType name="ProgramType">
+    	<sequence>
+    		<element name="programID" type="string" />
+    		<element name="programFullName" type="string" minOccurs="0" />
+    		<element name="plan" type="tns:PlanType" />
+    	</sequence>
+    </complexType>
+    <complexType name="PlanType">
+    	<sequence>
+    		<element name="planID" type="string" />
+    		<element name="planName" type="string" />
+    	</sequence>
+    </complexType>
 </schema>

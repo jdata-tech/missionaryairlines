@@ -3,6 +3,27 @@
 	
 	<element name="PaymentMethod" type="tns:PaymentMethodType"/>
 	<element name="Customer" type="tns:CustomerType"/>
+	<element name="ListOfCustomers">
+		<complexType>
+			<sequence>
+				<element name="object" type="string" minOccurs="0"/>
+				<element name="url" type="string" minOccurs="0"/>
+				<element name="has_more" type="string" minOccurs="0"/>
+				<element name="data" type="tns:CustomerType" maxOccurs="unbounded" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<complexType name="AddressType">
+		<sequence>
+			<element name="city" type="string" minOccurs="0"/>
+			<element name="country" type="string" minOccurs="0"/>
+			<element name="line1" type="string" minOccurs="0"/>
+			<element name="line2" type="string" minOccurs="0"/>
+			<element name="postal_code" type="string" minOccurs="0"/>
+			<element name="state" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
 	
 	<complexType name="PaymentMethodType">
 		<sequence>
@@ -11,18 +32,7 @@
 			<element name="billing_details" minOccurs="0">
 				<complexType>
 					<sequence>
-						<element name="address" minOccurs="0">
-							<complexType>
-								<sequence>
-									<element name="city" type="string" minOccurs="0"/>
-									<element name="country" type="string" minOccurs="0"/>
-									<element name="line1" type="string" minOccurs="0"/>
-									<element name="line2" type="string" minOccurs="0"/>
-									<element name="postal_code" type="string" minOccurs="0"/>
-									<element name="state" type="string" minOccurs="0"/>
-								</sequence>
-							</complexType>
-						</element>
+						<element name="address" type="tns:AddressType" minOccurs="0"/>
 						<element name="email" type="string" minOccurs="0"/>
 						<element name="name" type="string" minOccurs="0"/>
 						<element name="phone" type="string" minOccurs="0"/>
@@ -78,18 +88,7 @@
 		<sequence>
 			<element name="id" type="string" minOccurs="0"/>
 			<element name="object" type="string" minOccurs="0"/>
-			<element name="address" minOccurs="0">
-				<complexType>
-					<sequence>
-						<element name="line1" type="string" minOccurs="0"/>
-						<element name="line2" type="string" minOccurs="0"/>
-						<element name="city" type="string" minOccurs="0"/>
-						<element name="state" type="string" minOccurs="0"/>
-						<element name="postal_code" type="string" minOccurs="0"/>
-						<element name="country" type="string" minOccurs="0"/>
-					</sequence>
-				</complexType>
-			</element>
+			<element name="address" type="tns:AddressType" minOccurs="0"/>
 			<element name="balance" type="int" minOccurs="0"/>
 			<element name="created" type="int" minOccurs="0"/>
 			<element name="currency" type="string" minOccurs="0"/>
@@ -126,7 +125,15 @@
 					</sequence>
 				</complexType>
 			</element>
-			<element name="shipping" type="string" minOccurs="0"/>
+			<element name="shipping" minOccurs="0">
+				<complexType>
+					<sequence>
+						<element name="address" type="tns:AddressType" minOccurs="0"/>
+						<element name="name" type="string" minOccurs="0"/>
+						<element name="phone" type="string" minOccurs="0"/>
+					</sequence>
+				</complexType>
+			</element>
 			<element name="sources" minOccurs="0">
 				<complexType>
 					<sequence>
@@ -192,7 +199,7 @@
 			<element name="owner" minOccurs="0">
 				<complexType>
 					<sequence>
-						<element name="address" type="string" minOccurs="0"/>
+						<element name="address" type="tns:AddressType" minOccurs="0"/>
 						<element name="email" type="string" minOccurs="0"/>
 						<element name="name" type="string" minOccurs="0"/>
 						<element name="phone" type="string" minOccurs="0"/>
@@ -206,7 +213,7 @@
 			<element name="receiver" minOccurs="0">
 				<complexType>
 					<sequence>
-						<element name="address" type="string" minOccurs="0"/>
+						<element name="address" type="tns:AddressType" minOccurs="0"/>
 						<element name="amount_charged" type="int" minOccurs="0"/>
 						<element name="amount_received" type="int" minOccurs="0"/>
 						<element name="amount_returned" type="int" minOccurs="0"/>

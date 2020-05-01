@@ -311,8 +311,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="539"
-                                    xsi:type="notation:Bounds" y="22"/>
+                                    <layoutConstraint x="570"
+                                    xsi:type="notation:Bounds" y="23"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -433,7 +433,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="384"
+                                    <layoutConstraint height="373"
                                     width="861" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -576,7 +576,7 @@
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
             <children type="6002">
-                <layoutConstraint x="40" xsi:type="notation:Location" y="8"/>
+                <layoutConstraint x="38" xsi:type="notation:Location" y="31"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
@@ -637,14 +637,14 @@
             sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable element="ns0:PaymentRequest" name="Start"
             sca-bpel:internal="true" tibex:parameter="in"/>
-        <bpws:variable element="ns1:Customer"
+        <bpws:variable element="ns1:PaymentMethod"
             name="CreateCustomer-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:Customer" name="GetCustomerID-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ID" name="GetCustomerID" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:PaymentMethod"
             name="PaymentMethod-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ID" name="PaymentMethod" sca-bpel:internal="true"/>
-        <bpws:variable name="GetPlanLibrary" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:Programs" name="GetPlanLibrary" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -785,7 +785,7 @@
                     <bpws:sources>
                         <bpws:source linkName="GetSharedVariableToGetCustomerID"/>
                     </bpws:sources>
-                    <tibex:GetSharedVariable xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                    <tibex:GetSharedVariable variableName="AllPrograms" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
         </bpws:flow>

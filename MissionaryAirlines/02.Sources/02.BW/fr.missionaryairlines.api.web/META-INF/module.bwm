@@ -38,4 +38,13 @@
       <sca:interface.wsdl xmi:id="_AWU_UIovEeqmRao7E-_WLg" interface="http://xmlns.example.com/20200429173507PLT#wsdl.interface(payment)" scaext:wsdlLocation="../Processes/fr/missionaryairlines/api/web/Payment.bwp"/>
     </sca:service>
   </sca:component>
+  <sca:component xmi:id="_KVJ9eYuDEeqtkudMqsCtIQ" name="ComponentGetCustomerID" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_KVJ9eouDEeqtkudMqsCtIQ" processName="fr.missionaryairlines.api.web.StripeActions.GetCustomerID"/>
+  </sca:component>
+  <sca:component xmi:id="_wN-uUIuEEeqtkudMqsCtIQ" name="ComponentCreateCustomer" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_wN-uUYuEEeqtkudMqsCtIQ" processName="fr.missionaryairlines.api.web.StripeActions.CreateCustomer"/>
+  </sca:component>
+  <sca:component xmi:id="_Q53VsIuFEeqtkudMqsCtIQ" name="ComponentTimerStart" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Q53VsYuFEeqtkudMqsCtIQ" processName="fr.missionaryairlines.api.web.Test.TimerStart"/>
+  </sca:component>
 </sca:composite>
