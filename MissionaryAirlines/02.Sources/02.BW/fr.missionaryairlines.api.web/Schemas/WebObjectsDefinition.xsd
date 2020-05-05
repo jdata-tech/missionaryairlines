@@ -73,6 +73,7 @@
     	<sequence>
     		<element name="chosenProgramID" type="string"/>
     		<element name="chosenFinancialPlanID" type="string"/>
+    		<element name="cancelAt" type="string" minOccurs="0"/>
     		<element name="optionalServices" maxOccurs="unbounded" minOccurs="0">
 	    		<complexType>
 			    	<sequence>

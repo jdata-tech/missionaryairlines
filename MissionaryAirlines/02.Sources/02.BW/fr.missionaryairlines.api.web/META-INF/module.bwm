@@ -52,4 +52,10 @@
   <sca:component xmi:id="_ynWHsI4cEeqtkudMqsCtIQ" name="ComponentCreateSubscription" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ynWHsY4cEeqtkudMqsCtIQ" processName="fr.missionaryairlines.api.web.StripeActions.CreateSubscription"/>
   </sca:component>
+  <sca:component xmi:id="_YovfII61EequlpDRbB4jBQ" name="ComponentActivator" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_YovfIY61EequlpDRbB4jBQ" processName="fr.missionaryairlines.api.web.OnStartUp.Activator"/>
+  </sca:component>
+  <sca:component xmi:id="_L9bckI7VEequlpDRbB4jBQ" name="ComponentUpdateCustomer" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_L9bckY7VEequlpDRbB4jBQ" processName="fr.missionaryairlines.api.web.StripeActions.UpdateCustomer"/>
+  </sca:component>
 </sca:composite>

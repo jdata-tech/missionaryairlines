@@ -139,6 +139,9 @@
         "chosenFinancialPlanID" : {
           "type" : "string"
         },
+        "cancelAt" : {
+          "type" : "string"
+        },
         "optionalServices" : {
           "type" : "array",
           "items" : {

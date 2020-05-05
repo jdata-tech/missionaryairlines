@@ -277,7 +277,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="728"
+                                    <layoutConstraint x="824"
                                     xsi:type="notation:Bounds" y="94"/>
                                     </children>
                                     <children type="4002">
@@ -312,8 +312,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="473"
-                                    xsi:type="notation:Bounds" y="4"/>
+                                    <layoutConstraint x="553"
+                                    xsi:type="notation:Bounds" y="7"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -454,8 +454,43 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.6"/>
-                                    <layoutConstraint x="580"
+                                    <layoutConstraint x="708"
                                     xsi:type="notation:Bounds" y="94"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
+                                    <layoutConstraint x="553"
+                                    xsi:type="notation:Bounds" y="173"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -470,7 +505,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
                                     <layoutConstraint height="373"
-                                    width="861" xsi:type="notation:Bounds"/>
+                                    width="957" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -479,7 +514,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="338" width="864" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="373" width="960" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -584,7 +619,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="574" width="864" x="1"
+                    <layoutConstraint height="574" width="960" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -593,7 +628,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="626" width="1206" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="626" width="1302" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -612,13 +647,13 @@
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
             <children type="6002">
-                <layoutConstraint x="27" xsi:type="notation:Location" y="-48"/>
+                <layoutConstraint x="1" xsi:type="notation:Location" y="-13"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.1"/>
             <bendpoints
-                points="[25, 0, -99, 72]$[46, 0, -78, 72]$[46, -72, -78, 0]$[100, -72, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, 0, -98, 88]$[53, 0, -70, 88]$[53, -89, -70, -1]$[99, -89, -24, -1]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
@@ -644,14 +679,15 @@
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
-            <bendpoints points="[25, 0, -140, 0]$[141, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[25, 0, -98, -79]$[53, 0, -70, -79]$[53, 79, -70, 0]$[99, 79, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
@@ -673,7 +709,20 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.6"/>
-            <bendpoints points="[9, 25, -21, -57]$[21, 58, -9, -24]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[25, -1, -130, -88]$[92, -1, -63, -88]$[92, 92, -63, 5]$[131, 92, -24, 5]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
+            <bendpoints
+                points="[25, 0, -130, 79]$[93, 0, -62, 79]$[93, -74, -62, 5]$[131, -74, -24, 5]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -689,6 +738,8 @@
             namespace="http://www.jdata.fr/schemas/FrameworkObjects" prefix="tns2"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
+        <tibex:namespaceItem
+            namespace="http://www.jdata.fr/schemas/ProjectObjects" prefix="tns3"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.jdata.fr/schemas/WebObjectsDefinition"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.jdata.fr/schemas/FrameworkObjects"/>
@@ -713,6 +764,9 @@
             name="CreateSubscription-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ID" name="CreateSubscription" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ID" name="CreateCustomer" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:Customer"
+            name="UpdateCustomer-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:ID" name="UpdateCustomer" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -738,14 +792,14 @@
         <bpws:flow name="flow">
             <bpws:links>
                 <bpws:link name="StartToCreatePaymentMethod" tibex:linkType="SUCCESS"/>
-                <bpws:link
-                    name="GetCustomerIDToCreateCustomer_newcustomer"
-                    tibex:label="new customer" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="GetCustomerIDToCreateCustomer_Name"
+                    tibex:label="" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="PaymentMethodToGetCustomerID" tibex:linkType="SUCCESS"/>
                 <bpws:link name="GetSharedVariableToGetCustomerID" tibex:linkType="SUCCESS"/>
-                <bpws:link name="GetCustomerIDToCreateSubscription" tibex:linkType="SUCCESS"/>
+                <bpws:link name="GetCustomerIDToUpdateCustomer" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                 <bpws:link name="CreateSubscriptionToEnd" tibex:linkType="SUCCESS"/>
                 <bpws:link name="CreateCustomerToCreateSubscription" tibex:linkType="SUCCESS"/>
+                <bpws:link name="UpdateCustomerToCreateSubscription" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -794,7 +848,7 @@
                     tibex:xpdlId="0180e44c-2b83-4062-a4f5-adaa7831f846"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="GetCustomerIDToCreateCustomer_newcustomer"/>
+                        <bpws:target linkName="GetCustomerIDToCreateCustomer_Name"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="CreateCustomerToCreateSubscription"/>
@@ -816,14 +870,20 @@
                         <bpws:target linkName="GetSharedVariableToGetCustomerID"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="GetCustomerIDToCreateCustomer_newcustomer">
+                        <bpws:source linkName="GetCustomerIDToCreateCustomer_Name">
                             <tibex:DesignExpression>
                                 <tibex:expression
                                     expression="string-length(tib:trim($GetCustomerID)) = 0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
                             <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[string-length(tib:trim($GetCustomerID)) = 0]]></bpws:transitionCondition>
                         </bpws:source>
-                        <bpws:source linkName="GetCustomerIDToCreateSubscription"/>
+                        <bpws:source linkName="GetCustomerIDToUpdateCustomer">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                        </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
@@ -874,18 +934,38 @@
                     tibex:xpdlId="5fa42c25-1519-4b4d-a286-bad696e33308"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="GetCustomerIDToCreateSubscription"/>
                         <bpws:target linkName="CreateCustomerToCreateSubscription"/>
+                        <bpws:target linkName="UpdateCustomerToCreateSubscription"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="CreateSubscriptionToEnd"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetCustomerID&quot;/>&lt;xsl:param name=&quot;CreateCustomer&quot;/>&lt;xsl:template name=&quot;CreateSubscription-input&quot; match=&quot;/&quot;>&lt;tns1:Subscription>&lt;xsl:choose>&lt;xsl:when test=&quot;string-length(tib:trim($GetCustomerID)) !=0&quot;>&lt;tns1:customer>&lt;xsl:value-of select=&quot;$GetCustomerID&quot;/>&lt;/tns1:customer>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns1:customer>&lt;xsl:value-of select=&quot;$CreateCustomer&quot;/>&lt;/tns1:customer>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/tns1:Subscription>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/ProjectObjects&quot; xmlns:tns=&quot;http://www.jdata.fr/schemas/WebObjectsDefinition&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetCustomerID&quot;/>&lt;xsl:param name=&quot;CreateCustomer&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;GetPlanLibrary&quot;/>&lt;xsl:param name=&quot;PaymentMethod&quot;/>&lt;xsl:template name=&quot;CreateSubscription-input&quot; match=&quot;/&quot;>&lt;tns1:Subscription>&lt;xsl:if test=&quot;$Start/tns:ProgramDetails/tns:cancelAt&quot;>&lt;tns1:cancel_at>&lt;xsl:value-of select=&quot;$Start/tns:ProgramDetails/tns:cancelAt&quot;/>&lt;/tns1:cancel_at>&lt;/xsl:if>&lt;xsl:choose>&lt;xsl:when test=&quot;string-length(tib:trim($GetCustomerID)) !=0&quot;>&lt;tns1:customer>&lt;xsl:value-of select=&quot;$GetCustomerID&quot;/>&lt;/tns1:customer>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns1:customer>&lt;xsl:value-of select=&quot;$CreateCustomer&quot;/>&lt;/tns1:customer>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;tns1:default_payment_method>&lt;xsl:value-of select=&quot;$PaymentMethod&quot;/>&lt;/tns1:default_payment_method>&lt;tns1:plan>&lt;xsl:variable name=&quot;var&quot; select=&quot;xsd:int($Start/tns:ProgramDetails/tns:chosenProgramID)&quot;/>&lt;xsl:variable name=&quot;var2&quot; select=&quot;xsd:int($Start/tns:ProgramDetails/tns:chosenFinancialPlanID)&quot;/>&lt;xsl:if test=&quot;$GetPlanLibrary/tns3:Program[$var]/tns3:plan[$var2]/tns3:planID&quot;>&lt;tns1:id>&lt;xsl:value-of select=&quot;$GetPlanLibrary/tns3:Program[$var]/tns3:plan[$var2]/tns3:planID&quot;/>&lt;/tns1:id>&lt;/xsl:if>&lt;/tns1:plan>&lt;tns1:quantity>&lt;xsl:value-of select=&quot;&amp;quot;1&amp;quot;&quot;/>&lt;/tns1:quantity>&lt;/tns1:Subscription>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="fr.missionaryairlines.api.web.StripeActions.CreateSubscription" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity inputVariable="UpdateCustomer-input"
+                    name="UpdateCustomer"
+                    outputVariable="UpdateCustomer"
+                    tibex:xpdlId="9b58a1a8-6de7-4049-80ba-8dba1b94e04f"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="GetCustomerIDToUpdateCustomer"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="UpdateCustomerToCreateSubscription"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;PaymentMethod&quot;/>&lt;xsl:param name=&quot;GetCustomerID&quot;/>&lt;xsl:template name=&quot;UpdateCustomer-input&quot; match=&quot;/&quot;>&lt;tns1:Customer>&lt;tns1:id>&lt;xsl:value-of select=&quot;$GetCustomerID&quot;/>&lt;/tns1:id>&lt;tns1:invoice_settings>&lt;tns1:default_payment_method>&lt;xsl:value-of select=&quot;$PaymentMethod&quot;/>&lt;/tns1:default_payment_method>&lt;/tns1:invoice_settings>&lt;/tns1:Customer>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess
+                        subProcessName="fr.missionaryairlines.api.web.StripeActions.UpdateCustomer" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
         </bpws:flow>
