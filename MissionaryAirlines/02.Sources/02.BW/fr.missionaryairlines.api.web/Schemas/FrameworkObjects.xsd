@@ -2,6 +2,8 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.jdata.fr/schemas/FrameworkObjects" elementFormDefault="qualified" targetNamespace="http://www.jdata.fr/schemas/FrameworkObjects">
   	
   	<element name="CustomedError" type="tns:CustomedErrorType"/>
+  	<element name="LogJob" type="tns:LogJobType"/>
+  	<element name="Context" type="tns:ContextType"/>
     
     <complexType name="CustomedErrorType">
     	<sequence>
@@ -25,6 +27,39 @@
 			    	</sequence>
     			</complexType>
     		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="LogJobType">
+    	<sequence>
+    		<element name="jobID" type="string"/>
+    		<element name="projectName" type="string" minOccurs="0"/>
+    		<element name="saveInFiles" minOccurs="0">
+	    		<complexType>
+			    	<sequence>
+			    		<element name="saveInFiles" type="boolean" minOccurs="0"/>
+			    		<element name="fileRepository" type="string" minOccurs="0"/>
+			    		<element name="fileName" type="string" />
+			    	</sequence>
+    			</complexType>
+    		</element>
+    		<element name="logInfos" minOccurs="0">
+	    		<complexType>
+			    	<sequence>
+			    		<element name="messageCode" type="string" minOccurs="0"/>
+			    		<element name="logLevel" type="string" minOccurs="0"/>
+			    		<element name="message" type="string" />
+			    	</sequence>
+    			</complexType>
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="ContextType">
+    	<sequence>
+    		<element name="jobID" type="string"/>
+    		<element name="projectName" type="string" minOccurs="0"/>
+    		<element name="data" type="anyType" minOccurs="0"/>
     	</sequence>
     </complexType>
 </schema>

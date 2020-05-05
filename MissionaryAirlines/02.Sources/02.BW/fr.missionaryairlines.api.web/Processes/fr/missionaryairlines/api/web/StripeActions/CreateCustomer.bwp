@@ -2,7 +2,7 @@
 <bpws:process exitOnStandardFault="no"
     name="fr.missionaryairlines.api.web.StripeActions.CreateCustomer"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20200501102126"
+    targetNamespace="http://xmlns.example.com/20200504165339"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
@@ -13,6 +13,8 @@
     xmlns:ns12="http://www.tibco.com/namespaces/tnt/plugins/parsexml"
     xmlns:ns13="http://tns.tibco.com/bw/palette/internal/activityerror+bw.xml.parsexml"
     xmlns:ns14="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+d70a6a0d-3893-412c-8707-ee5735dcd747"
+    xmlns:ns15="http://www.tibco.com/namespaces/tnt/plugins/file"
+    xmlns:ns16="http://tns.tibco.com/bw/palette/internal/activityerror+bw.file.write"
     xmlns:ns2="http://tns.tibco.com/bw/activity/sendhttprequest/input+7ab7b410-ded1-4086-8111-603a7faa1ca5+RequestActivityInput"
     xmlns:ns3="http://tns.tibco.com/bw/activity/sendhttprequest/output+7ab7b410-ded1-4086-8111-603a7faa1ca5+RequestActivityOutput"
     xmlns:ns4="http://tns.tibco.com/bw/palette/internal/activityerror+bw.http.sendHTTPRequest"
@@ -23,6 +25,7 @@
     xmlns:ns9="http://www.jdata.fr/schemas/FrameworkObjects"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
+    xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <tibex:Types>
@@ -658,7 +661,7 @@
         productVersion="6.5.0 V63 2018-08-08" scalable="true"
         singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessInterface context=""
-        input="{http://www.jdata.fr/schemas/StripeObjectsDefinition}PaymentMethod" output="{http://www.jdata.fr/schemas/ProjectObjects}ID">
+        input="{http://www.jdata.fr/schemas/StripeObjectsDefinition}Customer" output="{http://www.jdata.fr/schemas/ProjectObjects}ID">
         <tibex:errorList>
             <tibex:error
                 error="{http://www.jdata.fr/schemas/FrameworkObjects}CustomedError" name="CustomedError"/>
@@ -752,7 +755,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="707"
+                                    <layoutConstraint x="716"
                                     xsi:type="notation:Bounds" y="107"/>
                                     </children>
                                     <children type="4002 bw.http.sendHTTPRequest">
@@ -826,10 +829,10 @@
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="359"
+                                    x="322"
                                     xsi:type="notation:Bounds" y="107"/>
                                     </children>
-                                    <children type="4002 bw.generalactivities.log">
+                                    <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Throw">
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
@@ -861,117 +864,6 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
-                                    <layoutConstraint
-                                    height="40" width="40"
-                                    x="509"
-                                    xsi:type="notation:Bounds" y="218"/>
-                                    </children>
-                                    <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Throw">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.5"/>
-                                    <layoutConstraint
-                                    height="40" width="40"
-                                    x="509"
-                                    xsi:type="notation:Bounds" y="328"/>
-                                    </children>
-                                    <children type="4002 bw.generalactivities.log">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.6"/>
-                                    <layoutConstraint
-                                    height="40" width="40"
-                                    x="199"
-                                    xsi:type="notation:Bounds" y="218"/>
-                                    </children>
-                                    <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Throw">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
                                     height="40" width="40"
                                     x="199"
@@ -1008,11 +900,85 @@
                                     backgroundColor="16777215"
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.5"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="509"
+                                    x="461"
                                     xsi:type="notation:Bounds" y="107"/>
+                                    </children>
+                                    <children type="4002 bw.generalactivities.mapper">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.6"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="569"
+                                    xsi:type="notation:Bounds" y="107"/>
+                                    </children>
+                                    <children type="4002 bw.generalactivities.log">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="199"
+                                    xsi:type="notation:Bounds" y="218"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1026,8 +992,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="434"
-                                    width="894" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="572"
+                                    width="1101" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -1036,7 +1002,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="434" width="897" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="572" width="1104" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1046,7 +1012,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="458" width="897" x="1"
+                    <layoutConstraint height="596" width="1104" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1055,7 +1021,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="510" width="1190" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="648" width="1446" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1082,19 +1048,20 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.2"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[0, 25, 1, -63]$[0, 87, 1, -1]" xsi:type="notation:RelativeBendpoints"/>
+            <targetAnchor id="(0.4796747967479675,0.02666666666666667)" xsi:type="notation:IdentityAnchor"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1104,48 +1071,37 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
-            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
-            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
-            <bendpoints points="[6, 25, 0, -86]$[6, 87, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.5"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[21, 25, -73, -84]$[73, 85, -21, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.6"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
-            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
-            <bendpoints points="[-24, 18, 126, -93]$[-125, 93, 25, -18]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, 0, -216, 0]$[217, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1169,6 +1125,8 @@
             namespace="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions" prefix="tns6"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/parsexml" prefix="tns7"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/file" prefix="tns8"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.jdata.fr/schemas/StripeObjectsDefinition"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.jdata.fr/schemas/ProjectObjects"/>
@@ -1176,10 +1134,6 @@
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:PaymentMethod" name="Start"
-            sca-bpel:internal="true" tibex:parameter="in"/>
-        <bpws:variable element="ns1:ID" name="End-input"
-            sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable name="httpClientResource"
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
@@ -1189,11 +1143,9 @@
             </bpws:from>
         </bpws:variable>
         <bpws:variable element="ns2:RequestActivityInput"
-            name="Create_PM_API-input" sca-bpel:internal="true"/>
+            name="CreateCustomer-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:RequestActivityOutput"
-            name="Create_PM_API" sca-bpel:internal="true"/>
-        <bpws:variable element="ns10:ErrorLinkHandlerFaultData"
-            name="_error_Create_PM_API" sca-bpel:internal="true"/>
+            name="CreateCustomer" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
         <bpws:variable name="stripeToken" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
@@ -1204,20 +1156,30 @@
             name="ParseJSON" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:ActivityErrorData"
             name="_error_ParseJSON" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:ActivityInput"
-            name="ParseError-input" sca-bpel:internal="true"/>
         <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns:OptionalErrorReport"
             name="_errorOptional" sca-bpel:internal="true"/>
         <bpws:variable element="ns9:CustomedError"
-            name="ThrowParseError-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:ActivityInput" name="APIError-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns9:CustomedError"
             name="ThrowAPIError-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns12:xmlString" name="ParseXml-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:PaymentMethod" name="ParseXml" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:ErrorLinkHandlerFaultData"
+            name="_error_ListCustomerByI" sca-bpel:internal="true"/>
+        <bpws:variable name="TimeStamp" type="xsd:string"/>
+        <bpws:variable element="ns12:xmlString" name="BuildData-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns0:ListOfCustomers" name="BuildData" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:ActivityErrorData"
-            name="_error_ParseXml" sca-bpel:internal="true"/>
+            name="_error_BuildData" sca-bpel:internal="true"/>
+        <bpws:variable element="ns0:ListOfCustomers"
+            name="MapFormat-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns0:ListOfCustomers" name="MapFormat" sca-bpel:internal="true"/>
+        <bpws:variable element="ns0:Customer" name="Start"
+            sca-bpel:internal="true" tibex:parameter="in"/>
+        <bpws:variable element="ns8:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:ErrorLinkHandlerFaultData"
+            name="_error_CreateC" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:ErrorLinkHandlerFaultData"
+            name="_error_CreateCustomer" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:ID" name="End-input"
+            sca-bpel:internal="true" tibex:parameter="out"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1230,14 +1192,13 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="StartToEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToCustomerByEmail" tibex:linkType="SUCCESS"/>
                 <bpws:link name="SendHTTPRequestToEnd" tibex:linkType="SUCCESS"/>
-                <bpws:link name="ParseJSONToEnd" tibex:linkType="SUCCESS"/>
-                <bpws:link name="ParseErrorToThrow" tibex:linkType="SUCCESS"/>
-                <bpws:link name="Create_PM_APIToCopy_1_ParseError" tibex:linkType="ERROR"/>
-                <bpws:link name="APIErrorToThrow" tibex:linkType="SUCCESS"/>
-                <bpws:link name="ParseXmlToEnd1" tibex:linkType="SUCCESS"/>
-                <bpws:link name="ParseXmlToParseError" tibex:linkType="ERROR"/>
+                <bpws:link name="CustomerByEmailToLog" tibex:linkType="ERROR"/>
+                <bpws:link name="MapFormatToEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ParseXml1ToParseXml" tibex:linkType="SUCCESS"/>
+                <bpws:link name="LogToThrowAPIError" tibex:linkType="SUCCESS"/>
+                <bpws:link name="ParseJSONToBuildData" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1245,7 +1206,7 @@
                     tibex:xpdlId="309c8bd6-6cb7-44ea-9125-7456c3e58042"
                     variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="StartToEnd"/>
+                        <bpws:source linkName="StartToCustomerByEmail"/>
                     </bpws:sources>
                     <tibex:eventSource>
                         <tibex:StartEvent xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -1257,12 +1218,14 @@
                     name="End"
                     tibex:xpdlId="de159e24-659c-4493-bda9-46f282e69051" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="ParseXmlToEnd1"/>
+                        <bpws:target linkName="MapFormatToEnd"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; xmlns:tns2=&quot;http://www.jdata.fr/schemas/ProjectObjects&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseXml&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns2:ID>&lt;xsl:value-of select=&quot;$ParseXml/tns3:id&quot;/>&lt;/tns2:ID>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.jdata.fr/schemas/ProjectObjects&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns2:ID>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/tns2:ID>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
+                    <tibex:inputBinding
+                        expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://www.jdata.fr/schemas/ProjectObjects" version="2.0"&gt; &lt;xsl:template name="End-input" match="/"&gt; &lt;tns2:ID/&gt;&lt;/xsl:template&gt; &lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                     <tibex:config>
                         <bwext:BWActivity
                             activityTypeID="bw.internal.end"
@@ -1282,17 +1245,17 @@
             <bpws:extensionActivity>
                 <tibex:activityExtension
                     governedObjectTypes="BWHttpReference"
-                    inputVariable="Create_PM_API-input"
-                    name="Create_PM_API" outputVariable="Create_PM_API"
+                    inputVariable="CreateCustomer-input"
+                    name="CreateCustomer"
+                    outputVariable="CreateCustomer"
                     tibex:xpdlId="7ab7b410-ded1-4086-8111-603a7faa1ca5" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="StartToEnd"/>
+                        <bpws:target linkName="StartToCustomerByEmail"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="SendHTTPRequestToEnd"/>
-                        <bpws:source
-                            linkName="Create_PM_APIToCopy_1_ParseError"
-                            tibex:faultDetailsVar="Create_PM_API" tibex:faultNameVar="FaultName">
+                        <bpws:source linkName="CustomerByEmailToLog"
+                            tibex:faultDetailsVar="CreateCustomer" tibex:faultNameVar="FaultName">
                             <tibex:DesignExpression>
                                 <tibex:expression expression="##error##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
@@ -1301,7 +1264,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://tns.tibco.com/bw/activity/sendhttprequest/input+7ab7b410-ded1-4086-8111-603a7faa1ca5+RequestActivityInput&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;stripeToken&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;Create_PM_API-input&quot; match=&quot;/&quot;>&lt;tns:RequestActivityInput>&lt;Method>&lt;xsl:value-of select=&quot;&amp;quot;POST&amp;quot;&quot;/>&lt;/Method>&lt;RequestURI>&lt;xsl:value-of select=&quot;&amp;quot;/v1/payment_methods&amp;quot;&quot;/>&lt;/RequestURI>&lt;QueryString>&lt;xsl:value-of select=&quot;concat(&amp;quot;type=card&amp;quot;, &amp;quot;&amp;amp;card[number]=&amp;quot;, $Start/tns3:card/tns3:wallet, &amp;quot;&amp;amp;card[exp_month]=&amp;quot;, xsd:string($Start/tns3:card/tns3:exp_month), &amp;quot;&amp;amp;card[exp_year]=&amp;quot;, xsd:string($Start/tns3:card/tns3:exp_year), &amp;quot;&amp;amp;card[cvc]=&amp;quot;, $Start/tns3:card/tns3:checks/tns3:cvc_check)&quot;/>&lt;/QueryString>&lt;Headers>&lt;Content-Type>&lt;xsl:value-of select=&quot;&amp;quot;application/x-www-form-urlencoded&amp;quot;&quot;/>&lt;/Content-Type>&lt;/Headers>&lt;DynamicHeaders>&lt;Header>&lt;Name>&lt;xsl:value-of select=&quot;&amp;quot;Authorization&amp;quot;&quot;/>&lt;/Name>&lt;Value>&lt;xsl:value-of select=&quot;concat(&amp;quot;Bearer &amp;quot;, $stripeToken)&quot;/>&lt;/Value>&lt;/Header>&lt;/DynamicHeaders>&lt;/tns:RequestActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://tns.tibco.com/bw/activity/sendhttprequest/input+7ab7b410-ded1-4086-8111-603a7faa1ca5+RequestActivityInput&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;stripeToken&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;CreateCustomer-input&quot; match=&quot;/&quot;>&lt;tns:RequestActivityInput>&lt;Method>&lt;xsl:value-of select=&quot;&amp;quot;POST&amp;quot;&quot;/>&lt;/Method>&lt;RequestURI>&lt;xsl:value-of select=&quot;&amp;quot;/v1/customers&amp;quot;&quot;/>&lt;/RequestURI>&lt;QueryString>&lt;xsl:value-of select=&quot;concat(&amp;quot;email=&amp;quot;, $Start/tns3:email,&amp;quot;&amp;amp;name=&amp;quot;, $Start/tns3:name,&amp;quot;&amp;amp;phone=&amp;quot;, $Start/tns3:phone)&quot;/>&lt;/QueryString>&lt;Headers>&lt;Content-Type>&lt;xsl:value-of select=&quot;&amp;quot;application/x-www-form-urlencoded&amp;quot;&quot;/>&lt;/Content-Type>&lt;/Headers>&lt;DynamicHeaders>&lt;Header>&lt;Name>&lt;xsl:value-of select=&quot;&amp;quot;Authorization&amp;quot;&quot;/>&lt;/Name>&lt;Value>&lt;xsl:value-of select=&quot;concat(&amp;quot;Bearer &amp;quot;, $stripeToken)&quot;/>&lt;/Value>&lt;/Header>&lt;/DynamicHeaders>&lt;/tns:RequestActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1334,11 +1297,11 @@
                         <bpws:target linkName="SendHTTPRequestToEnd"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="ParseJSONToEnd"/>
+                        <bpws:source linkName="ParseJSONToBuildData"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;activity.jsonParser.input+abf57095-8d70-4d0b-bea2-8e8dd3f5a63c+ActivityInputType&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Create_PM_API&quot;/>&lt;xsl:template name=&quot;ParseJSON-input&quot; match=&quot;/&quot;>&lt;tns1:ActivityInputClass>&lt;jsonString>&lt;xsl:value-of select=&quot;$Create_PM_API/asciiContent&quot;/>&lt;/jsonString>&lt;/tns1:ActivityInputClass>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;activity.jsonParser.input+abf57095-8d70-4d0b-bea2-8e8dd3f5a63c+ActivityInputType&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;CreateCustomer&quot;/>&#xa;    &lt;xsl:template name=&quot;ParseJSON-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ActivityInputClass>&#xa;            &lt;jsonString>&#xa;                &lt;xsl:value-of select=&quot;$CreateCustomer/asciiContent&quot;/>&#xa;            &lt;/jsonString>&#xa;        &lt;/tns1:ActivityInputClass>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1361,83 +1324,6 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:activityExtension
-                    inputVariable="ParseError-input" name="ParseError"
-                    tibex:xpdlId="0226038e-f8db-41ef-b4f7-a9585d1ac102" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="ParseXmlToParseError"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="ParseErrorToThrow"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns6=&quot;http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;ParseError-input&quot; match=&quot;/&quot;>&lt;tns4:ActivityInput>&lt;msgCode>&lt;xsl:value-of select=&quot;&amp;quot;Error Parsing PaymentMethod JSON Object&amp;quot;&quot;/>&lt;/msgCode>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($_error, true(), true())&quot;/>&lt;/message>&lt;/tns4:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.generalactivities.log"
-                            version="6.0.0.001"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value controlBy="Application"
-                                    role="Error"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:throw faultName="ns9:CustomedError"
-                faultVariable="ThrowParseError-input"
-                name="ThrowParseError" tibex:xpdlId="b4b47585-d930-444c-b30e-dec93b2a931b">
-                <tibex:inputBindings>
-                    <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.jdata.fr/schemas/FrameworkObjects&quot; xmlns:tns6=&quot;http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;ThrowParseError-input&quot; match=&quot;/&quot;>&lt;tns5:CustomedError>&lt;tns5:jobID>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/tns5:jobID>&lt;tns5:processInstanceID>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/tns5:processInstanceID>&lt;tns5:technicalError>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;tns5:errorCode>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/tns5:errorCode>&lt;/xsl:if>&lt;tns5:errorMessage>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/tns5:errorMessage>&lt;/tns5:technicalError>&lt;/tns5:CustomedError>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                </tibex:inputBindings>
-                <bpws:targets>
-                    <bpws:target linkName="ParseErrorToThrow"/>
-                </bpws:targets>
-            </bpws:throw>
-            <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="APIError-input"
-                    name="APIError"
-                    tibex:xpdlId="5ad3a9ca-78fc-44ad-b4ef-824918f00441" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="Create_PM_APIToCopy_1_ParseError"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="APIErrorToThrow"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns6=&quot;http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;Copy_1_ParseError-input&quot; match=&quot;/&quot;>&lt;tns4:ActivityInput>&lt;msgCode>&lt;xsl:value-of select=&quot;&amp;quot;HTTP Error With API Create PaymentMethod&amp;quot;&quot;/>&lt;/msgCode>&lt;message>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/message>&lt;/tns4:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.generalactivities.log"
-                            version="6.0.0.001"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value controlBy="Application"
-                                    role="Error"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
             <bpws:throw faultName="ns9:CustomedError"
                 faultVariable="ThrowAPIError-input" name="ThrowAPIError" tibex:xpdlId="aeed3c3e-fe99-4c77-bac8-4e273b7f7c0e">
                 <tibex:inputBindings>
@@ -1445,29 +1331,22 @@
                         expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.jdata.fr/schemas/FrameworkObjects&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;ThrowAPIError-input&quot; match=&quot;/&quot;>&lt;tns5:CustomedError>&lt;tns5:jobID>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/tns5:jobID>&lt;tns5:processInstanceID>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/tns5:processInstanceID>&lt;tns5:functionnalError>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;tns5:errorCode>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/tns5:errorCode>&lt;/xsl:if>&lt;tns5:errorMessage>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/tns5:errorMessage>&lt;/tns5:functionnalError>&lt;/tns5:CustomedError>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                 </tibex:inputBindings>
                 <bpws:targets>
-                    <bpws:target linkName="APIErrorToThrow"/>
+                    <bpws:target linkName="LogToThrowAPIError"/>
                 </bpws:targets>
             </bpws:throw>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="ParseXml-input"
-                    name="ParseXml" outputVariable="ParseXml"
-                    tibex:xpdlId="d70a6a0d-3893-412c-8707-ee5735dcd747" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                <tibex:activityExtension inputVariable="BuildData-input"
+                    name="BuildData" outputVariable="BuildData"
+                    tibex:xpdlId="25cc5512-253b-4688-a9a0-79d82557dfcf" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="ParseJSONToEnd"/>
+                        <bpws:target linkName="ParseJSONToBuildData"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="ParseXmlToEnd1"/>
-                        <bpws:source linkName="ParseXmlToParseError"
-                            tibex:faultDetailsVar="ParseXml" tibex:faultNameVar="FaultName">
-                            <tibex:DesignExpression>
-                                <tibex:expression expression="##error##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                            </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##error##]]></bpws:transitionCondition>
-                        </bpws:source>
+                        <bpws:source linkName="ParseXml1ToParseXml"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.tibco.com/namespaces/tnt/plugins/parsexml&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;ParseXml-input&quot; match=&quot;/&quot;>&lt;tns7:xmlString>&lt;xsl:value-of select=&quot;concat('&amp;lt;PaymentMethod xmlns=&amp;quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&amp;quot; >', substring-before(substring($ParseJSON/xmlString, 7), '&amp;lt;/JSON>'), '&amp;lt;/PaymentMethod>')&quot;/>&lt;/tns7:xmlString>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.tibco.com/namespaces/tnt/plugins/parsexml&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;BuildData-input&quot; match=&quot;/&quot;>&lt;tns7:xmlString>&lt;xsl:value-of select=&quot;concat('&amp;lt;Customers xmlns=&amp;quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&amp;quot; >', substring-before(substring($ParseJSON/xmlString, 7), '&amp;lt;/JSON>'), '&amp;lt;/Customers>')&quot;/>&lt;/tns7:xmlString>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1481,8 +1360,73 @@
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/xmlpalette#//ParseXml"/>
                                     <value inputStyle="text"
-                                    outputElementQName="StripeObjectsDefinition:PaymentMethod"
-                                    validateOutput="true" xsi:type="palettexml:ParseXml"/>
+                                    outputElementQName="StripeObjectsDefinition:ListOfCustomers" xsi:type="palettexml:ParseXml"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="MapFormat-input"
+                    name="MapFormat" outputVariable="MapFormat"
+                    tibex:xpdlId="4736112e-3582-4a63-888b-cc135a1f4632" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="ParseXml1ToParseXml"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="MapFormatToEnd"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;BuildData&quot;/>&lt;xsl:template name=&quot;Mapper-input&quot; match=&quot;/&quot;>&lt;xsl:for-each select=&quot;$BuildData&quot;>&lt;tns3:ListOfCustomers>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:url&quot;>&lt;tns3:url>&lt;xsl:value-of select=&quot;tns3:url&quot;/>&lt;/tns3:url>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:has_more&quot;>&lt;tns3:has_more>&lt;xsl:value-of select=&quot;tns3:has_more&quot;/>&lt;/tns3:has_more>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:data&quot;>&lt;tns3:data>&lt;xsl:if test=&quot;tns3:id&quot;>&lt;tns3:id>&lt;xsl:value-of select=&quot;tns3:id&quot;/>&lt;/tns3:id>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:address&quot;>&lt;tns3:address>&lt;xsl:if test=&quot;tns3:city&quot;>&lt;tns3:city>&lt;xsl:value-of select=&quot;tns3:city&quot;/>&lt;/tns3:city>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:country&quot;>&lt;tns3:country>&lt;xsl:value-of select=&quot;tns3:country&quot;/>&lt;/tns3:country>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:line1&quot;>&lt;tns3:line1>&lt;xsl:value-of select=&quot;tns3:line1&quot;/>&lt;/tns3:line1>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:line2&quot;>&lt;tns3:line2>&lt;xsl:value-of select=&quot;tns3:line2&quot;/>&lt;/tns3:line2>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:postal_code&quot;>&lt;tns3:postal_code>&lt;xsl:value-of select=&quot;tns3:postal_code&quot;/>&lt;/tns3:postal_code>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:state&quot;>&lt;tns3:state>&lt;xsl:value-of select=&quot;tns3:state&quot;/>&lt;/tns3:state>&lt;/xsl:if>&lt;/tns3:address>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:balance&quot;>&lt;tns3:balance>&lt;xsl:value-of select=&quot;tns3:balance&quot;/>&lt;/tns3:balance>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:created&quot;>&lt;tns3:created>&lt;xsl:value-of select=&quot;tns3:created&quot;/>&lt;/tns3:created>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:currency&quot;>&lt;tns3:currency>&lt;xsl:value-of select=&quot;tns3:currency&quot;/>&lt;/tns3:currency>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:default_source&quot;>&lt;tns3:default_source>&lt;xsl:value-of select=&quot;tns3:default_source&quot;/>&lt;/tns3:default_source>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:delinquent&quot;>&lt;tns3:delinquent>&lt;xsl:value-of select=&quot;tns3:delinquent&quot;/>&lt;/tns3:delinquent>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:description&quot;>&lt;tns3:description>&lt;xsl:value-of select=&quot;tns3:description&quot;/>&lt;/tns3:description>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:discount&quot;>&lt;tns3:discount>&lt;xsl:value-of select=&quot;tns3:discount&quot;/>&lt;/tns3:discount>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:email&quot;>&lt;tns3:email>&lt;xsl:value-of select=&quot;tns3:email&quot;/>&lt;/tns3:email>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:invoice_prefix&quot;>&lt;tns3:invoice_prefix>&lt;xsl:value-of select=&quot;tns3:invoice_prefix&quot;/>&lt;/tns3:invoice_prefix>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:invoice_settings&quot;>&lt;tns3:invoice_settings>&lt;xsl:if test=&quot;tns3:custom_fields&quot;>&lt;tns3:custom_fields>&lt;xsl:value-of select=&quot;tns3:custom_fields&quot;/>&lt;/tns3:custom_fields>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:default_payment_method&quot;>&lt;tns3:default_payment_method>&lt;xsl:value-of select=&quot;tns3:default_payment_method&quot;/>&lt;/tns3:default_payment_method>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:footer&quot;>&lt;tns3:footer>&lt;xsl:value-of select=&quot;tns3:footer&quot;/>&lt;/tns3:footer>&lt;/xsl:if>&lt;/tns3:invoice_settings>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:livemode&quot;>&lt;tns3:livemode>&lt;xsl:value-of select=&quot;tns3:livemode&quot;/>&lt;/tns3:livemode>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:metadata&quot;>&lt;tns3:metadata>&lt;xsl:if test=&quot;tns3:order_id&quot;>&lt;tns3:order_id>&lt;xsl:value-of select=&quot;tns3:order_id&quot;/>&lt;/tns3:order_id>&lt;/xsl:if>&lt;/tns3:metadata>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:name&quot;>&lt;tns3:name>&lt;xsl:value-of select=&quot;tns3:name&quot;/>&lt;/tns3:name>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:next_invoice_sequence&quot;>&lt;tns3:next_invoice_sequence>&lt;xsl:value-of select=&quot;tns3:next_invoice_sequence&quot;/>&lt;/tns3:next_invoice_sequence>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:phone&quot;>&lt;tns3:phone>&lt;xsl:value-of select=&quot;tns3:phone&quot;/>&lt;/tns3:phone>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:preferred_locales&quot;>&lt;tns3:preferred_locales>&lt;xsl:if test=&quot;tns3:preferred_locales&quot;>&lt;tns3:preferred_locales>&lt;xsl:value-of select=&quot;tns3:preferred_locales&quot;/>&lt;/tns3:preferred_locales>&lt;/xsl:if>&lt;/tns3:preferred_locales>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;tns3:shipping&quot;>&lt;tns3:shipping>&lt;xsl:for-each select=&quot;tns3:address&quot;>&lt;xsl:for-each select=&quot;.&quot;>&lt;tns3:address>&lt;xsl:if test=&quot;tns3:city&quot;>&lt;tns3:city>&lt;xsl:value-of select=&quot;tns3:city&quot;/>&lt;/tns3:city>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:country&quot;>&lt;tns3:country>&lt;xsl:value-of select=&quot;tns3:country&quot;/>&lt;/tns3:country>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:line1&quot;>&lt;tns3:line1>&lt;xsl:value-of select=&quot;tns3:line1&quot;/>&lt;/tns3:line1>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:line2&quot;>&lt;tns3:line2>&lt;xsl:value-of select=&quot;tns3:line2&quot;/>&lt;/tns3:line2>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:postal_code&quot;>&lt;tns3:postal_code>&lt;xsl:value-of select=&quot;tns3:postal_code&quot;/>&lt;/tns3:postal_code>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:state&quot;>&lt;tns3:state>&lt;xsl:value-of select=&quot;tns3:state&quot;/>&lt;/tns3:state>&lt;/xsl:if>&lt;/tns3:address>&lt;/xsl:for-each>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:name&quot;>&lt;tns3:name>&lt;xsl:value-of select=&quot;tns3:name&quot;/>&lt;/tns3:name>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:phone&quot;>&lt;tns3:phone>&lt;xsl:value-of select=&quot;tns3:phone&quot;/>&lt;/tns3:phone>&lt;/xsl:if>&lt;/tns3:shipping>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;tns3:sources&quot;>&lt;tns3:sources>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:data&quot;>&lt;tns3:data>&lt;xsl:if test=&quot;tns3:id&quot;>&lt;tns3:id>&lt;xsl:value-of select=&quot;tns3:id&quot;/>&lt;/tns3:id>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:address_city&quot;>&lt;tns3:address_city>&lt;xsl:value-of select=&quot;tns3:address_city&quot;/>&lt;/tns3:address_city>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:address_country&quot;>&lt;tns3:address_country>&lt;xsl:value-of select=&quot;tns3:address_country&quot;/>&lt;/tns3:address_country>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:address_line1&quot;>&lt;tns3:address_line1>&lt;xsl:value-of select=&quot;tns3:address_line1&quot;/>&lt;/tns3:address_line1>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:address_line1_check&quot;>&lt;tns3:address_line1_check>&lt;xsl:value-of select=&quot;tns3:address_line1_check&quot;/>&lt;/tns3:address_line1_check>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:address_line2&quot;>&lt;tns3:address_line2>&lt;xsl:value-of select=&quot;tns3:address_line2&quot;/>&lt;/tns3:address_line2>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:address_state&quot;>&lt;tns3:address_state>&lt;xsl:value-of select=&quot;tns3:address_state&quot;/>&lt;/tns3:address_state>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:address_zip&quot;>&lt;tns3:address_zip>&lt;xsl:value-of select=&quot;tns3:address_zip&quot;/>&lt;/tns3:address_zip>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:address_zip_check&quot;>&lt;tns3:address_zip_check>&lt;xsl:value-of select=&quot;tns3:address_zip_check&quot;/>&lt;/tns3:address_zip_check>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:brand&quot;>&lt;tns3:brand>&lt;xsl:value-of select=&quot;tns3:brand&quot;/>&lt;/tns3:brand>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:country&quot;>&lt;tns3:country>&lt;xsl:value-of select=&quot;tns3:country&quot;/>&lt;/tns3:country>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:customer&quot;>&lt;tns3:customer>&lt;xsl:value-of select=&quot;tns3:customer&quot;/>&lt;/tns3:customer>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:cvc_check&quot;>&lt;tns3:cvc_check>&lt;xsl:value-of select=&quot;tns3:cvc_check&quot;/>&lt;/tns3:cvc_check>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:dynamic_last4&quot;>&lt;tns3:dynamic_last4>&lt;xsl:value-of select=&quot;tns3:dynamic_last4&quot;/>&lt;/tns3:dynamic_last4>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:exp_month&quot;>&lt;tns3:exp_month>&lt;xsl:value-of select=&quot;tns3:exp_month&quot;/>&lt;/tns3:exp_month>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:exp_year&quot;>&lt;tns3:exp_year>&lt;xsl:value-of select=&quot;tns3:exp_year&quot;/>&lt;/tns3:exp_year>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:fingerprint&quot;>&lt;tns3:fingerprint>&lt;xsl:value-of select=&quot;tns3:fingerprint&quot;/>&lt;/tns3:fingerprint>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:funding&quot;>&lt;tns3:funding>&lt;xsl:value-of select=&quot;tns3:funding&quot;/>&lt;/tns3:funding>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:last4&quot;>&lt;tns3:last4>&lt;xsl:value-of select=&quot;tns3:last4&quot;/>&lt;/tns3:last4>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:metadata&quot;>&lt;tns3:metadata>&lt;xsl:if test=&quot;tns3:order_id&quot;>&lt;tns3:order_id>&lt;xsl:value-of select=&quot;tns3:order_id&quot;/>&lt;/tns3:order_id>&lt;/xsl:if>&lt;/tns3:metadata>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:name&quot;>&lt;tns3:name>&lt;xsl:value-of select=&quot;tns3:name&quot;/>&lt;/tns3:name>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:tokenization_method&quot;>&lt;tns3:tokenization_method>&lt;xsl:value-of select=&quot;tns3:tokenization_method&quot;/>&lt;/tns3:tokenization_method>&lt;/xsl:if>&lt;/tns3:data>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:has_more&quot;>&lt;tns3:has_more>&lt;xsl:value-of select=&quot;tns3:has_more&quot;/>&lt;/tns3:has_more>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:total_count&quot;>&lt;tns3:total_count>&lt;xsl:value-of select=&quot;tns3:total_count&quot;/>&lt;/tns3:total_count>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:url&quot;>&lt;tns3:url>&lt;xsl:value-of select=&quot;tns3:url&quot;/>&lt;/tns3:url>&lt;/xsl:if>&lt;/tns3:sources>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;tns3:subscriptions&quot;>&lt;tns3:subscriptions>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:data&quot;>&lt;tns3:data>&lt;xsl:if test=&quot;tns3:id&quot;>&lt;tns3:id>&lt;xsl:value-of select=&quot;tns3:id&quot;/>&lt;/tns3:id>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:application_fee_percent&quot;>&lt;tns3:application_fee_percent>&lt;xsl:value-of select=&quot;tns3:application_fee_percent&quot;/>&lt;/tns3:application_fee_percent>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:billing_cycle_anchor&quot;>&lt;tns3:billing_cycle_anchor>&lt;xsl:value-of select=&quot;tns3:billing_cycle_anchor&quot;/>&lt;/tns3:billing_cycle_anchor>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:billing_thresholds&quot;>&lt;tns3:billing_thresholds>&lt;xsl:value-of select=&quot;tns3:billing_thresholds&quot;/>&lt;/tns3:billing_thresholds>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:cancel_at&quot;>&lt;tns3:cancel_at>&lt;xsl:value-of select=&quot;tns3:cancel_at&quot;/>&lt;/tns3:cancel_at>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:cancel_at_period_end&quot;>&lt;tns3:cancel_at_period_end>&lt;xsl:value-of select=&quot;tns3:cancel_at_period_end&quot;/>&lt;/tns3:cancel_at_period_end>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:canceled_at&quot;>&lt;tns3:canceled_at>&lt;xsl:value-of select=&quot;tns3:canceled_at&quot;/>&lt;/tns3:canceled_at>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:collection_method&quot;>&lt;tns3:collection_method>&lt;xsl:value-of select=&quot;tns3:collection_method&quot;/>&lt;/tns3:collection_method>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:created&quot;>&lt;tns3:created>&lt;xsl:value-of select=&quot;tns3:created&quot;/>&lt;/tns3:created>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:current_period_end&quot;>&lt;tns3:current_period_end>&lt;xsl:value-of select=&quot;tns3:current_period_end&quot;/>&lt;/tns3:current_period_end>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:current_period_start&quot;>&lt;tns3:current_period_start>&lt;xsl:value-of select=&quot;tns3:current_period_start&quot;/>&lt;/tns3:current_period_start>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:customer&quot;>&lt;tns3:customer>&lt;xsl:value-of select=&quot;tns3:customer&quot;/>&lt;/tns3:customer>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:days_until_due&quot;>&lt;tns3:days_until_due>&lt;xsl:value-of select=&quot;tns3:days_until_due&quot;/>&lt;/tns3:days_until_due>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:default_payment_method&quot;>&lt;tns3:default_payment_method>&lt;xsl:value-of select=&quot;tns3:default_payment_method&quot;/>&lt;/tns3:default_payment_method>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:default_source&quot;>&lt;tns3:default_source>&lt;xsl:value-of select=&quot;tns3:default_source&quot;/>&lt;/tns3:default_source>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:default_tax_rates&quot;>&lt;tns3:default_tax_rates>&lt;xsl:if test=&quot;tns3:id&quot;>&lt;tns3:id>&lt;xsl:value-of select=&quot;tns3:id&quot;/>&lt;/tns3:id>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:active&quot;>&lt;tns3:active>&lt;xsl:value-of select=&quot;tns3:active&quot;/>&lt;/tns3:active>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:created&quot;>&lt;tns3:created>&lt;xsl:value-of select=&quot;tns3:created&quot;/>&lt;/tns3:created>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:description&quot;>&lt;tns3:description>&lt;xsl:value-of select=&quot;tns3:description&quot;/>&lt;/tns3:description>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:display_name&quot;>&lt;tns3:display_name>&lt;xsl:value-of select=&quot;tns3:display_name&quot;/>&lt;/tns3:display_name>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:inclusive&quot;>&lt;tns3:inclusive>&lt;xsl:value-of select=&quot;tns3:inclusive&quot;/>&lt;/tns3:inclusive>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:jurisdiction&quot;>&lt;tns3:jurisdiction>&lt;xsl:value-of select=&quot;tns3:jurisdiction&quot;/>&lt;/tns3:jurisdiction>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:livemode&quot;>&lt;tns3:livemode>&lt;xsl:value-of select=&quot;tns3:livemode&quot;/>&lt;/tns3:livemode>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:metadata&quot;>&lt;tns3:metadata>&lt;xsl:if test=&quot;tns3:order_id&quot;>&lt;tns3:order_id>&lt;xsl:value-of select=&quot;tns3:order_id&quot;/>&lt;/tns3:order_id>&lt;/xsl:if>&lt;/tns3:metadata>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:percentage&quot;>&lt;tns3:percentage>&lt;xsl:value-of select=&quot;tns3:percentage&quot;/>&lt;/tns3:percentage>&lt;/xsl:if>&lt;/tns3:default_tax_rates>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:discount&quot;>&lt;tns3:discount>&lt;xsl:value-of select=&quot;tns3:discount&quot;/>&lt;/tns3:discount>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:ended_at&quot;>&lt;tns3:ended_at>&lt;xsl:value-of select=&quot;tns3:ended_at&quot;/>&lt;/tns3:ended_at>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:items&quot;>&lt;tns3:items>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:data&quot;>&lt;tns3:data>&lt;xsl:if test=&quot;tns3:id&quot;>&lt;tns3:id>&lt;xsl:value-of select=&quot;tns3:id&quot;/>&lt;/tns3:id>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:billing_thresholds&quot;>&lt;tns3:billing_thresholds>&lt;xsl:value-of select=&quot;tns3:billing_thresholds&quot;/>&lt;/tns3:billing_thresholds>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:created&quot;>&lt;tns3:created>&lt;xsl:value-of select=&quot;tns3:created&quot;/>&lt;/tns3:created>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:metadata&quot;>&lt;tns3:metadata>&lt;xsl:if test=&quot;tns3:order_id&quot;>&lt;tns3:order_id>&lt;xsl:value-of select=&quot;tns3:order_id&quot;/>&lt;/tns3:order_id>&lt;/xsl:if>&lt;/tns3:metadata>&lt;/xsl:for-each>&lt;xsl:for-each select=&quot;tns3:plan&quot;>&lt;tns3:plan>&lt;xsl:if test=&quot;tns3:id&quot;>&lt;tns3:id>&lt;xsl:value-of select=&quot;tns3:id&quot;/>&lt;/tns3:id>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:active&quot;>&lt;tns3:active>&lt;xsl:value-of select=&quot;tns3:active&quot;/>&lt;/tns3:active>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:aggregate_usage&quot;>&lt;tns3:aggregate_usage>&lt;xsl:value-of select=&quot;tns3:aggregate_usage&quot;/>&lt;/tns3:aggregate_usage>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:amount&quot;>&lt;tns3:amount>&lt;xsl:value-of select=&quot;tns3:amount&quot;/>&lt;/tns3:amount>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:amount_decimal&quot;>&lt;tns3:amount_decimal>&lt;xsl:value-of select=&quot;tns3:amount_decimal&quot;/>&lt;/tns3:amount_decimal>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:billing_scheme&quot;>&lt;tns3:billing_scheme>&lt;xsl:value-of select=&quot;tns3:billing_scheme&quot;/>&lt;/tns3:billing_scheme>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:created&quot;>&lt;tns3:created>&lt;xsl:value-of select=&quot;tns3:created&quot;/>&lt;/tns3:created>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:currency&quot;>&lt;tns3:currency>&lt;xsl:value-of select=&quot;tns3:currency&quot;/>&lt;/tns3:currency>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:interval&quot;>&lt;tns3:interval>&lt;xsl:value-of select=&quot;tns3:interval&quot;/>&lt;/tns3:interval>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:interval_count&quot;>&lt;tns3:interval_count>&lt;xsl:value-of select=&quot;tns3:interval_count&quot;/>&lt;/tns3:interval_count>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:livemode&quot;>&lt;tns3:livemode>&lt;xsl:value-of select=&quot;tns3:livemode&quot;/>&lt;/tns3:livemode>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:metadata&quot;>&lt;tns3:metadata>&lt;xsl:if test=&quot;tns3:order_id&quot;>&lt;tns3:order_id>&lt;xsl:value-of select=&quot;tns3:order_id&quot;/>&lt;/tns3:order_id>&lt;/xsl:if>&lt;/tns3:metadata>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:nickname&quot;>&lt;tns3:nickname>&lt;xsl:value-of select=&quot;tns3:nickname&quot;/>&lt;/tns3:nickname>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:product&quot;>&lt;tns3:product>&lt;xsl:value-of select=&quot;tns3:product&quot;/>&lt;/tns3:product>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:tiers&quot;>&lt;tns3:tiers>&lt;xsl:value-of select=&quot;tns3:tiers&quot;/>&lt;/tns3:tiers>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:tiers_mode&quot;>&lt;tns3:tiers_mode>&lt;xsl:value-of select=&quot;tns3:tiers_mode&quot;/>&lt;/tns3:tiers_mode>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:transform_usage&quot;>&lt;tns3:transform_usage>&lt;xsl:value-of select=&quot;tns3:transform_usage&quot;/>&lt;/tns3:transform_usage>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:trial_period_days&quot;>&lt;tns3:trial_period_days>&lt;xsl:value-of select=&quot;tns3:trial_period_days&quot;/>&lt;/tns3:trial_period_days>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:usage_type&quot;>&lt;tns3:usage_type>&lt;xsl:value-of select=&quot;tns3:usage_type&quot;/>&lt;/tns3:usage_type>&lt;/xsl:if>&lt;/tns3:plan>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:quantity&quot;>&lt;tns3:quantity>&lt;xsl:value-of select=&quot;tns3:quantity&quot;/>&lt;/tns3:quantity>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:subscription&quot;>&lt;tns3:subscription>&lt;xsl:value-of select=&quot;tns3:subscription&quot;/>&lt;/tns3:subscription>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:tax_rates&quot;>&lt;tns3:tax_rates>&lt;xsl:if test=&quot;tns3:id&quot;>&lt;tns3:id>&lt;xsl:value-of select=&quot;tns3:id&quot;/>&lt;/tns3:id>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:active&quot;>&lt;tns3:active>&lt;xsl:value-of select=&quot;tns3:active&quot;/>&lt;/tns3:active>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:created&quot;>&lt;tns3:created>&lt;xsl:value-of select=&quot;tns3:created&quot;/>&lt;/tns3:created>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:description&quot;>&lt;tns3:description>&lt;xsl:value-of select=&quot;tns3:description&quot;/>&lt;/tns3:description>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:display_name&quot;>&lt;tns3:display_name>&lt;xsl:value-of select=&quot;tns3:display_name&quot;/>&lt;/tns3:display_name>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:inclusive&quot;>&lt;tns3:inclusive>&lt;xsl:value-of select=&quot;tns3:inclusive&quot;/>&lt;/tns3:inclusive>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:jurisdiction&quot;>&lt;tns3:jurisdiction>&lt;xsl:value-of select=&quot;tns3:jurisdiction&quot;/>&lt;/tns3:jurisdiction>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:livemode&quot;>&lt;tns3:livemode>&lt;xsl:value-of select=&quot;tns3:livemode&quot;/>&lt;/tns3:livemode>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:metadata&quot;>&lt;tns3:metadata>&lt;xsl:if test=&quot;tns3:order_id&quot;>&lt;tns3:order_id>&lt;xsl:value-of select=&quot;tns3:order_id&quot;/>&lt;/tns3:order_id>&lt;/xsl:if>&lt;/tns3:metadata>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:percentage&quot;>&lt;tns3:percentage>&lt;xsl:value-of select=&quot;tns3:percentage&quot;/>&lt;/tns3:percentage>&lt;/xsl:if>&lt;/tns3:tax_rates>&lt;/xsl:for-each>&lt;/tns3:data>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:has_more&quot;>&lt;tns3:has_more>&lt;xsl:value-of select=&quot;tns3:has_more&quot;/>&lt;/tns3:has_more>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:total_count&quot;>&lt;tns3:total_count>&lt;xsl:value-of select=&quot;tns3:total_count&quot;/>&lt;/tns3:total_count>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:url&quot;>&lt;tns3:url>&lt;xsl:value-of select=&quot;tns3:url&quot;/>&lt;/tns3:url>&lt;/xsl:if>&lt;/tns3:items>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:latest_invoice&quot;>&lt;tns3:latest_invoice>&lt;xsl:value-of select=&quot;tns3:latest_invoice&quot;/>&lt;/tns3:latest_invoice>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:livemode&quot;>&lt;tns3:livemode>&lt;xsl:value-of select=&quot;tns3:livemode&quot;/>&lt;/tns3:livemode>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:metadata&quot;>&lt;tns3:metadata>&lt;xsl:if test=&quot;tns3:order_id&quot;>&lt;tns3:order_id>&lt;xsl:value-of select=&quot;tns3:order_id&quot;/>&lt;/tns3:order_id>&lt;/xsl:if>&lt;/tns3:metadata>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:next_pending_invoice_item_invoice&quot;>&lt;tns3:next_pending_invoice_item_invoice>&lt;xsl:value-of select=&quot;tns3:next_pending_invoice_item_invoice&quot;/>&lt;/tns3:next_pending_invoice_item_invoice>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:pause_collection&quot;>&lt;tns3:pause_collection>&lt;xsl:value-of select=&quot;tns3:pause_collection&quot;/>&lt;/tns3:pause_collection>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:pending_invoice_item_interval&quot;>&lt;tns3:pending_invoice_item_interval>&lt;xsl:value-of select=&quot;tns3:pending_invoice_item_interval&quot;/>&lt;/tns3:pending_invoice_item_interval>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:pending_setup_intent&quot;>&lt;tns3:pending_setup_intent>&lt;xsl:value-of select=&quot;tns3:pending_setup_intent&quot;/>&lt;/tns3:pending_setup_intent>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:pending_update&quot;>&lt;tns3:pending_update>&lt;xsl:value-of select=&quot;tns3:pending_update&quot;/>&lt;/tns3:pending_update>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:plan&quot;>&lt;tns3:plan>&lt;xsl:if test=&quot;tns3:id&quot;>&lt;tns3:id>&lt;xsl:value-of select=&quot;tns3:id&quot;/>&lt;/tns3:id>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:active&quot;>&lt;tns3:active>&lt;xsl:value-of select=&quot;tns3:active&quot;/>&lt;/tns3:active>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:aggregate_usage&quot;>&lt;tns3:aggregate_usage>&lt;xsl:value-of select=&quot;tns3:aggregate_usage&quot;/>&lt;/tns3:aggregate_usage>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:amount&quot;>&lt;tns3:amount>&lt;xsl:value-of select=&quot;tns3:amount&quot;/>&lt;/tns3:amount>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:amount_decimal&quot;>&lt;tns3:amount_decimal>&lt;xsl:value-of select=&quot;tns3:amount_decimal&quot;/>&lt;/tns3:amount_decimal>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:billing_scheme&quot;>&lt;tns3:billing_scheme>&lt;xsl:value-of select=&quot;tns3:billing_scheme&quot;/>&lt;/tns3:billing_scheme>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:created&quot;>&lt;tns3:created>&lt;xsl:value-of select=&quot;tns3:created&quot;/>&lt;/tns3:created>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:currency&quot;>&lt;tns3:currency>&lt;xsl:value-of select=&quot;tns3:currency&quot;/>&lt;/tns3:currency>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:interval&quot;>&lt;tns3:interval>&lt;xsl:value-of select=&quot;tns3:interval&quot;/>&lt;/tns3:interval>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:interval_count&quot;>&lt;tns3:interval_count>&lt;xsl:value-of select=&quot;tns3:interval_count&quot;/>&lt;/tns3:interval_count>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:livemode&quot;>&lt;tns3:livemode>&lt;xsl:value-of select=&quot;tns3:livemode&quot;/>&lt;/tns3:livemode>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:metadata&quot;>&lt;tns3:metadata>&lt;xsl:if test=&quot;tns3:order_id&quot;>&lt;tns3:order_id>&lt;xsl:value-of select=&quot;tns3:order_id&quot;/>&lt;/tns3:order_id>&lt;/xsl:if>&lt;/tns3:metadata>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:nickname&quot;>&lt;tns3:nickname>&lt;xsl:value-of select=&quot;tns3:nickname&quot;/>&lt;/tns3:nickname>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:product&quot;>&lt;tns3:product>&lt;xsl:value-of select=&quot;tns3:product&quot;/>&lt;/tns3:product>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:tiers&quot;>&lt;tns3:tiers>&lt;xsl:value-of select=&quot;tns3:tiers&quot;/>&lt;/tns3:tiers>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:tiers_mode&quot;>&lt;tns3:tiers_mode>&lt;xsl:value-of select=&quot;tns3:tiers_mode&quot;/>&lt;/tns3:tiers_mode>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:transform_usage&quot;>&lt;tns3:transform_usage>&lt;xsl:value-of select=&quot;tns3:transform_usage&quot;/>&lt;/tns3:transform_usage>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:trial_period_days&quot;>&lt;tns3:trial_period_days>&lt;xsl:value-of select=&quot;tns3:trial_period_days&quot;/>&lt;/tns3:trial_period_days>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:usage_type&quot;>&lt;tns3:usage_type>&lt;xsl:value-of select=&quot;tns3:usage_type&quot;/>&lt;/tns3:usage_type>&lt;/xsl:if>&lt;/tns3:plan>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:quantity&quot;>&lt;tns3:quantity>&lt;xsl:value-of select=&quot;tns3:quantity&quot;/>&lt;/tns3:quantity>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:schedule&quot;>&lt;tns3:schedule>&lt;xsl:value-of select=&quot;tns3:schedule&quot;/>&lt;/tns3:schedule>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:start_date&quot;>&lt;tns3:start_date>&lt;xsl:value-of select=&quot;tns3:start_date&quot;/>&lt;/tns3:start_date>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:status&quot;>&lt;tns3:status>&lt;xsl:value-of select=&quot;tns3:status&quot;/>&lt;/tns3:status>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:tax_percent&quot;>&lt;tns3:tax_percent>&lt;xsl:value-of select=&quot;tns3:tax_percent&quot;/>&lt;/tns3:tax_percent>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:trial_end&quot;>&lt;tns3:trial_end>&lt;xsl:value-of select=&quot;tns3:trial_end&quot;/>&lt;/tns3:trial_end>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:trial_start&quot;>&lt;tns3:trial_start>&lt;xsl:value-of select=&quot;tns3:trial_start&quot;/>&lt;/tns3:trial_start>&lt;/xsl:if>&lt;/tns3:data>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:has_more&quot;>&lt;tns3:has_more>&lt;xsl:value-of select=&quot;tns3:has_more&quot;/>&lt;/tns3:has_more>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:total_count&quot;>&lt;tns3:total_count>&lt;xsl:value-of select=&quot;tns3:total_count&quot;/>&lt;/tns3:total_count>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:url&quot;>&lt;tns3:url>&lt;xsl:value-of select=&quot;tns3:url&quot;/>&lt;/tns3:url>&lt;/xsl:if>&lt;/tns3:subscriptions>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:tax_exempt&quot;>&lt;tns3:tax_exempt>&lt;xsl:value-of select=&quot;tns3:tax_exempt&quot;/>&lt;/tns3:tax_exempt>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:tax_ids&quot;>&lt;tns3:tax_ids>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:data&quot;>&lt;tns3:data>&lt;xsl:if test=&quot;tns3:id&quot;>&lt;tns3:id>&lt;xsl:value-of select=&quot;tns3:id&quot;/>&lt;/tns3:id>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:object&quot;>&lt;tns3:object>&lt;xsl:value-of select=&quot;tns3:object&quot;/>&lt;/tns3:object>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:country&quot;>&lt;tns3:country>&lt;xsl:value-of select=&quot;tns3:country&quot;/>&lt;/tns3:country>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:created&quot;>&lt;tns3:created>&lt;xsl:value-of select=&quot;tns3:created&quot;/>&lt;/tns3:created>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:customer&quot;>&lt;tns3:customer>&lt;xsl:value-of select=&quot;tns3:customer&quot;/>&lt;/tns3:customer>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:livemode&quot;>&lt;tns3:livemode>&lt;xsl:value-of select=&quot;tns3:livemode&quot;/>&lt;/tns3:livemode>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:type&quot;>&lt;tns3:type>&lt;xsl:value-of select=&quot;tns3:type&quot;/>&lt;/tns3:type>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:value&quot;>&lt;tns3:value>&lt;xsl:value-of select=&quot;tns3:value&quot;/>&lt;/tns3:value>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:verification&quot;>&lt;tns3:verification>&lt;xsl:if test=&quot;tns3:status&quot;>&lt;tns3:status>&lt;xsl:value-of select=&quot;tns3:status&quot;/>&lt;/tns3:status>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:verified_address&quot;>&lt;tns3:verified_address>&lt;xsl:value-of select=&quot;tns3:verified_address&quot;/>&lt;/tns3:verified_address>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:verified_name&quot;>&lt;tns3:verified_name>&lt;xsl:value-of select=&quot;tns3:verified_name&quot;/>&lt;/tns3:verified_name>&lt;/xsl:if>&lt;/tns3:verification>&lt;/xsl:for-each>&lt;/tns3:data>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:has_more&quot;>&lt;tns3:has_more>&lt;xsl:value-of select=&quot;tns3:has_more&quot;/>&lt;/tns3:has_more>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:total_count&quot;>&lt;tns3:total_count>&lt;xsl:value-of select=&quot;tns3:total_count&quot;/>&lt;/tns3:total_count>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:url&quot;>&lt;tns3:url>&lt;xsl:value-of select=&quot;tns3:url&quot;/>&lt;/tns3:url>&lt;/xsl:if>&lt;/tns3:tax_ids>&lt;/xsl:for-each>&lt;/tns3:data>&lt;/xsl:for-each>&lt;/tns3:ListOfCustomers>&lt;/xsl:for-each>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.mapper"
+                            version="6.0.0.001"
+                            xmlns:StripeObjectsDefinition="http://www.jdata.fr/schemas/StripeObjectsDefinition"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Mapper"/>
+                                    <value
+                                    inputQName="StripeObjectsDefinition:ListOfCustomers" xsi:type="generalactivities:Mapper"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="Log-input"
+                    name="Log"
+                    tibex:xpdlId="0031662b-28e5-461c-99ad-05cfbd3206dc" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="CustomerByEmailToLog"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="LogToThrowAPIError"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns4:ActivityInput>&lt;msgCode>&lt;xsl:value-of select=&quot;&amp;quot;PAYMENT/STRIPE API/GET CUSTOMER BY ID&amp;quot;&quot;/>&lt;/msgCode>&lt;message>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/message>&lt;/tns4:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.log"
+                            version="6.0.0.001"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
+                                    <value controlBy="Application"
+                                    role="Error"
+                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>

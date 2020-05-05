@@ -16,13 +16,13 @@
     	<sequence>
     		<element name="programID" type="string" />
     		<element name="programFullName" type="string" minOccurs="0" />
-    		<element name="plan" type="tns:PlanType" />
+    		<element name="plan" type="tns:PlanType" maxOccurs="unbounded"  />
     	</sequence>
     </complexType>
     <complexType name="PlanType">
     	<sequence>
     		<element name="planID" type="string" />
-    		<element name="planName" type="string" />
+    		<element name="planName" type="string" minOccurs="0" />
     	</sequence>
     </complexType>
 </schema>

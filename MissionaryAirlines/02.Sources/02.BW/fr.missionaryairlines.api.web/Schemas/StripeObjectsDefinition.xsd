@@ -3,6 +3,7 @@
 	
 	<element name="PaymentMethod" type="tns:PaymentMethodType"/>
 	<element name="Customer" type="tns:CustomerType"/>
+	<element name="Subscription" type="tns:SubscriptionType"/>
 	<element name="ListOfCustomers">
 		<complexType>
 			<sequence>
@@ -53,8 +54,8 @@
 							</complexType>
 						</element>					
 						<element name="country" type="string" minOccurs="0"/>
-						<element name="exp_month" type="int" minOccurs="0"/>
-						<element name="exp_year" type="int" minOccurs="0"/>
+						<element name="exp_month" type="string" minOccurs="0"/>
+						<element name="exp_year" type="string" minOccurs="0"/>
 						<element name="fingerprint" type="string" minOccurs="0"/>
 						<element name="funding" type="string" minOccurs="0"/>
 						<element name="generated_from" type="string" minOccurs="0"/>
@@ -70,7 +71,7 @@
 					</sequence>
 				</complexType>
 			</element>
-			<element name="created" type="int" minOccurs="0"/>
+			<element name="created" type="string" minOccurs="0"/>
 			<element name="customer" type="string" minOccurs="0"/>
 			<element name="livemode" type="boolean" minOccurs="0"/>
 			<element name="metadata" minOccurs="0">
@@ -89,8 +90,8 @@
 			<element name="id" type="string" minOccurs="0"/>
 			<element name="object" type="string" minOccurs="0"/>
 			<element name="address" type="tns:AddressType" minOccurs="0"/>
-			<element name="balance" type="int" minOccurs="0"/>
-			<element name="created" type="int" minOccurs="0"/>
+			<element name="balance" type="string" minOccurs="0"/>
+			<element name="created" type="string" minOccurs="0"/>
 			<element name="currency" type="string" minOccurs="0"/>
 			<element name="default_source" type="string" minOccurs="0"/>
 			<element name="delinquent" type="boolean" minOccurs="0"/>
@@ -116,7 +117,7 @@
 				</complexType>
 			</element>
 			<element name="name" type="string" minOccurs="0"/>
-			<element name="next_invoice_sequence" type="int" minOccurs="0"/>
+			<element name="next_invoice_sequence" type="string" minOccurs="0"/>
 			<element name="phone" type="string" minOccurs="0"/>
 			<element name="preferred_locales" minOccurs="0" maxOccurs="unbounded">
 				<complexType>
@@ -140,6 +141,7 @@
 						<element name="object" type="string" minOccurs="0"/>
 						<element name="data" type="tns:SourceType" minOccurs="0" maxOccurs="unbounded"/>
 						<element name="has_more" type="string" minOccurs="0"/>
+						<element name="total_count" type="string" minOccurs="0"/>
 						<element name="url" type="string" minOccurs="0"/>
 					</sequence>
 				</complexType>
@@ -150,6 +152,7 @@
 						<element name="object" type="string" minOccurs="0"/>
 						<element name="data" type="tns:SubscriptionType" minOccurs="0" maxOccurs="unbounded"/>
 						<element name="has_more" type="string" minOccurs="0"/>
+						<element name="total_count" type="string" minOccurs="0"/>
 						<element name="url" type="string" minOccurs="0"/>
 					</sequence>
 				</complexType>
@@ -161,6 +164,7 @@
 						<element name="object" type="string" minOccurs="0"/>
 						<element name="data" type="tns:TaxIdType" minOccurs="0" maxOccurs="unbounded"/>
 						<element name="has_more" type="string" minOccurs="0"/>
+						<element name="total_count" type="string" minOccurs="0"/>
 						<element name="url" type="string" minOccurs="0"/>
 					</sequence>
 				</complexType>
@@ -170,25 +174,26 @@
 	
 	<complexType name="SourceType">
 		<sequence>
-			<element name="id" type="string" minOccurs="0"/>
-			<element name="object" type="string" minOccurs="0"/>
-			<element name="ach_credit_transfer" minOccurs="0">
-				<complexType>
-					<sequence>
-						<element name="account_number" type="string" minOccurs="0"/>
-						<element name="routing_number" type="string" minOccurs="0"/>
-						<element name="fingerprint" type="string" minOccurs="0"/>
-						<element name="bank_name" type="string" minOccurs="0"/>
-						<element name="swift_code" type="string" minOccurs="0"/>
-					</sequence>
-				</complexType>
-			</element>
-			<element name="amount" type="string" minOccurs="0"/>
-			<element name="client_secret" type="string" minOccurs="0"/>
-			<element name="created" type="int" minOccurs="0"/>
-			<element name="currency" type="string" minOccurs="0"/>
-			<element name="flow" type="string" minOccurs="0"/>
-			<element name="livemode" type="boolean" minOccurs="0"/>
+			<element name="id" type="string" minOccurs="0" />
+			<element name="object" type="string" minOccurs="0" />
+			<element name="address_city" type="string" minOccurs="0" />
+			<element name="address_country" type="string" minOccurs="0" />
+			<element name="address_line1" type="string" minOccurs="0" />
+			<element name="address_line1_check" type="string" minOccurs="0" />
+			<element name="address_line2" type="string" minOccurs="0" />
+			<element name="address_state" type="string" minOccurs="0" />
+			<element name="address_zip" type="string" minOccurs="0" />
+			<element name="address_zip_check" type="string" minOccurs="0" />
+			<element name="brand" type="string" minOccurs="0" />
+			<element name="country" type="string" minOccurs="0" />
+			<element name="customer" type="string" minOccurs="0" />
+			<element name="cvc_check" type="string" minOccurs="0" />
+			<element name="dynamic_last4" type="string" minOccurs="0" />
+			<element name="exp_month" type="string" minOccurs="0" />
+			<element name="exp_year" type="string" minOccurs="0" />
+			<element name="fingerprint" type="string" minOccurs="0" />
+			<element name="funding" type="string" minOccurs="0" />
+			<element name="last4" type="string" minOccurs="0" />
 			<element name="metadata" minOccurs="0">
 				<complexType>
 					<sequence>
@@ -196,36 +201,8 @@
 					</sequence>
 				</complexType>
 			</element>
-			<element name="owner" minOccurs="0">
-				<complexType>
-					<sequence>
-						<element name="address" type="tns:AddressType" minOccurs="0"/>
-						<element name="email" type="string" minOccurs="0"/>
-						<element name="name" type="string" minOccurs="0"/>
-						<element name="phone" type="string" minOccurs="0"/>
-						<element name="verified_address" type="string" minOccurs="0"/>
-						<element name="verified_email" type="string" minOccurs="0"/>
-						<element name="verified_name" type="string" minOccurs="0"/>
-						<element name="verified_phone" type="string" minOccurs="0"/>
-					</sequence>
-				</complexType>
-			</element>
-			<element name="receiver" minOccurs="0">
-				<complexType>
-					<sequence>
-						<element name="address" type="tns:AddressType" minOccurs="0"/>
-						<element name="amount_charged" type="int" minOccurs="0"/>
-						<element name="amount_received" type="int" minOccurs="0"/>
-						<element name="amount_returned" type="int" minOccurs="0"/>
-						<element name="refund_attributes_method" type="string" minOccurs="0"/>
-						<element name="refund_attributes_status" type="string" minOccurs="0"/>
-					</sequence>
-				</complexType>
-			</element>
-			<element name="statement_descriptor" type="string" minOccurs="0"/>
-			<element name="status" type="string" minOccurs="0"/>
-			<element name="type" type="string" minOccurs="0"/>
-			<element name="usage" type="string" minOccurs="0"/>
+			<element name="name" type="string" minOccurs="0" />
+			<element name="tokenization_method" type="string" minOccurs="0" />
 		</sequence>
 	</complexType>
 	
@@ -234,7 +211,7 @@
 			<element name="id" type="string" minOccurs="0"/>
 			<element name="object" type="string" minOccurs="0"/>
 			<element name="country" type="string" minOccurs="0"/>
-			<element name="created" type="int" minOccurs="0"/>
+			<element name="created" type="string" minOccurs="0"/>
 			<element name="customer" type="string" minOccurs="0"/>
 			<element name="livemode" type="boolean" minOccurs="0"/>
 			<element name="type" type="string" minOccurs="0"/>
@@ -256,28 +233,29 @@
 			<element name="id" type="string" minOccurs="0"/>
 			<element name="object" type="string" minOccurs="0"/>
 			<element name="application_fee_percent" type="string" minOccurs="0"/>
-			<element name="billing_cycle_anchor" type="int" minOccurs="0"/>
+			<element name="billing_cycle_anchor" type="string" minOccurs="0"/>
 			<element name="billing_thresholds" type="string" minOccurs="0"/>
 			<element name="cancel_at" type="string" minOccurs="0"/>
 			<element name="cancel_at_period_end" type="boolean" minOccurs="0"/>
-			<element name="canceled_at" type="int" minOccurs="0"/>
+			<element name="canceled_at" type="string" minOccurs="0"/>
 			<element name="collection_method" type="string" minOccurs="0"/>
-			<element name="created" type="int" minOccurs="0"/>
-			<element name="current_period_end" type="int" minOccurs="0"/>
-			<element name="current_period_start" type="int" minOccurs="0"/>
+			<element name="created" type="string" minOccurs="0"/>
+			<element name="current_period_end" type="string" minOccurs="0"/>
+			<element name="current_period_start" type="string" minOccurs="0"/>
 			<element name="customer" type="string" minOccurs="0"/>
-			<element name="days_until_due" type="int" minOccurs="0"/>
+			<element name="days_until_due" type="string" minOccurs="0"/>
 			<element name="default_payment_method" type="string" minOccurs="0"/>
 			<element name="default_source" type="string" minOccurs="0"/>
 			<element name="default_tax_rates" type="tns:TaxRateType" minOccurs="0" maxOccurs="unbounded" />
 			<element name="discount" type="string" minOccurs="0"/>
-			<element name="ended_at" type="int" minOccurs="0"/>
-			<element name="items" minOccurs="0">
+			<element name="ended_at" type="string" minOccurs="0"/>
+			<element name="items" minOccurs="0" maxOccurs="unbounded">
 				<complexType>
 					<sequence>
 						<element name="object" type="string" minOccurs="0"/>
 						<element name="data" type="tns:SubscriptionItemType" minOccurs="0" maxOccurs="unbounded"/>
 						<element name="has_more" type="string" minOccurs="0"/>
+						<element name="total_count" type="string" minOccurs="0"/>
 						<element name="url" type="string" minOccurs="0"/>
 					</sequence>
 				</complexType>
@@ -297,9 +275,9 @@
 			<element name="pending_setup_intent" type="string" minOccurs="0"/>
 			<element name="pending_update" type="string" minOccurs="0"/>
 			<element name="plan" type="tns:PlanType" minOccurs="0" />
-			<element name="quantity" type="int" minOccurs="0"/>
+			<element name="quantity" type="string" minOccurs="0"/>
 			<element name="schedule" type="string" minOccurs="0"/>
-			<element name="start_date" type="int" minOccurs="0"/>
+			<element name="start_date" type="string" minOccurs="0"/>
 			<element name="status" type="string" minOccurs="0"/>
 			<element name="tax_percent" type="string" minOccurs="0"/>
 			<element name="trial_end" type="string" minOccurs="0"/>
@@ -313,13 +291,13 @@
 			<element name="object" type="string" minOccurs="0"/>
 			<element name="active" type="boolean" minOccurs="0"/>
 			<element name="aggregate_usage" type="string" minOccurs="0"/>
-			<element name="amount" type="int" minOccurs="0"/>
-			<element name="amount_decimal" type="int" minOccurs="0"/>
+			<element name="amount" type="string" minOccurs="0"/>
+			<element name="amount_decimal" type="string" minOccurs="0"/>
 			<element name="billing_scheme" type="string" minOccurs="0"/>
-			<element name="created" type="int" minOccurs="0"/>
+			<element name="created" type="string" minOccurs="0"/>
 			<element name="currency" type="string" minOccurs="0"/>
 			<element name="interval" type="string" minOccurs="0"/>
-			<element name="interval_count" type="int" minOccurs="0"/>
+			<element name="interval_count" type="string" minOccurs="0"/>
 			<element name="livemode" type="boolean" minOccurs="0"/>
 			<element name="metadata" minOccurs="0">
 				<complexType>
@@ -343,7 +321,7 @@
 			<element name="id" type="string" minOccurs="0"/>
 			<element name="object" type="string" minOccurs="0"/>
 			<element name="billing_thresholds" type="string" minOccurs="0"/>
-			<element name="created" type="int" minOccurs="0"/>
+			<element name="created" type="string" minOccurs="0"/>
 			<element name="metadata" minOccurs="0">
 				<complexType>
 					<sequence>
@@ -352,7 +330,7 @@
 				</complexType>
 			</element>
 			<element name="plan" type="tns:PlanType" minOccurs="0" />
-			<element name="quantity" type="int" minOccurs="0"/>
+			<element name="quantity" type="string" minOccurs="0"/>
 			<element name="subscription" type="string" minOccurs="0"/>
 			<element name="tax_rates" type="tns:TaxRateType" minOccurs="0" maxOccurs="unbounded"/>
 		</sequence>
@@ -363,7 +341,7 @@
 			<element name="id" type="string" minOccurs="0"/>
 			<element name="object" type="string" minOccurs="0"/>
 			<element name="active" type="boolean" minOccurs="0"/>
-			<element name="created" type="int" minOccurs="0"/>
+			<element name="created" type="string" minOccurs="0"/>
 			<element name="description" type="string" minOccurs="0"/>
 			<element name="display_name" type="string" minOccurs="0"/>
 			<element name="inclusive" type="boolean" minOccurs="0"/>

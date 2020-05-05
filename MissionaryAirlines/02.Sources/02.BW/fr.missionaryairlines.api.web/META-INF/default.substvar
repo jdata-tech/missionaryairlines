@@ -161,5 +161,21 @@
 			<type>String</type>
 			<isOverride>false</isOverride>
 		</globalVariable>
+		<globalVariable>
+			<name>/file/logRepository</name>
+			<value>C:\app\data\Logs\bw\</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>/file/projectName</name>
+			<value>&quot;MissionaryAirlines&quot;</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
 	</globalVariables>
 </repository>

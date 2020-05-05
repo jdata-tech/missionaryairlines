@@ -106,6 +106,22 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>//fr.missionaryairlines.api.web///file/logRepository</name>
+			<value>C:\app\data\Logs\bw\</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//fr.missionaryairlines.api.web///file/projectName</name>
+			<value>&quot;MissionaryAirlines&quot;</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>//fr.missionaryairlines.api.web///http/stripe/maxTotalConnectionsPerHost</name>
 			<value>20</value>
 			<deploymentSettable>false</deploymentSettable>

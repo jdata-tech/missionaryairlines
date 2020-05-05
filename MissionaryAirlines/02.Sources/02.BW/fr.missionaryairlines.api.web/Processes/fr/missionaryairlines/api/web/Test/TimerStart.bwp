@@ -9,6 +9,7 @@
     xmlns:ns0="http://tns.tibco.com/bw/activity/timer/xsd/output"
     xmlns:ns1="http://www.jdata.fr/schemas/StripeObjectsDefinition"
     xmlns:ns2="http://www.jdata.fr/schemas/ProjectObjects"
+    xmlns:ns3="http://www.jdata.fr/schemas/FrameworkObjects"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -362,12 +363,13 @@
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.jdata.fr/schemas/StripeObjectsDefinition"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.jdata.fr/schemas/ProjectObjects"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.jdata.fr/schemas/FrameworkObjects"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
         <bpws:variable element="ns0:TimerOutputSchema" name="Timer" sca-bpel:internal="true"/>
-        <bpws:variable element="ns1:Customer" name="GetCustomerID-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ID" name="GetCustomerID" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:Customer" name="GetCustomerID-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>

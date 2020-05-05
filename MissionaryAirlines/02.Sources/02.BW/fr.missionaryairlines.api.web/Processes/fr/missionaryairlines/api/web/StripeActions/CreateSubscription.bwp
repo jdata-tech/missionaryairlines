@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpws:process exitOnStandardFault="no"
-    name="fr.missionaryairlines.api.web.StripeActions.GetCustomerID"
+    name="fr.missionaryairlines.api.web.StripeActions.CreateSubscription"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20200501101003"
+    targetNamespace="http://xmlns.example.com/20200504173448"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
@@ -661,7 +661,7 @@
         productVersion="6.5.0 V63 2018-08-08" scalable="true"
         singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessInterface context=""
-        input="{http://www.jdata.fr/schemas/StripeObjectsDefinition}Customer" output="{http://www.jdata.fr/schemas/ProjectObjects}ID">
+        input="{http://www.jdata.fr/schemas/StripeObjectsDefinition}Subscription" output="{http://www.jdata.fr/schemas/ProjectObjects}ID">
         <tibex:errorList>
             <tibex:error
                 error="{http://www.jdata.fr/schemas/FrameworkObjects}CustomedError" name="CustomedError"/>
@@ -1145,9 +1145,9 @@
             </bpws:from>
         </bpws:variable>
         <bpws:variable element="ns2:RequestActivityInput"
-            name="CustomerByEmail-input" sca-bpel:internal="true"/>
+            name="CreateSubscription-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:RequestActivityOutput"
-            name="CustomerByEmail" sca-bpel:internal="true"/>
+            name="CreateSubscription" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
         <bpws:variable name="stripeToken" sca-bpel:hotUpdate="false"
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
@@ -1165,8 +1165,6 @@
             name="ThrowAPIError-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns10:ErrorLinkHandlerFaultData"
             name="_error_ListCustomerByI" sca-bpel:internal="true"/>
-        <bpws:variable element="ns10:ErrorLinkHandlerFaultData"
-            name="_error_CustomerByEmail" sca-bpel:internal="true"/>
         <bpws:variable name="TimeStamp" type="xsd:string"/>
         <bpws:variable element="ns12:xmlString" name="BuildData-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns0:ListOfCustomers" name="BuildData" sca-bpel:internal="true"/>
@@ -1175,9 +1173,11 @@
         <bpws:variable element="ns0:ListOfCustomers"
             name="MapFormat-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns0:ListOfCustomers" name="MapFormat" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:Customer" name="Start"
+        <bpws:variable element="ns0:Subscription" name="Start"
             sca-bpel:internal="true" tibex:parameter="in"/>
         <bpws:variable element="ns8:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:ErrorLinkHandlerFaultData"
+            name="_error_CreateSubscription" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1241,9 +1241,9 @@
             <bpws:extensionActivity>
                 <tibex:activityExtension
                     governedObjectTypes="BWHttpReference"
-                    inputVariable="CustomerByEmail-input"
-                    name="CustomerByEmail"
-                    outputVariable="CustomerByEmail"
+                    inputVariable="CreateSubscription-input"
+                    name="CreateSubscription"
+                    outputVariable="CreateSubscription"
                     tibex:xpdlId="7ab7b410-ded1-4086-8111-603a7faa1ca5" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="StartToCustomerByEmail"/>
@@ -1251,7 +1251,7 @@
                     <bpws:sources>
                         <bpws:source linkName="SendHTTPRequestToEnd"/>
                         <bpws:source linkName="CustomerByEmailToLog"
-                            tibex:faultDetailsVar="CustomerByEmail" tibex:faultNameVar="FaultName">
+                            tibex:faultDetailsVar="CreateSubscription" tibex:faultNameVar="FaultName">
                             <tibex:DesignExpression>
                                 <tibex:expression expression="##error##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
@@ -1260,7 +1260,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://tns.tibco.com/bw/activity/sendhttprequest/input+7ab7b410-ded1-4086-8111-603a7faa1ca5+RequestActivityInput&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;stripeToken&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;CustomerByEmail-input&quot; match=&quot;/&quot;>&lt;tns:RequestActivityInput>&lt;Method>&lt;xsl:value-of select=&quot;&amp;quot;GET&amp;quot;&quot;/>&lt;/Method>&lt;RequestURI>&lt;xsl:value-of select=&quot;&amp;quot;/v1/customers&amp;quot;&quot;/>&lt;/RequestURI>&lt;QueryString>&lt;xsl:value-of select=&quot;concat(&amp;quot;email=&amp;quot;, $Start/tns3:email)&quot;/>&lt;/QueryString>&lt;Headers>&lt;Content-Type>&lt;xsl:value-of select=&quot;&amp;quot;application/x-www-form-urlencoded&amp;quot;&quot;/>&lt;/Content-Type>&lt;/Headers>&lt;DynamicHeaders>&lt;Header>&lt;Name>&lt;xsl:value-of select=&quot;&amp;quot;Authorization&amp;quot;&quot;/>&lt;/Name>&lt;Value>&lt;xsl:value-of select=&quot;concat(&amp;quot;Bearer &amp;quot;, $stripeToken)&quot;/>&lt;/Value>&lt;/Header>&lt;/DynamicHeaders>&lt;/tns:RequestActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://tns.tibco.com/bw/activity/sendhttprequest/input+7ab7b410-ded1-4086-8111-603a7faa1ca5+RequestActivityInput&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;stripeToken&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;CreateSubscription-input&quot; match=&quot;/&quot;>&lt;tns:RequestActivityInput>&lt;Method>&lt;xsl:value-of select=&quot;&amp;quot;POST&amp;quot;&quot;/>&lt;/Method>&lt;RequestURI>&lt;xsl:value-of select=&quot;&amp;quot;/v1/customers&amp;quot;&quot;/>&lt;/RequestURI>&lt;QueryString>&lt;xsl:value-of select=&quot;concat(&amp;quot;customer=&amp;quot;, $Start/tns3:customer)&quot;/>&lt;/QueryString>&lt;Headers>&lt;Content-Type>&lt;xsl:value-of select=&quot;&amp;quot;application/x-www-form-urlencoded&amp;quot;&quot;/>&lt;/Content-Type>&lt;/Headers>&lt;DynamicHeaders>&lt;Header>&lt;Name>&lt;xsl:value-of select=&quot;&amp;quot;Authorization&amp;quot;&quot;/>&lt;/Name>&lt;Value>&lt;xsl:value-of select=&quot;concat(&amp;quot;Bearer &amp;quot;, $stripeToken)&quot;/>&lt;/Value>&lt;/Header>&lt;/DynamicHeaders>&lt;/tns:RequestActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1297,7 +1297,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;activity.jsonParser.input+abf57095-8d70-4d0b-bea2-8e8dd3f5a63c+ActivityInputType&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;CustomerByEmail&quot;/>&#xa;    &lt;xsl:template name=&quot;ParseJSON-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ActivityInputClass>&#xa;            &lt;jsonString>&#xa;                &lt;xsl:value-of select=&quot;$CustomerByEmail/asciiContent&quot;/>&#xa;            &lt;/jsonString>&#xa;        &lt;/tns1:ActivityInputClass>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;activity.jsonParser.input+abf57095-8d70-4d0b-bea2-8e8dd3f5a63c+ActivityInputType&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;CreateSubscription&quot;/>&#xa;    &lt;xsl:template name=&quot;ParseJSON-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ActivityInputClass>&#xa;            &lt;jsonString>&#xa;                &lt;xsl:value-of select=&quot;$CreateSubscription/asciiContent&quot;/>&#xa;            &lt;/jsonString>&#xa;        &lt;/tns1:ActivityInputClass>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

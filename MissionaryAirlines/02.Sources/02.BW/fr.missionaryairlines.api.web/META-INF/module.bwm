@@ -32,6 +32,8 @@
   <sca:property xmi:id="_a4JG8Ip4EeqtkudMqsCtIQ" name="/http/keystore/url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_eu5WEIp4EeqtkudMqsCtIQ" name="/http/keystore/password" type="property:password" scaext:simpleValue="#!L3wVWbuvXopkuKS3RRHwcg==" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_KShy0IpoEeqtkudMqsCtIQ" name="/file/failedStartRepository" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_zwKPQIu-EeqtkudMqsCtIQ" name="/file/logRepository" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_TZBBcIvBEeqtkudMqsCtIQ" name="/file/projectName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_AVwXkIovEeqmRao7E-_WLg" name="ComponentPayment" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_AVwXkYovEeqmRao7E-_WLg" processName="fr.missionaryairlines.api.web.Payment"/>
     <sca:service xmi:id="_AWIyEIovEeqmRao7E-_WLg" name="payment">
@@ -41,10 +43,13 @@
   <sca:component xmi:id="_KVJ9eYuDEeqtkudMqsCtIQ" name="ComponentGetCustomerID" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_KVJ9eouDEeqtkudMqsCtIQ" processName="fr.missionaryairlines.api.web.StripeActions.GetCustomerID"/>
   </sca:component>
-  <sca:component xmi:id="_wN-uUIuEEeqtkudMqsCtIQ" name="ComponentCreateCustomer" compositeext:version="1.0.0.qualifier">
-    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_wN-uUYuEEeqtkudMqsCtIQ" processName="fr.missionaryairlines.api.web.StripeActions.CreateCustomer"/>
-  </sca:component>
   <sca:component xmi:id="_Q53VsIuFEeqtkudMqsCtIQ" name="ComponentTimerStart" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Q53VsYuFEeqtkudMqsCtIQ" processName="fr.missionaryairlines.api.web.Test.TimerStart"/>
+  </sca:component>
+  <sca:component xmi:id="_CoI5gI4XEeqtkudMqsCtIQ" name="ComponentCreateCustomer" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_CoI5gY4XEeqtkudMqsCtIQ" processName="fr.missionaryairlines.api.web.StripeActions.CreateCustomer"/>
+  </sca:component>
+  <sca:component xmi:id="_ynWHsI4cEeqtkudMqsCtIQ" name="ComponentCreateSubscription" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ynWHsY4cEeqtkudMqsCtIQ" processName="fr.missionaryairlines.api.web.StripeActions.CreateSubscription"/>
   </sca:component>
 </sca:composite>
