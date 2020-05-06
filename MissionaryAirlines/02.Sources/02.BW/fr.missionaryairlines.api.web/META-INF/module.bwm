@@ -34,6 +34,9 @@
   <sca:property xmi:id="_KShy0IpoEeqtkudMqsCtIQ" name="/file/failedStartRepository" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_zwKPQIu-EeqtkudMqsCtIQ" name="/file/logRepository" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_TZBBcIvBEeqtkudMqsCtIQ" name="/file/projectName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_JJKf8I-rEeqqJ7B6yLLU0g" name="/bd/url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_lX-fEI-rEeqqJ7B6yLLU0g" name="/bd/login" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ldROwI-rEeqqJ7B6yLLU0g" name="/bd/password" type="property:password" scaext:simpleValue="#!OpMP7Q46m92pe0i0oI8CFw==" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_AVwXkIovEeqmRao7E-_WLg" name="ComponentPayment" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_AVwXkYovEeqmRao7E-_WLg" processName="fr.missionaryairlines.api.web.Payment"/>
     <sca:service xmi:id="_AWIyEIovEeqmRao7E-_WLg" name="payment">

@@ -3,6 +3,14 @@
   	
   	<element name="ID" type="string"/>
   	
+  	<element name="NbrPrograms">
+		<complexType>
+	    	<sequence>
+	    		<element name="NbrOfPrograms" type="int" maxOccurs="unbounded" minOccurs="0"/>
+	    	</sequence>
+  		</complexType>
+  	</element>
+  	
   	<element name="Programs">
 		<complexType>
 	    	<sequence>
@@ -15,7 +23,12 @@
   	<complexType name="ProgramType">
     	<sequence>
     		<element name="programID" type="string" />
+    		<element name="programCategoryName" type="string" minOccurs="0" />
+    		<element name="programName" type="string" minOccurs="0" />
     		<element name="programFullName" type="string" minOccurs="0" />
+    		<element name="programPlace" type="string" minOccurs="0" />
+    		<element name="programStartDate" type="string" minOccurs="0" />
+    		<element name="programEndDate" type="string" minOccurs="0" />
     		<element name="plan" type="tns:PlanType" maxOccurs="unbounded"  />
     	</sequence>
     </complexType>
@@ -23,6 +36,9 @@
     	<sequence>
     		<element name="planID" type="string" />
     		<element name="planName" type="string" minOccurs="0" />
+    		<element name="planStripeID" type="string" minOccurs="0" />
+    		<element name="planUnitPrice" type="string" minOccurs="0" />
+    		<element name="planScheduledMonth" type="string" minOccurs="0" />
     	</sequence>
     </complexType>
 </schema>

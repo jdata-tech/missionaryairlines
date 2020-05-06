@@ -1,0 +1,26 @@
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HDp5VJdZcOJkdO', '1', '1 Mensualité', '600', '1');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_H8fRDxjZNdhTUX', '1', '2 Mensualités', '300', '2');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_H8fOTY78MLJPeN', '1', '3 Mensualités', '200', '3');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_H8fPNTBKGbQOlo', '1', '4 Mensualités', '150', '4');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_H8fOsvCwdhKx8R', '1', '5 Mensualités', '120', '5');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_H8euQ07Tac6MSr', '1', '6 Mensualités', '100', '6');
+
+
+
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEH1uL9AzWUQK2', '2', '1 Mensualité', '600', '1');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEH14a5sOjRDij', '2', '2 Mensualités', '300', '2');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEH128cExdcDKU', '2', '3 Mensualités', '200', '3');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEH2cwFXseUYhJ', '2', '4 Mensualités', '150', '4');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEH22i2nhCUp5r', '2', '5 Mensualités', '120', '5');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEH2LO0RqvN5Bw', '2', '6 Mensualités', '100', '6');
+
+
+
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEHA9ZMk9WRpM9', '3', '1 Mensualité', '600', '1');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEHAQZb7a3Nt0F', '3', '2 Mensualités', '300', '2');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEHBY84KcqXxmq', '3', '3 Mensualités', '200', '3');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEHBpJ2hKL4Nkq', '3', '4 Mensualités', '150', '4');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEHBJaxop8Akdq', '3', '5 Mensualités', '120', '5');
+INSERT INTO ma."PLAN"("ID","IDPROGRAM","NAME","UNITPRICE","SCHEDULE") VALUES ('plan_HEHBKXs1rStc9h', '3', '6 Mensualités', '100', '6');
+
+
