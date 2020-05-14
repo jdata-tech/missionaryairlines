@@ -1,7 +1,17 @@
 {
-    "records": [],
-    "resources": [{
-        "location": "Service Descriptors/fr.missionaryairlines.api.web.Payment-Payment.json",
-        "type": "generated"
-    }]
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/fr.missionaryairlines.api.web.Payment-Payment.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/fr.missionaryairlines.api.web.ListPrograms-ListPrograms.json",
+            "type": "generated"
+        }
+    ]
 }

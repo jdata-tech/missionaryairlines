@@ -2087,7 +2087,19 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.6"/>
-            <bendpoints points="[25, -22, -74, 66]$[75, -66, -24, 22]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints
+                points="[25, 0, -74, 88]$[44, 0, -55, 88]$[44, -88, -55, 0]$[75, -88, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.7"/>
+            <bendpoints points="[25, 21, -79, -67]$[80, 67, -24, -21]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -2259,6 +2271,7 @@
                                 <bpws:link name="CallStripeAPITopostOut" tibex:linkType="SUCCESS"/>
                                 <bpws:link
                                     name="SaveDataToCallStripeAPI" tibex:linkType="SUCCESS"/>
+                                <bpws:link name="StartToSaveData" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="OnMessageStart"
                                 tibex:constructor="onMessageStart" tibex:xpdlId="2100eb26-bcc2-4a3b-a06e-28a0da7ea128"/>
@@ -2290,7 +2303,10 @@
                                     <bpws:target linkName="JMSSendMessageToLogStart"/>
                                     </bpws:targets>
                                     <bpws:sources>
-                                    <bpws:source linkName="StartToCallStripeAPI"/>
+                                    <bpws:source linkName="StartToCallStripeAPI">
+                                    <tibex:DesignExpression/>
+                                    </bpws:source>
+                                    <bpws:source linkName="StartToSaveData"/>
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
@@ -2438,7 +2454,7 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/file&quot; xmlns:tns1=&quot;http://www.jdata.fr/schemas/WebObjectsDefinition&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;failedJMSStartRepository&quot;/>&lt;xsl:template name=&quot;SaveData-input&quot; match=&quot;/&quot;>&lt;tns5:WriteActivityInputTextClass>&lt;fileName>&lt;xsl:value-of select=&quot;concat($failedJMSStartRepository, &amp;quot;PaymentRequest_&amp;quot;, $_processContext/JobId, &amp;quot;_&amp;quot;, $_processContext/ProcessInstanceId)&quot;/>&lt;/fileName>&lt;textContent>&lt;xsl:value-of select=&quot;tib:render-xml($post/item/tns1:PaymentRequest, true(), true())&quot;/>&lt;/textContent>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;utf-8&amp;quot;&quot;/>&lt;/encoding>&lt;/tns5:WriteActivityInputTextClass>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/file&quot; xmlns:tns1=&quot;http://www.jdata.fr/schemas/WebObjectsDefinition&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;failedJMSStartRepository&quot;/>&lt;xsl:template name=&quot;SaveData-input&quot; match=&quot;/&quot;>&lt;tns5:WriteActivityInputTextClass>&lt;fileName>&lt;xsl:value-of select=&quot;concat($failedJMSStartRepository, &amp;quot;PaymentRequest_&amp;quot;, $_processContext/JobId, &amp;quot;_&amp;quot;, $_processContext/ProcessInstanceId, &amp;quot;.xml&amp;quot;)&quot;/>&lt;/fileName>&lt;textContent>&lt;xsl:value-of select=&quot;tib:render-xml($post/item/tns1:PaymentRequest, true(), true())&quot;/>&lt;/textContent>&lt;encoding>&lt;xsl:value-of select=&quot;&amp;quot;utf-8&amp;quot;&quot;/>&lt;/encoding>&lt;/tns5:WriteActivityInputTextClass>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="SaveData-input"
                                     name="SaveData"
@@ -2446,13 +2462,14 @@
                                     tibex:xpdlId="884f86d4-acc7-4d20-9616-d2068625d904" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="StartFailModeToWriteFile"/>
+                                    <bpws:target linkName="StartToSaveData"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="SaveDataToCallStripeAPI"/>
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/file&quot; xmlns:tns1=&quot;http://www.jdata.fr/schemas/WebObjectsDefinition&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:param name=&quot;_processContext&quot;/>&#xa;    &lt;xsl:param name=&quot;failedJMSStartRepository&quot;/>&#xa;    &lt;xsl:template name=&quot;SaveData-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:WriteActivityInputTextClass>&#xa;            &lt;fileName>&#xa;                &lt;xsl:value-of select=&quot;concat($failedJMSStartRepository, &amp;quot;PaymentRequest_&amp;quot;, $_processContext/JobId, &amp;quot;_&amp;quot;, $_processContext/ProcessInstanceId)&quot;/>&#xa;            &lt;/fileName>&#xa;            &lt;textContent>&#xa;                &lt;xsl:value-of select=&quot;tib:render-xml($post.item, true(), true())&quot;/>&#xa;            &lt;/textContent>&#xa;            &lt;encoding>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;utf-8&amp;quot;&quot;/>&#xa;            &lt;/encoding>&#xa;        &lt;/tns5:WriteActivityInputTextClass>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/file&quot; xmlns:tns1=&quot;http://www.jdata.fr/schemas/WebObjectsDefinition&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:param name=&quot;_processContext&quot;/>&#xa;    &lt;xsl:param name=&quot;failedJMSStartRepository&quot;/>&#xa;    &lt;xsl:template name=&quot;SaveData-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:WriteActivityInputTextClass>&#xa;            &lt;fileName>&#xa;                &lt;xsl:value-of select=&quot;concat($failedJMSStartRepository, &amp;quot;PaymentRequest_&amp;quot;, $_processContext/JobId, &amp;quot;_&amp;quot;, $_processContext/ProcessInstanceId, &amp;quot;.xml&amp;quot;)&quot;/>&#xa;            &lt;/fileName>&#xa;            &lt;textContent>&#xa;                &lt;xsl:value-of select=&quot;tib:render-xml($post.item, true(), true())&quot;/>&#xa;            &lt;/textContent>&#xa;            &lt;encoding>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;utf-8&amp;quot;&quot;/>&#xa;            &lt;/encoding>&#xa;        &lt;/tns5:WriteActivityInputTextClass>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity

@@ -15,6 +15,14 @@
 		</complexType>
 	</element>
 	
+	<element name="error">
+	    <complexType>
+	      <sequence>
+	        <element minOccurs="0" name="message" type="string" />
+	      </sequence>
+	    </complexType>
+	  </element>
+	
 	<complexType name="AddressType">
 		<sequence>
 			<element name="city" type="string" minOccurs="0"/>

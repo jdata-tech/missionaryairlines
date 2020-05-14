@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.jdata.fr/schemas/ProjectObjects" elementFormDefault="qualified" targetNamespace="http://www.jdata.fr/schemas/ProjectObjects">
   	
-  	<element name="ID" type="string"/>
-  	
-  	<element name="NbrPrograms">
-		<complexType>
-	    	<sequence>
-	    		<element name="NbrOfPrograms" type="int" maxOccurs="unbounded" minOccurs="0"/>
-	    	</sequence>
-  		</complexType>
-  	</element>
-  	
+  	<element name="ID" type="string"/>  	
   	<element name="Programs">
 		<complexType>
 	    	<sequence>
@@ -29,6 +20,8 @@
     		<element name="programPlace" type="string" minOccurs="0" />
     		<element name="programStartDate" type="string" minOccurs="0" />
     		<element name="programEndDate" type="string" minOccurs="0" />
+    		<element name="programCapacity" type="string" minOccurs="0" />
+    		<element name="programEndDateOffer" type="string" minOccurs="0" />
     		<element name="plan" type="tns:PlanType" maxOccurs="unbounded"  />
     	</sequence>
     </complexType>

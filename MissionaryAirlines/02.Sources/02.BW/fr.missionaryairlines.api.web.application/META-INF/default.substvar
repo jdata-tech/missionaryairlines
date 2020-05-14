@@ -178,6 +178,22 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>//fr.missionaryairlines.api.web///http/ma/hostname</name>
+			<value>localhost</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//fr.missionaryairlines.api.web///http/ma/port</name>
+			<value>8077</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>//fr.missionaryairlines.api.web///bd/url</name>
 			<value>jdbc:tibcosoftwareinc:postgresql://localhost:5432;DatabaseName=MISSIONARYAIRLINES</value>
 			<deploymentSettable>false</deploymentSettable>

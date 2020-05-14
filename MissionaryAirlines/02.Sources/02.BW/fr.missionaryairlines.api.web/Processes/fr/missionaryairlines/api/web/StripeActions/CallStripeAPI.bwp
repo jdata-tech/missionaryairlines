@@ -312,8 +312,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="553"
-                                    xsi:type="notation:Bounds" y="7"/>
+                                    <layoutConstraint x="571"
+                                    xsi:type="notation:Bounds" y="9"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -489,7 +489,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
-                                    <layoutConstraint x="553"
+                                    <layoutConstraint x="571"
                                     xsi:type="notation:Bounds" y="173"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -514,7 +514,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="373" width="960" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="331" width="960" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -619,7 +619,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="574" width="960" x="1"
+                    <layoutConstraint height="532" width="960" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -628,7 +628,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="626" width="1302" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="584" width="1302" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -653,7 +653,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.1"/>
             <bendpoints
-                points="[25, 0, -98, 88]$[53, 0, -70, 88]$[53, -89, -70, -1]$[99, -89, -24, -1]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, 0, -131, 85]$[75, 0, -81, 85]$[75, -87, -81, -2]$[132, -87, -24, -2]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
@@ -687,7 +687,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
             <bendpoints
-                points="[25, 0, -98, -79]$[53, 0, -70, -79]$[53, 79, -70, 0]$[99, 79, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, 5, -131, -74]$[75, 5, -81, -74]$[75, 79, -81, 0]$[132, 79, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
@@ -710,7 +710,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.6"/>
             <bendpoints
-                points="[25, -1, -130, -88]$[92, -1, -63, -88]$[92, 92, -63, 5]$[131, 92, -24, 5]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, -2, -112, -87]$[70, -2, -67, -87]$[70, 85, -67, 0]$[113, 85, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
@@ -722,7 +722,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.7"/>
             <bendpoints
-                points="[25, 0, -130, 79]$[93, 0, -62, 79]$[93, -74, -62, 5]$[131, -74, -24, 5]" xsi:type="notation:RelativeBendpoints"/>
+                points="[25, 0, -112, 79]$[69, 0, -68, 79]$[69, -74, -68, 5]$[113, -74, -24, 5]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -761,8 +761,8 @@
         <bpws:variable element="ns2:Programs" name="GetPlanLibrary" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:Customer" name="GetCustomerID-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:Subscription"
-            name="CreateSubscription-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:ID" name="CreateSubscription" sca-bpel:internal="true"/>
+            name="Subscription-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:ID" name="Subscription" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ID" name="CreateCustomer" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:Customer"
             name="UpdateCustomer-input" sca-bpel:internal="true"/>
@@ -927,10 +927,8 @@
                 </tibex:extActivity>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:extActivity
-                    inputVariable="CreateSubscription-input"
-                    name="CreateSubscription"
-                    outputVariable="CreateSubscription"
+                <tibex:extActivity inputVariable="Subscription-input"
+                    name="Subscription" outputVariable="Subscription"
                     tibex:xpdlId="5fa42c25-1519-4b4d-a286-bad696e33308"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
@@ -942,7 +940,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/ProjectObjects&quot; xmlns:tns=&quot;http://www.jdata.fr/schemas/WebObjectsDefinition&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetCustomerID&quot;/>&lt;xsl:param name=&quot;CreateCustomer&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;GetPlanLibrary&quot;/>&lt;xsl:param name=&quot;PaymentMethod&quot;/>&lt;xsl:template name=&quot;CreateSubscription-input&quot; match=&quot;/&quot;>&lt;tns1:Subscription>&lt;xsl:if test=&quot;$Start/tns:ProgramDetails/tns:cancelAt&quot;>&lt;tns1:cancel_at>&lt;xsl:value-of select=&quot;$Start/tns:ProgramDetails/tns:cancelAt&quot;/>&lt;/tns1:cancel_at>&lt;/xsl:if>&lt;xsl:choose>&lt;xsl:when test=&quot;string-length(tib:trim($GetCustomerID)) !=0&quot;>&lt;tns1:customer>&lt;xsl:value-of select=&quot;$GetCustomerID&quot;/>&lt;/tns1:customer>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns1:customer>&lt;xsl:value-of select=&quot;$CreateCustomer&quot;/>&lt;/tns1:customer>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;tns1:default_payment_method>&lt;xsl:value-of select=&quot;$PaymentMethod&quot;/>&lt;/tns1:default_payment_method>&lt;tns1:plan>&lt;xsl:variable name=&quot;var&quot; select=&quot;xsd:int($Start/tns:ProgramDetails/tns:chosenProgramID)&quot;/>&lt;xsl:variable name=&quot;var2&quot; select=&quot;xsd:int($Start/tns:ProgramDetails/tns:chosenFinancialPlanID)&quot;/>&lt;xsl:if test=&quot;$GetPlanLibrary/tns3:Program[$var]/tns3:plan[$var2]/tns3:planID&quot;>&lt;tns1:id>&lt;xsl:value-of select=&quot;$GetPlanLibrary/tns3:Program[$var]/tns3:plan[$var2]/tns3:planID&quot;/>&lt;/tns1:id>&lt;/xsl:if>&lt;/tns1:plan>&lt;tns1:quantity>&lt;xsl:value-of select=&quot;&amp;quot;1&amp;quot;&quot;/>&lt;/tns1:quantity>&lt;/tns1:Subscription>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/ProjectObjects&quot; xmlns:tns=&quot;http://www.jdata.fr/schemas/WebObjectsDefinition&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetCustomerID&quot;/>&lt;xsl:param name=&quot;CreateCustomer&quot;/>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;GetPlanLibrary&quot;/>&lt;xsl:param name=&quot;PaymentMethod&quot;/>&lt;xsl:template name=&quot;CreateSubscription-input&quot; match=&quot;/&quot;>&lt;tns1:Subscription>&lt;xsl:if test=&quot;$Start/tns:ProgramDetails/tns:cancelAt&quot;>&lt;tns1:cancel_at>&lt;xsl:value-of select=&quot;$Start/tns:ProgramDetails/tns:cancelAt&quot;/>&lt;/tns1:cancel_at>&lt;/xsl:if>&lt;xsl:choose>&lt;xsl:when test=&quot;string-length(tib:trim($GetCustomerID)) !=0&quot;>&lt;tns1:customer>&lt;xsl:value-of select=&quot;$GetCustomerID&quot;/>&lt;/tns1:customer>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns1:customer>&lt;xsl:value-of select=&quot;$CreateCustomer&quot;/>&lt;/tns1:customer>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;tns1:default_payment_method>&lt;xsl:value-of select=&quot;$PaymentMethod&quot;/>&lt;/tns1:default_payment_method>&lt;tns1:plan>&lt;xsl:variable name=&quot;var&quot; select=&quot;$Start/tns:ProgramDetails/tns:chosenProgramID&quot;/>&lt;xsl:variable name=&quot;var2&quot; select=&quot;$Start/tns:ProgramDetails/tns:chosenFinancialPlanID&quot;/>&lt;xsl:if test=&quot;$GetPlanLibrary/tns3:Program[tns3:programID = $var]/tns3:plan[tns3:planID = $var2]/tns3:planStripeID &quot;>&lt;tns1:id>&lt;xsl:value-of select=&quot;$GetPlanLibrary/tns3:Program[tns3:programID = $var]/tns3:plan[tns3:planID = $var2]/tns3:planStripeID &quot;/>&lt;/tns1:id>&lt;/xsl:if>&lt;/tns1:plan>&lt;tns1:quantity>&lt;xsl:value-of select=&quot;&amp;quot;1&amp;quot;&quot;/>&lt;/tns1:quantity>&lt;/tns1:Subscription>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="fr.missionaryairlines.api.web.StripeActions.CreateSubscription" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>

@@ -1,0 +1,106 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/listprograms" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "get-listprograms",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a Programs to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Programs"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Programs" : {
+      "type" : "object",
+      "properties" : {
+        "Program" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Program",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "Program" : {
+      "type" : "object",
+      "required" : [ "plan", "programID" ],
+      "properties" : {
+        "programID" : {
+          "type" : "string"
+        },
+        "programCategoryName" : {
+          "type" : "string"
+        },
+        "programName" : {
+          "type" : "string"
+        },
+        "programFullName" : {
+          "type" : "string"
+        },
+        "programPlace" : {
+          "type" : "string"
+        },
+        "programStartDate" : {
+          "type" : "string"
+        },
+        "programEndDate" : {
+          "type" : "string"
+        },
+        "programCapacity" : {
+          "type" : "string"
+        },
+        "programEndDateOffer" : {
+          "type" : "string"
+        },
+        "plan" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/plan",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "plan" : {
+      "type" : "object",
+      "required" : [ "planID" ],
+      "properties" : {
+        "planID" : {
+          "type" : "string"
+        },
+        "planName" : {
+          "type" : "string"
+        },
+        "planStripeID" : {
+          "type" : "string"
+        },
+        "planUnitPrice" : {
+          "type" : "string"
+        },
+        "planScheduledMonth" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
