@@ -71,9 +71,10 @@ function programDataById(programID){
 			programData.currency = "€";
 			programData.stars = 5;
 			programData.backgroundImage = "img/photo/camp-biblique-enfants.jpg";
-			programData.badge = "Formation UMPJ";
+			programData.badge = "UMPJ";
 			programData.place = "Ndoumbi";
 			programData.capacity = 20;
+			programData.sectionDescription = "Ce cours s'engage à produire des ministres capables de produire une future génération de croyants.";
 			break;
 		case "2" :
 			programData.name = "Pasteurs & Missionnaires";
@@ -87,9 +88,10 @@ function programDataById(programID){
 			programData.currency = "€";
 			programData.stars = 5;
 			programData.backgroundImage = "img/photo/pasteurs-missionnaires-3.jpg";
-			programData.badge = "Formation UMPJ";
+			programData.badge = "UMPJ";
 			programData.place = "Ndoumbi";
 			programData.capacity = 50;
+			programData.sectionDescription = "Cours Spécialisés pour les pasteurs, les missionnaires, les dirigeants et les leaders dans le ministère.";
 			break;
 		case "3" :
 			programData.name = "Étudiants & Jeunes";
@@ -103,9 +105,10 @@ function programDataById(programID){
 			programData.currency = "€";
 			programData.stars = 5;
 			programData.backgroundImage = "img/photo/etudiants-jeunes.jpg";
-			programData.badge = "Formation UMPJ";
+			programData.badge = "UMPJ";
 			programData.place = "Ndoumbi";
 			programData.capacity = 50;
+			programData.sectionDescription = "Session de Formation de l'UMPJ destinée aux Étudiants d'Universités et aux Jeunes lycéens et d'ailleurs.";
 			break;
 		case "4" :
 			programData.name = "Cours de 3 ans sur la Prière (1)";
@@ -119,9 +122,10 @@ function programDataById(programID){
 			programData.currency = "€";
 			programData.stars = 5;
 			programData.backgroundImage = "img/photo/cours-general-priere-2.jpg";
-			programData.badge = "Formation UMPJ";
+			programData.badge = "UMPJ";
 			programData.place = "Ndoumbi";
 			programData.capacity = 50;
+			programData.sectionDescription = "Cours Spécialisés pour les <strong>Ministres de Prière</strong> de notre oeuvre, quelque soit le domaine d'appel.";
 			break;
 		case "5" :
 			programData.name = "Cours Général sur la Prière";
@@ -135,9 +139,10 @@ function programDataById(programID){
 			programData.currency = "€";
 			programData.stars = 5;
 			programData.backgroundImage = "img/photo/cours-priere-3.jpg";
-			programData.badge = "Formation UMPJ";
+			programData.badge = "UMPJ";
 			programData.place = "Ndoumbi";
 			programData.capacity = 50;
+			programData.sectionDescription = "Cours Généraux de l'UMPJ sur la Prière. Enseignements précis autour du thème de la Prière.";
 			break;
 		case "6" :
 			programData.name = "Ministres de Louange";
@@ -151,9 +156,10 @@ function programDataById(programID){
 			programData.currency = "€";
 			programData.stars = 5;
 			programData.backgroundImage = "img/photo/ministres-louange.jpg";
-			programData.badge = "Formation UMPJ";
+			programData.badge = "UMPJ";
 			programData.place = "Ndoumbi";
 			programData.capacity = 50;
+			programData.sectionDescription = "Session de Formation de l'UMPJ destinée aux ministres d'Actions de Grâce, de Louange & d'Adoration.";
 			break;
 		case "7" :
 			programData.name = "Dirigeants de Chambre de Prière";
@@ -167,9 +173,10 @@ function programDataById(programID){
 			programData.currency = "€";
 			programData.stars = 5;
 			programData.backgroundImage = "img/photo/chambre-priere.jpg";
-			programData.badge = "Formation UMPJ";
+			programData.badge = "UMPJ";
 			programData.place = "Ndoumbi";
 			programData.capacity = 50;
+			programData.sectionDescription = "Cours destinés aux Ministres de Prière, en charge des chambres de prière dans les nations.";
 			break;
 		case "8" :
 			programData.name = "Ministres de Finance";
@@ -183,9 +190,10 @@ function programDataById(programID){
 			programData.currency = "€";
 			programData.stars = 5;
 			programData.backgroundImage = "img/photo/ministres-finance.jpg";
-			programData.badge = "Formation UMPJ";
+			programData.badge = "UMPJ";
 			programData.place = "Ndoumbi";
 			programData.capacity = 50;
+			programData.sectionDescription = "Session destinée aux ministres de finances, tant les trésoriers que ceux qui suscitent les fonds.";
 			break;
 		case "9" :
 			programData.name = "Cours de 3 ans sur la Prière (2)";
@@ -199,9 +207,10 @@ function programDataById(programID){
 			programData.currency = "€";
 			programData.stars = 5;
 			programData.backgroundImage = "img/photo/cours-general-priere-2.jpg";
-			programData.badge = "Formation UMPJ";
+			programData.badge = "UMPJ";
 			programData.place = "Ndoumbi";
 			programData.capacity = 50;
+			programData.sectionDescription = "Cours Spécialisés pour les <strong>Ministres de Prière</strong> de notre oeuvre, quelque soit le domaine d'appel.";
 			break;
 		case "10" :
 			programData.name = "Camp des Enfants";
@@ -218,6 +227,7 @@ function programDataById(programID){
 			programData.badge = "Camp Biblique";
 			programData.place = "Koumé";
 			programData.capacity = 50;
+			programData.sectionDescription = "Onzième session du Camp Biblique des Enfants. Principalement dédié aux <i><strong>petits</strong></i> de moins de 15 ans.";
 			break;
 		case "11" :
 			programData.name = "Camp des Étudiants";
@@ -234,6 +244,7 @@ function programDataById(programID){
 			programData.badge = "Camp Biblique";
 			programData.place = "Koumé";
 			programData.capacity = 50;
+			programData.sectionDescription = "Onzième session du Camp Biblique Annuel des Etudiants. Moment phare du ministère, toute génération confondue.";
 			break;
 		case "12" :
 			programData.name = "Dirigeants de Jeunes";
@@ -250,6 +261,7 @@ function programDataById(programID){
 			programData.badge = "Camp Biblique";
 			programData.place = "Koumé";
 			programData.capacity = 50;
+			programData.sectionDescription = "Session spéciale d'enseignements destinées aux jeunes dirigeants de jeunes, dans le monde entier.";
 			break;
 		default:
 			programData.name = "Cours de 3 ans sur la Prière";
@@ -263,9 +275,10 @@ function programDataById(programID){
 			programData.currency = "€";
 			programData.stars = 5;
 			programData.backgroundImage = "img/photo/camp-biblique.jpg";
-			programData.badge = "Formation UMPJ";
+			programData.badge = "UMPJ";
 			programData.place = "Ndoumbi";
 			programData.capacity = 50;
+			programData.sectionDescription = "Cours Généraux de l'UMPJ sur la Prière. Enseignements précis autour du thème de la Prière.";
 	}
 	
 	return programData;
