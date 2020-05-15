@@ -41,6 +41,11 @@
 	<header class="header">
 		<!-- Navbar-->
 		<nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
+			<a class="navbar-brand" href="#"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 			<div class="container-fluid">
 				<div class="d-flex align-items-center"><a href="index.html" class="navbar-brand py-1"><img
 							src="img/logo.svg" alt="Missionary Airlines logo"></a>
@@ -1018,9 +1023,9 @@
 		document.getElementById("ProgramServicePrice").innerHTML			= 0;
 		document.getElementById("ProgramAirTicketPrice").innerHTML			= programData.totalPrice;
 		document.getElementById("ProgramTotalPrice").innerHTML				= programData.totalPrice;
-		document.getElementById("ProgramBlueuStars").innerHTML='<div class="mt-n1"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i></div>';
-		document.getElementById("ProgramImage").innerHTML='<img src="img/photo/koume-6.jpg" alt="" width="100" class="ml-3 rounded">';
-		document.getElementById("expiration-date").innerHTML = Math.floor((programData.endDateOffer - todayDate) / 86400000);
+		document.getElementById("ProgramBlueuStars").innerHTML				= '<div class="mt-n1"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i></div>';
+		document.getElementById("ProgramImage").innerHTML					= '<img src="' + programData.backgroundImage + '" alt="" width="100" class="ml-3 rounded">';
+		document.getElementById("expiration-date").innerHTML 				= Math.floor((programData.endDateOffer - todayDate) / 86400000);
 
 		document.getElementById("ReturnPrgID").innerHTML = '<a href="user-booking-2.html?prg=' + currentProgramID + '" class="btn btn-link text-muted"><i class="fa-chevron-left fa mr-2"></i>Retour</a>';
 	</script>

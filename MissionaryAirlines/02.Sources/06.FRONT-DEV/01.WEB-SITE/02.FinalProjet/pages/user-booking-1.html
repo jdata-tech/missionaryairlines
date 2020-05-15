@@ -41,6 +41,11 @@
 	<header class="header">
 		<!-- Navbar-->
 		<nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
+			<a class="navbar-brand" href="#"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 			<div class="container-fluid">
 				<div class="d-flex align-items-center"><a href="index.html" class="navbar-brand py-1"><img
 							src="img/logo.svg" alt="Missionary Airlines logo"></a>
@@ -207,28 +212,21 @@
 										<ul class="list-inline mb-0 mt-1">
 											<li class="list-inline-item">
 												<div class="custom-control custom-switch">
-													<input class="custom-control-input" id="needVisa"
-														type="checkbox">
-													<label class="custom-control-label" for="needVisa"> <span
-															class="text-sm">Oui / Non</span></label>
+													<input class="custom-control-input" id="needVisa" type="checkbox" onchange="myFunction()">
+													<label class="custom-control-label" for="needVisa"> 
+														<span class="text-sm">Non / Oui</span>
+													</label>
 												</div>
 											</li>
-											<!-- <li class="list-inline-item">
-												<div class="custom-control custom-switch">
-													<input class="custom-control-input" id="superhost" type="checkbox">
-													<label class="custom-control-label" for="superhost"> <span
-															class="text-sm">Non</span></label>
-												</div>
-											</li> -->
 										</ul>
 									</div>
 								</div>
 								<div class="col-xl-8 col-md-6 mb-4">
-									<label class="form-label" for="form_guests">Mode de Retrait du Visa</label>
-									<select class="selectpicker form-control" name="guests" id="form_guests"
+									<label class="form-label" for="form_visas">Mode de Retrait du Visa</label>
+									<select class="selectpicker form-control" name="visas" id="form_visas"
 										data-style="btn-selectpicker" title=" ">
-										<option value="guests_0">Par Courrier </option>
-										<option value="guests_1">En Main Propre </option>
+										<option value="visas_0">Par Courrier </option>
+										<option value="visas_1">En Main Propre </option>
 									</select>
 								</div>
 								<div class="col-12 pb-4">
@@ -576,13 +574,11 @@
 									<div class="media-body">
 										<h6>
 											<p id="ProgramResumeName"></p>
-											<!-- <a href="offre-umpj-pasteurs-missionnaires.html" class="text-reset"> <p id="ProgramName2"></p> </a> -->
 										</h6>
 										<p class="text-muted text-sm mb-0"><a id="ProgramResumeSubName"></a></p>
 										<div id="ProgramBlueuStars"></div>
 									</div>
 									<div id="ProgramImage"></div>
-									<!-- <a href="offre-umpj-pasteurs-missionnaires.html"><img src="img/photo/umpj-2.jpg" alt="" width="100" class="ml-3 rounded"></a> -->
 								</div>
 							</div>
 							<div class="text-block py-3">
@@ -772,9 +768,26 @@
 		document.getElementById("ProgramServicePrice").innerHTML			= 0;
 		document.getElementById("ProgramAirTicketPrice").innerHTML			= programData.totalPrice;
 		document.getElementById("ProgramTotalPrice").innerHTML				= programData.totalPrice;
-		document.getElementById("ProgramBlueuStars").innerHTML='<div class="mt-n1"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i></div>';
-		document.getElementById("ProgramImage").innerHTML='<img src="img/photo/koume-6.jpg" alt="" width="100" class="ml-3 rounded">';
-		document.getElementById("expiration-date").innerHTML = Math.floor((programData.endDateOffer - todayDate) / 86400000);
+		document.getElementById("ProgramBlueuStars").innerHTML				= '<div class="mt-n1"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i></div>';
+		document.getElementById("ProgramImage").innerHTML					= '<img src="' + programData.backgroundImage + '" alt="" width="100" class="ml-3 rounded">';
+		document.getElementById("expiration-date").innerHTML 				= Math.floor((programData.endDateOffer - todayDate) / 86400000);
+
+
+		function myFunction() {
+			if(document.getElementById("needVisa").checked == true) 
+			{
+				document.getElementById("form_visas").disabled = false;
+				document.getElementById("ProgramServicePrice").innerHTML 	= 135;
+				document.getElementById("ProgramTotalPrice").innerHTML		= programData.totalPrice + 135;
+				
+			}else {
+				document.getElementById("form_visas").disabled = true;
+				document.getElementById("ProgramServicePrice").innerHTML = 0;
+				document.getElementById("ProgramTotalPrice").innerHTML		= programData.totalPrice + 0;
+			}			
+			console.log("toto");
+		}
+
 
 
 		
