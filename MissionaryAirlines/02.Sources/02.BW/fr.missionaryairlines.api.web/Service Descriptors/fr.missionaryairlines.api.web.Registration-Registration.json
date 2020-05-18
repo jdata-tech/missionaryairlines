@@ -1,0 +1,106 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/registration" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-registration",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/UserDetails"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "UserDetails" : {
+      "type" : "object",
+      "required" : [ "userPassportInfos", "userFirstname", "userNationality", "userAddressInfos", "userName", "userSpecificRequest" ],
+      "properties" : {
+        "userName" : {
+          "type" : "string"
+        },
+        "userFirstname" : {
+          "type" : "string"
+        },
+        "userNationality" : {
+          "type" : "string"
+        },
+        "userPassportInfos" : {
+          "$ref" : "#/definitions/userPassportInfos"
+        },
+        "userAddressInfos" : {
+          "$ref" : "#/definitions/userAddressInfos"
+        },
+        "userSpecificRequest" : {
+          "type" : "string"
+        }
+      }
+    },
+    "userPassportInfos" : {
+      "type" : "object",
+      "required" : [ "passeportNumber", "visaApplianceWarranty", "passeportExpirationDate", "passeportIssueDate" ],
+      "properties" : {
+        "passeportNumber" : {
+          "type" : "string"
+        },
+        "passeportIssueDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "passeportExpirationDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "visaApplianceWarranty" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "userAddressInfos" : {
+      "type" : "object",
+      "required" : [ "country", "address", "phone", "city", "postalCode", "email" ],
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        },
+        "phone" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "address" : {
+          "type" : "string"
+        },
+        "postalCode" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

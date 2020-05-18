@@ -1547,9 +1547,7 @@
                                 </tibex:activityExtension>
                             </bpws:extensionActivity>
                             <bpws:scope name="ForEach"
-                                tibex:group="foreach"
-                                tibex:indexOriginalName="index"
-                                tibex:indexToGlobal="false" tibex:xpdlId="ac3b2322-fdde-4680-91aa-4cc0e13833a4">
+                                tibex:group="foreach" tibex:xpdlId="ac3b2322-fdde-4680-91aa-4cc0e13833a4">
                                 <bpws:targets>
                                     <bpws:target linkName="JDBCQueryToForEach"/>
                                 </bpws:targets>

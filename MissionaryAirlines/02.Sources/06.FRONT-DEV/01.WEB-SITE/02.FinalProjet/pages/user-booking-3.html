@@ -747,7 +747,7 @@
 									</div>
 									<img src="img/avatar/hermine.jpg" alt="Hermine" class="avatar ml-4">
 								</div>
-								<textarea name="specific_demand" rows="4" class="form-control"></textarea>
+								<textarea id="form_specific_demand" name="specific_demand" rows="4" class="form-control"></textarea>
 							</div>
 							<!-- <div class="row form-block flex-column flex-sm-row">
 									<div class="col text-center text-sm-left">
@@ -765,7 +765,7 @@
 										</form> -->
 								</div>
 								<div class="col text-center text-sm-right">
-									<button type="submit" class="btn btn-primary px-3">Dernière Etape<i
+									<button type="button" onclick="sendData()" class="btn btn-primary px-3">Dernière Etape<i
 											class="fa-chevron-right fa ml-2"></i></button>
 									<!-- <form id="booking-form" method="get" action="user-booking-3.html" autocomplete="off" class="form">
 											<div id="NextID"></div>
@@ -1010,7 +1010,7 @@
 
 		document.getElementById("LastID").innerHTML = '<input type="hidden" name="prg" value="' + currentProgramID + '" />';
 
-		document.getElementById("ProgramResumeName").innerHTML 				= programData.fullName;
+		document.getElementById("ProgramResumeName").innerHTML 				= programData.fullform_nameName;
 		document.getElementById("ProgramResumeSubName").innerHTML 			= programData.subName;
 		document.getElementById("ProgramResumeDepartureDay").innerHTML		= departDate.getDate();
 		document.getElementById("ProgramResumeDepartureMonth").innerHTML	= monthNames[departDate.getMonth()];
@@ -1028,6 +1028,67 @@
 		document.getElementById("expiration-date").innerHTML 				= Math.floor((programData.endDateOffer - todayDate) / 86400000);
 
 		document.getElementById("ReturnPrgID").innerHTML = '<a href="user-booking-2.html?prg=' + currentProgramID + '" class="btn btn-link text-muted"><i class="fa-chevron-left fa mr-2"></i>Retour</a>';
+
+		
+
+		function sendData() {
+			var UserDetails = {};
+
+			UserDetails = {};
+			UserDetails.userPassportInfos = {};
+			UserDetails.userAddressInfos = {};
+
+			var visa = true;
+			if(document.getElementById("form_visa_ok").checked == false)
+			{
+				visa = false;
+			}
+
+			UserDetails["userName"] 								    = document.getElementById("form_name").value;
+			UserDetails["userFirstname"]                                = document.getElementById("form_firstname").value;
+			UserDetails["userNationality"]                              = document.getElementById("form_country").value;
+			UserDetails["userPassportInfos"]["passeportNumber"]         = document.getElementById("form_passport").value;
+			UserDetails["userPassportInfos"]["visaApplianceWarranty"]   = visa;
+			UserDetails["userPassportInfos"]["passeportExpirationDate"] = document.getElementById("form_date_expiration").value;
+			UserDetails["userPassportInfos"]["passeportIssueDate"]      = document.getElementById("form_date_emission").value;
+			UserDetails["userAddressInfos"]["country"]                  = document.getElementById("form_country").value;
+			UserDetails["userAddressInfos"]["address"]                  = document.getElementById("form_street").value;
+			UserDetails["userAddressInfos"]["phone"]                    = document.getElementById("form_phone").value;
+			UserDetails["userAddressInfos"]["city"]                     = document.getElementById("form_city").value;
+			UserDetails["userAddressInfos"]["postalCode"]               = document.getElementById("form_zip").value;
+			UserDetails["userAddressInfos"]["email"]                    = document.getElementById("form_email").value;
+			UserDetails["userSpecificRequest"]                          = document.getElementById("form_specific_demand").value;
+
+			console.log("sendData => ");
+			console.log(JSON.stringify(UserDetails));
+
+			const request = async () => {
+				const response = await fetch('http://localhost:8077/registration', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json;charset=utf-8'
+					},
+					body: JSON.stringify(UserDetails)
+				})
+				.then(response => {
+					console.log("Le paiement s'est effectué avec succès. Redirection vers la page finale.");
+					var $url = "user-booking-4.html?prg=" + currentProgramID;
+					document.location.href = $url;
+					return response.json()
+				})
+				.then(data => {
+				// Work with JSON data here
+					console.log(JSON.stringify(data))
+				})
+				.catch(err => {
+					console.log("Une erreur est survenue lors de l'envoie du formulaire : <" + err.message + ">");
+					//alert("Une erreur est survenue lors de l'envoie du formulaire. Veuillez réessayer !");
+					var $url = "user-booking-4.html?prg=" + currentProgramID;
+					document.location.href = $url;
+				});
+			}
+			request();
+		}
 	</script>
 </body>
 

@@ -12,6 +12,10 @@
         {
             "location": "Service Descriptors/fr.missionaryairlines.api.web.ListPrograms-ListPrograms.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/fr.missionaryairlines.api.web.Registration-Registration.json",
+            "type": "generated"
         }
     ]
 }

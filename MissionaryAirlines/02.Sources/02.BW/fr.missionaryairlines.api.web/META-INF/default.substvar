@@ -90,6 +90,14 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>/ems/queues/inputCustomerQueue</name>
+			<value>WEB.IN.CUSTOMER</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>/ems/topics/newProperty</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>

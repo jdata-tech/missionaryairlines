@@ -24,6 +24,18 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_iSkfIZOiEeqgXpWYxlyy8w" bindingName="RestService1"/>
   </sca:service>
+  <sca:service xmi:id="_FjG6gJkHEeq8VIMVrZiLoA" name="registration" promote="ComponentRegistration/registration">
+    <sca:interface.wsdl xmi:id="_FjTHwJkHEeq8VIMVrZiLoA" interface="http://xmlns.example.com/20200518145709PLT#wsdl.interface(registration)" scaext:wsdlLocation="../Processes/fr/missionaryairlines/api/web/Registration.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_FjfVAJkHEeq8VIMVrZiLoA" name="RestService2" path="/registration" docBasePath="http://localhost:7777/fr.missionaryairlines.api.web" docResourcePath="Registration" basePath="/" connector="fr.missionaryairlines.api.web.Payment" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/fr.missionaryairlines.api.web.Registration-Registration.json">
+      <operation xmi:id="_FjfVApkHEeq8VIMVrZiLoA" operationName="post" nickname="post-registration" httpMethod="POST" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_FjlboJkHEeq8VIMVrZiLoA"/>
+      <advancedConfig xmi:id="_FjfVAZkHEeq8VIMVrZiLoA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_FjfVA5kHEeq8VIMVrZiLoA" bindingName="RestService2"/>
+  </sca:service>
   <sca:property xmi:id="_1ezcIIouEeqmRao7E-_WLg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_1fFwAIouEeqmRao7E-_WLg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_1fL2oIouEeqmRao7E-_WLg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -35,6 +47,7 @@
   <sca:property xmi:id="_1f0IwIouEeqmRao7E-_WLg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_WUwggIpmEeqtkudMqsCtIQ" name="/ems/connection/url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_amWRgIpmEeqtkudMqsCtIQ" name="/ems/queues/inputPaymentQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Qfmn0JkIEeq8VIMVrZiLoA" name="/ems/queues/inputCustomerQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_ZJMXAIpmEeqtkudMqsCtIQ" name="/ems/topics/newProperty" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_eC62UIp3EeqtkudMqsCtIQ" name="/http/stripe/url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_j3p1EIp3EeqtkudMqsCtIQ" name="/http/stripe/ssl-port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
@@ -79,6 +92,12 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_iQMgkZOiEeqgXpWYxlyy8w" processName="fr.missionaryairlines.api.web.ListPrograms"/>
     <sca:service xmi:id="_iQwhQJOiEeqgXpWYxlyy8w" name="listprograms">
       <sca:interface.wsdl xmi:id="_iQ7gYJOiEeqgXpWYxlyy8w" interface="http://xmlns.example.com/20200511181447PLT#wsdl.interface(listprograms)" scaext:wsdlLocation="../Processes/fr/missionaryairlines/api/web/ListPrograms.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_Fi0moJkHEeq8VIMVrZiLoA" name="ComponentRegistration" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Fi0moZkHEeq8VIMVrZiLoA" processName="fr.missionaryairlines.api.web.Registration"/>
+    <sca:service xmi:id="_Fi6tQJkHEeq8VIMVrZiLoA" name="registration">
+      <sca:interface.wsdl xmi:id="_Fi6tQZkHEeq8VIMVrZiLoA" interface="http://xmlns.example.com/20200518145709PLT#wsdl.interface(registration)" scaext:wsdlLocation="../Processes/fr/missionaryairlines/api/web/Registration.bwp"/>
     </sca:service>
   </sca:component>
 </sca:composite>
