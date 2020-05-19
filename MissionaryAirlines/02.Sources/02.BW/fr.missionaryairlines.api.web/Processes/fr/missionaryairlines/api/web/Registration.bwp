@@ -631,222 +631,6 @@
                 </choice>
             </complexType>
         </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"
-            version="0.1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions">
-            <complexType name="ActivityExceptionType">
-                <sequence>
-                    <element name="msg" type="string"/>
-                    <element minOccurs="0" name="msgCode" type="string"/>
-                </sequence>
-            </complexType>
-            <complexType name="PluginExceptionType">
-                <complexContent>
-                    <extension base="tns2:ActivityExceptionType"/>
-                </complexContent>
-            </complexType>
-            <element name="JDBCPluginException" type="tns2:JDBCPluginExceptionType"/>
-            <complexType name="JDBCPluginExceptionType">
-                <complexContent>
-                    <extension base="tns2:PluginExceptionType"/>
-                </complexContent>
-            </complexType>
-            <element name="InvalidSQLTypeException" type="tns2:InvalidSQLTypeExceptionType"/>
-            <complexType name="InvalidSQLTypeExceptionType">
-                <complexContent>
-                    <extension base="tns2:JDBCPluginExceptionType">
-                        <sequence>
-                            <element name="typeName" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="JDBCConnectionNotFoundException" type="tns2:JDBCConnectionNotFoundExceptionType"/>
-            <complexType name="JDBCConnectionNotFoundExceptionType">
-                <complexContent>
-                    <extension base="tns2:JDBCPluginExceptionType">
-                        <sequence>
-                            <element name="jdbcConnection" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="DuplicatedFieldNameException" type="tns2:DuplicatedFieldNameExceptionType"/>
-            <complexType name="DuplicatedFieldNameExceptionType">
-                <complexContent>
-                    <extension base="tns2:JDBCPluginExceptionType">
-                        <sequence>
-                            <element name="fieldName" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="InvalidTimeZoneException" type="tns2:InvalidTimeZoneExceptionType"/>
-            <complexType name="InvalidTimeZoneExceptionType">
-                <complexContent>
-                    <extension base="tns2:JDBCPluginExceptionType">
-                        <sequence>
-                            <element name="timeZone" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="JDBCSQLException" type="tns2:JDBCSQLExceptionType"/>
-            <complexType name="JDBCSQLExceptionType">
-                <complexContent>
-                    <extension base="tns2:JDBCPluginExceptionType">
-                        <sequence>
-                            <element name="sqlState" type="string"/>
-                            <element name="detailStr" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="LoginTimedOutException" type="tns2:LoginTimedOutExceptionType"/>
-            <complexType name="LoginTimedOutExceptionType">
-                <complexContent>
-                    <extension base="tns2:JDBCPluginExceptionType"/>
-                </complexContent>
-            </complexType>
-        </schema>
-        <schema
-            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f60d0f37-a82d-47cf-a0ca-7a3eb30e7551+input"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+f60d0f37-a82d-47cf-a0ca-7a3eb30e7551+input">
-            <element name="jdbcUpdateActivityInput">
-                <complexType>
-                    <sequence>
-                        <element maxOccurs="1" minOccurs="1" name="NAME"
-                            nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="FIRSTNAME" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="ADDRESS_1" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="ADDRESS_2" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="POSTALCODE" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1" name="CITY"
-                            nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="COUNTRY" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="PHONE" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="EMAIL" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="CIVILITY" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="NATIONALITY" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="PASSPORTNUMBER" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="ISSUEDATE" nillable="true" type="date"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="EXPIRATIONDATE" nillable="true" type="date"/>
-                        <element maxOccurs="1" minOccurs="0"
-                            name="ServerTimeZone" type="string"/>
-                        <element maxOccurs="1" minOccurs="0"
-                            name="timeout" type="long"/>
-                    </sequence>
-                </complexType>
-            </element>
-        </schema>
-        <xs:schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc"
-            xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-            <xs:complexType name="jdbcCallActivityInput">
-                <xs:sequence>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="inputSet" type="xs:anyType"/>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="ServerTimeZone" type="xs:string"/>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="timeout" type="xs:int"/>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="maxRows" type="xs:int"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="jdbcCallActivityInput" type="tns:jdbcCallActivityInput"/>
-            <xs:element name="jdbcCallActivityOutput" type="tns:jdbcCallActivityOutput"/>
-            <xs:complexType name="jdbcCallActivityOutput">
-                <xs:sequence>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="outputSet" type="xs:string"/>
-                    <xs:element maxOccurs="1" minOccurs="0"
-                        name="UnResolvedResultSets" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="column">
-                <xs:sequence>
-                    <xs:element form="unqualified" name="name" type="xs:string"/>
-                    <xs:element form="unqualified" name="value"
-                        nillable="true" type="xs:anyType"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="jdbcGeneralActivityInput">
-                <xs:sequence>
-                    <xs:element form="unqualified" name="statement" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="ServerTimeZone" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="timeout" type="xs:int"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="maxRows" type="xs:int"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="jdbcGeneralActivityOutput">
-                <xs:sequence>
-                    <xs:element form="unqualified" maxOccurs="unbounded"
-                        minOccurs="0" name="noOfUpdates" type="xs:int"/>
-                    <xs:element form="unqualified" maxOccurs="unbounded"
-                        minOccurs="0" name="unknownResultset" type="tns:unknownResultset"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="row">
-                <xs:sequence>
-                    <xs:element form="unqualified" maxOccurs="unbounded"
-                        minOccurs="0" name="column" type="tns:column"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="unknownResultset">
-                <xs:sequence>
-                    <xs:element form="unqualified" maxOccurs="unbounded"
-                        minOccurs="0" name="row" type="tns:row"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="jdbcGeneralActivityInput" type="tns:jdbcGeneralActivityInput"/>
-            <xs:element name="jdbcGeneralActivityOutput" type="tns:jdbcGeneralActivityOutput"/>
-            <xs:complexType name="jdbcUpdateOutput">
-                <xs:sequence>
-                    <xs:element form="unqualified" name="noOfUpdates" type="xs:int"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="jdbcUpdateActivityOutput" type="tns:jdbcUpdateOutput"/>
-        </xs:schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.update"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"
-            xmlns:Q2="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.jdbc.update">
-            <import namespace="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <import namespace="http://schemas.tibco.com/bw/plugins/jdbc/5.0/jdbcExceptions"/>
-            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
-            <complexType name="ActivityErrorDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:JDBCConnectionNotFoundException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvalidTimeZoneException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:JDBCSQLException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:LoginTimedOutException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvalidSQLTypeException"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q2:ActivityTimedOutException"/>
-                </choice>
-            </complexType>
-        </schema>
         <wsdl:definitions
             targetNamespace="http://xmlns.example.com/20200518145709PLT"
             xmlns:custom="http://www.jdata.fr/schemas/StripeObjectsDefinition"
@@ -1138,62 +922,6 @@
                                     xsi:type="notation:Bounds" y="22"/>
                                     </children>
 
-                                    <children type="4002 bw.jdbc.update">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@activities.4"/>
-
-                                    <layoutConstraint
-                                    height="40"
-                                    width="40"
-                                    x="199"
-                                    xsi:type="notation:Bounds" y="22"/>
-                                    </children>
-
                                     <styles xsi:type="notation:DrawerStyle"/>
 
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1376,7 +1104,7 @@
         <element href="//0"/>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1384,17 +1112,6 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.0"/>
             <bendpoints points="[25, -1, -195, 11]$[196, -11, -24, 1]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.0/@messages.0/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1449,12 +1166,6 @@
                 <bpws:literal>fr.missionaryairlines.api.web.JDBCConnectionResource</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable element="ns7:jdbcUpdateActivityInput"
-            name="JDBCUpdate-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:jdbcUpdateActivityOutput"
-            name="JDBCUpdate" sca-bpel:internal="true"/>
-        <bpws:variable element="ns9:ActivityErrorData"
-            name="_error_JDBCUpdate" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1476,7 +1187,6 @@
                         <bpws:flow name="flow1">
                             <bpws:links>
                                 <bpws:link name="CustomerInfosTopostOut" tibex:linkType="SUCCESS"/>
-                                <bpws:link name="JDBCUpdateTopostOut" tibex:linkType="SUCCESS"/>
                             </bpws:links>
                             <bpws:empty name="OnMessageStart"
                                 tibex:constructor="onMessageStart" tibex:xpdlId="ec85dc3a-6daa-48b1-b108-6c831f995742"/>
@@ -1493,7 +1203,7 @@
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns4="http://xmlns.example.com/20200518145709PLT" xmlns:tns="http://tns.tibco.com/bw/REST" version="2.0"&gt;&lt;xsl:template name="postOut-input" match="/"&gt;&lt;tns4:postResponse&gt;&lt;status&gt;&lt;tns:statusLine&gt;&lt;statusCode&gt;&lt;xsl:value-of select="200"/&gt;&lt;/statusCode&gt;&lt;/tns:statusLine&gt;&lt;/status&gt;&lt;/tns4:postResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
-                                    <bpws:target linkName="JDBCUpdateTopostOut"/>
+                                    <bpws:target linkName="CustomerInfosTopostOut"/>
                                 </bpws:targets>
                             </bpws:reply>
                             <bpws:extensionActivity>
@@ -1532,101 +1242,6 @@
                                     messageType="XML Text"
                                     messagingStyle="Queue"
                                     priority="4" xsi:type="jms:JMSSenderActivityConfiguration"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                </tibex:activityExtension>
-                            </bpws:extensionActivity>
-                            <bpws:extensionActivity>
-                                <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+f60d0f37-a82d-47cf-a0ca-7a3eb30e7551+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/WebObjectsDefinition&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns2:jdbcUpdateActivityInput>&lt;NAME>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userName&quot;/>&lt;/NAME>&lt;FIRSTNAME>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userFirstname&quot;/>&lt;/FIRSTNAME>&lt;ADDRESS_1>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userAddressInfos/tns3:address&quot;/>&lt;/ADDRESS_1>&lt;ADDRESS_2>&lt;xsl:value-of select=&quot;&amp;quot; &amp;quot;&quot;/>&lt;/ADDRESS_2>&lt;POSTALCODE>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userAddressInfos/tns3:postalCode&quot;/>&lt;/POSTALCODE>&lt;CITY>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userAddressInfos/tns3:city&quot;/>&lt;/CITY>&lt;COUNTRY>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userAddressInfos/tns3:country&quot;/>&lt;/COUNTRY>&lt;PHONE>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userAddressInfos/tns3:phone&quot;/>&lt;/PHONE>&lt;EMAIL>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userAddressInfos/tns3:email&quot;/>&lt;/EMAIL>&lt;CIVILITY>&lt;xsl:value-of select=&quot;&amp;quot;Mr ou Mme&amp;quot;&quot;/>&lt;/CIVILITY>&lt;NATIONALITY>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userNationality&quot;/>&lt;/NATIONALITY>&lt;PASSPORTNUMBER>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userPassportInfos/tns3:passeportNumber&quot;/>&lt;/PASSPORTNUMBER>&lt;ISSUEDATE>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userPassportInfos/tns3:passeportIssueDate&quot;/>&lt;/ISSUEDATE>&lt;EXPIRATIONDATE>&lt;xsl:value-of select=&quot;$post/item/tns3:UserDetails/tns3:userPassportInfos/tns3:passeportExpirationDate&quot;/>&lt;/EXPIRATIONDATE>&lt;/tns2:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
-                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
-                                    inputVariable="JDBCUpdate-input"
-                                    name="JDBCUpdate"
-                                    outputVariable="JDBCUpdate"
-                                    tibex:xpdlId="f60d0f37-a82d-47cf-a0ca-7a3eb30e7551" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="CustomerInfosTopostOut"/>
-                                    </bpws:targets>
-                                    <bpws:sources>
-                                    <bpws:source linkName="JDBCUpdateTopostOut"/>
-                                    </bpws:sources>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+f60d0f37-a82d-47cf-a0ca-7a3eb30e7551+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/WebObjectsDefinition&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:jdbcUpdateActivityInput>&#xa;            &lt;NAME>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userName&quot;/>&#xa;            &lt;/NAME>&#xa;            &lt;FIRSTNAME>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userFirstname&quot;/>&#xa;            &lt;/FIRSTNAME>&#xa;            &lt;ADDRESS_1>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userAddressInfos/tns3:address&quot;/>&#xa;            &lt;/ADDRESS_1>&#xa;            &lt;ADDRESS_2>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot; &amp;quot;&quot;/>&#xa;            &lt;/ADDRESS_2>&#xa;            &lt;POSTALCODE>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userAddressInfos/tns3:postalCode&quot;/>&#xa;            &lt;/POSTALCODE>&#xa;            &lt;CITY>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userAddressInfos/tns3:city&quot;/>&#xa;            &lt;/CITY>&#xa;            &lt;COUNTRY>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userAddressInfos/tns3:country&quot;/>&#xa;            &lt;/COUNTRY>&#xa;            &lt;PHONE>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userAddressInfos/tns3:phone&quot;/>&#xa;            &lt;/PHONE>&#xa;            &lt;EMAIL>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userAddressInfos/tns3:email&quot;/>&#xa;            &lt;/EMAIL>&#xa;            &lt;CIVILITY>&#xa;                &lt;xsl:value-of select=&quot;&amp;quot;Mr ou Mme&amp;quot;&quot;/>&#xa;            &lt;/CIVILITY>&#xa;            &lt;NATIONALITY>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userNationality&quot;/>&#xa;            &lt;/NATIONALITY>&#xa;            &lt;PASSPORTNUMBER>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userPassportInfos/tns3:passeportNumber&quot;/>&#xa;            &lt;/PASSPORTNUMBER>&#xa;            &lt;ISSUEDATE>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userPassportInfos/tns3:passeportIssueDate&quot;/>&#xa;            &lt;/ISSUEDATE>&#xa;            &lt;EXPIRATIONDATE>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns3:userPassportInfos/tns3:passeportExpirationDate&quot;/>&#xa;            &lt;/EXPIRATIONDATE>&#xa;        &lt;/tns2:jdbcUpdateActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.jdbc.update"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:jdbcPalette="http://ns.tibco.com/bw/palette/jdbc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCUpdateActivity"/>
-                                    <value
-                                    sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="insert into  ma.&quot;CUSTOMER&quot; (&quot;NAME&quot;,&quot;FIRSTNAME&quot;,&quot;ADDRESS_1&quot;,&quot;ADDRESS_2&quot;,&quot;POSTALCODE&quot;,&quot;CITY&quot;,&quot;COUNTRY&quot;,&quot;PHONE&quot;,&quot;EMAIL&quot;,&quot;CIVILITY&quot;,&quot;NATIONALITY&quot;,&quot;PASSPORTNUMBER&quot;,&quot;ISSUEDATE&quot;,&quot;EXPIRATIONDATE&quot;)&#xd;&#xa;values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-                                    timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity">
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="NAME"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="FIRSTNAME"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="ADDRESS_1"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="ADDRESS_2"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="POSTALCODE"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="CITY"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="COUNTRY"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="PHONE"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="EMAIL"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="CIVILITY"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="NATIONALITY"/>
-
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="PASSPORTNUMBER"/>
-
-                                    <PreparedParameters
-                                    DataType="91"
-                                    DataTypeDisplayValue="DATE" ParameterName="ISSUEDATE"/>
-
-                                    <PreparedParameters
-                                    DataType="91"
-                                    DataTypeDisplayValue="DATE" ParameterName="EXPIRATIONDATE"/>
-                                    </value>
                                     </properties>
                                     </activityConfig>
                                     </bwext:BWActivity>

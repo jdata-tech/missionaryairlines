@@ -223,10 +223,10 @@
 								</div>
 								<div class="col-xl-8 col-md-6 mb-4">
 									<label class="form-label" for="form_visas">Mode de Retrait du Visa</label>
-									<select class="selectpicker form-control" name="visas" id="form_visas"
+									<select class="selectpicker form-control" name="visas" id="form_visas" onchange="modeRetrait()"
 										data-style="btn-selectpicker" title=" ">
-										<option value="visas_0">Par Courrier </option>
-										<option value="visas_1">En Main Propre </option>
+										<option value="courrier">Par Courrier </option>
+										<option value="main">En Main Propre </option>
 									</select>
 								</div>
 								<div class="col-12 pb-4">
@@ -744,6 +744,7 @@
 	<script src="js/theme.js"></script>
 	<script src="js/booking.js"></script>
 	<script>
+		localStorage.setItem('optionalServicesTotalPrice', 0);
 		const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 		var currentProgramID = getUrlVars()["prg"];
 
@@ -776,15 +777,34 @@
 		function myFunction() {
 			if(document.getElementById("needVisa").checked == true) 
 			{
-				document.getElementById("form_visas").disabled = false;
+				document.getElementById("form_visas").disabled 				= false;
 				document.getElementById("ProgramServicePrice").innerHTML 	= 135;
 				document.getElementById("ProgramTotalPrice").innerHTML		= programData.totalPrice + 135;
+				localStorage.setItem('optionalServicesTotalPrice', 135);
 				
 			}else {
-				document.getElementById("form_visas").disabled = true;
-				document.getElementById("ProgramServicePrice").innerHTML = 0;
+				document.getElementById("form_visas").disabled 				= true;
+				document.getElementById("ProgramServicePrice").innerHTML 	= 0;
 				document.getElementById("ProgramTotalPrice").innerHTML		= programData.totalPrice + 0;
-			}			
+				localStorage.setItem('optionalServicesTotalPrice', 0);
+			}
+		}
+
+		function modeRetrait() {
+			if(document.getElementById("needVisa").checked == true) 
+			{
+				if(document.getElementById("form_visas").value == "courrier") 
+				{
+					document.getElementById("ProgramServicePrice").innerHTML 	= 135 + 20;
+					document.getElementById("ProgramTotalPrice").innerHTML		= programData.totalPrice + 135 + 20;
+					localStorage.setItem('optionalServicesTotalPrice', 135 + 20);
+					
+				}else{
+					document.getElementById("ProgramServicePrice").innerHTML 	= 135 + 0;
+					document.getElementById("ProgramTotalPrice").innerHTML		= programData.totalPrice + 135 + 0;
+					localStorage.setItem('optionalServicesTotalPrice', 135 + 0);
+				}
+			}					
 			console.log("toto");
 		}
 

@@ -452,6 +452,7 @@
 	<script src="js/theme.js"></script>
 	<script src="js/booking.js"></script>
 	<script>
+		var optionalServicesTotalPrice = localStorage.getItem('optionalServicesTotalPrice');
 		const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 		var currentProgramID = getUrlVars()["prg"];
 
@@ -481,15 +482,16 @@
 		document.getElementById("ProgramResumeReturnYear").innerHTML		= retourDate.getFullYear();
 		document.getElementById("ProgramMonthlyPrice").innerHTML			= programData.sixMonthPrice;
 		document.getElementById("ProgramMonthlyPeriod").innerHTML			= 6;
-		document.getElementById("ProgramServicePrice").innerHTML			= 0;
+		document.getElementById("ProgramServicePrice").innerHTML			= optionalServicesTotalPrice;
 		document.getElementById("ProgramAirTicketPrice").innerHTML			= programData.totalPrice;
-		document.getElementById("ProgramTotalPrice").innerHTML				= programData.totalPrice;
+		document.getElementById("ProgramTotalPrice").innerHTML				= programData.totalPrice + parseInt(optionalServicesTotalPrice);
 		document.getElementById("ProgramBlueuStars").innerHTML				= '<div class="mt-n1"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i></div>';
 		document.getElementById("ProgramImage").innerHTML					= '<img src="' + programData.backgroundImage + '" alt="" width="100" class="ml-3 rounded">';
 		document.getElementById("expiration-date").innerHTML 				= Math.floor((programData.endDateOffer - todayDate) / 86400000);
 
 		document.getElementById("ProgramID").innerHTML 						= '<input type="hidden" name="prg" value="' + currentProgramID + '" />';
 		document.getElementById("ReturnPrgID").innerHTML 					= '<a href="user-booking-1.html?prg=' + currentProgramID + '" class="btn btn-link text-muted"><i class="fa-chevron-left fa mr-2"></i>Retour</a>';
+
 	</script>
 </body>
 

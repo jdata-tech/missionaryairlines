@@ -997,6 +997,7 @@
 	<script src="js/theme.js"></script>
 	<script src="js/booking.js"></script>
 	<script>
+		var optionalServicesTotalPrice = localStorage.getItem('optionalServicesTotalPrice');
 		const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 		var currentProgramID = getUrlVars()["prg"];
 
@@ -1010,7 +1011,7 @@
 
 		document.getElementById("LastID").innerHTML = '<input type="hidden" name="prg" value="' + currentProgramID + '" />';
 
-		document.getElementById("ProgramResumeName").innerHTML 				= programData.fullform_nameName;
+		document.getElementById("ProgramResumeName").innerHTML 				= programData.fullName;
 		document.getElementById("ProgramResumeSubName").innerHTML 			= programData.subName;
 		document.getElementById("ProgramResumeDepartureDay").innerHTML		= departDate.getDate();
 		document.getElementById("ProgramResumeDepartureMonth").innerHTML	= monthNames[departDate.getMonth()];
@@ -1020,9 +1021,9 @@
 		document.getElementById("ProgramResumeReturnYear").innerHTML		= retourDate.getFullYear();
 		document.getElementById("ProgramMonthlyPrice").innerHTML			= programData.sixMonthPrice;
 		document.getElementById("ProgramMonthlyPeriod").innerHTML			= 6;
-		document.getElementById("ProgramServicePrice").innerHTML			= 0;
+		document.getElementById("ProgramServicePrice").innerHTML			= optionalServicesTotalPrice;
 		document.getElementById("ProgramAirTicketPrice").innerHTML			= programData.totalPrice;
-		document.getElementById("ProgramTotalPrice").innerHTML				= programData.totalPrice;
+		document.getElementById("ProgramTotalPrice").innerHTML				= programData.totalPrice + parseInt(optionalServicesTotalPrice);
 		document.getElementById("ProgramBlueuStars").innerHTML				= '<div class="mt-n1"><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i></div>';
 		document.getElementById("ProgramImage").innerHTML					= '<img src="' + programData.backgroundImage + '" alt="" width="100" class="ml-3 rounded">';
 		document.getElementById("expiration-date").innerHTML 				= Math.floor((programData.endDateOffer - todayDate) / 86400000);
@@ -1071,18 +1072,12 @@
 					body: JSON.stringify(UserDetails)
 				})
 				.then(response => {
-					console.log("Le paiement s'est effectué avec succès. Redirection vers la page finale.");
+					console.log("Enregistrement effectué avec succès.");
 					var $url = "user-booking-4.html?prg=" + currentProgramID;
 					document.location.href = $url;
-					return response.json()
-				})
-				.then(data => {
-				// Work with JSON data here
-					console.log(JSON.stringify(data))
 				})
 				.catch(err => {
 					console.log("Une erreur est survenue lors de l'envoie du formulaire : <" + err.message + ">");
-					//alert("Une erreur est survenue lors de l'envoie du formulaire. Veuillez réessayer !");
 					var $url = "user-booking-4.html?prg=" + currentProgramID;
 					document.location.href = $url;
 				});
