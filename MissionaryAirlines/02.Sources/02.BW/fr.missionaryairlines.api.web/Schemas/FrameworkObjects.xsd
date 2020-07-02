@@ -2,9 +2,19 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.jdata.fr/schemas/FrameworkObjects" elementFormDefault="qualified" targetNamespace="http://www.jdata.fr/schemas/FrameworkObjects">
   	
   	<element name="CustomedError" type="tns:CustomedErrorType"/>
+  	<element name="StripeError" type="tns:StripeErrorType"/>
   	<element name="LogJob" type="tns:LogJobType"/>
   	<element name="Context" type="tns:ContextType"/>
     
+    <complexType name="StripeErrorType">
+    	<sequence>
+    		<element name="ID" type="string" minOccurs="0"/>
+    		<element name="jobID" type="string" minOccurs="0"/>
+    		<element name="processInstanceID" type="string" minOccurs="0"/>
+    		<element name="parentProcessInstanceID" type="string" minOccurs="0"/>
+    		<element name="errorMessageJSON" type="string" minOccurs="0"/>
+    	</sequence>
+    </complexType>
     <complexType name="CustomedErrorType">
     	<sequence>
     		<element name="ID" type="string" minOccurs="0"/>

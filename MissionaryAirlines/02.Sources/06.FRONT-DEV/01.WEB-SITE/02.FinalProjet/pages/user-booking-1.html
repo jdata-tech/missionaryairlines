@@ -781,12 +781,18 @@
 				document.getElementById("ProgramServicePrice").innerHTML 	= 135;
 				document.getElementById("ProgramTotalPrice").innerHTML		= programData.totalPrice + 135;
 				localStorage.setItem('optionalServicesTotalPrice', 135);
+				localStorage.setItem('visaApplianceWarranty', "true");
+				localStorage.setItem('optionalServices_visas', "true");
+				localStorage.setItem('optionalServices_visas_amount', 135);
 				
 			}else {
 				document.getElementById("form_visas").disabled 				= true;
 				document.getElementById("ProgramServicePrice").innerHTML 	= 0;
 				document.getElementById("ProgramTotalPrice").innerHTML		= programData.totalPrice + 0;
 				localStorage.setItem('optionalServicesTotalPrice', 0);
+				localStorage.setItem('visaApplianceWarranty', "false");
+				localStorage.setItem('optionalServices_visas', "false");
+				localStorage.setItem('optionalServices_visas_amount', 0);
 			}
 		}
 
@@ -798,11 +804,12 @@
 					document.getElementById("ProgramServicePrice").innerHTML 	= 135 + 20;
 					document.getElementById("ProgramTotalPrice").innerHTML		= programData.totalPrice + 135 + 20;
 					localStorage.setItem('optionalServicesTotalPrice', 135 + 20);
-					
+					localStorage.setItem('optionalServices_visas_amount', 135 + 20);
 				}else{
 					document.getElementById("ProgramServicePrice").innerHTML 	= 135 + 0;
 					document.getElementById("ProgramTotalPrice").innerHTML		= programData.totalPrice + 135 + 0;
 					localStorage.setItem('optionalServicesTotalPrice', 135 + 0);
+					localStorage.setItem('optionalServices_visas_amount', 135 + 0);
 				}
 			}					
 			console.log("toto");

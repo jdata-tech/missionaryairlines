@@ -470,7 +470,7 @@
 										<input type="date" name="date_expiration" id="form_date_expiration"
 											class="form-control">
 									</div>
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label class="form-label">Souhaitez-vous une assistance pour l'obtention du Visa
 											d'entrée ?</label>
 										<div class="custom-control custom-radio">
@@ -485,7 +485,7 @@
 											<label for="form_visa_ko" class="custom-control-label">Non, pas besoin
 												!</label>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 							<div class="row form-block">
@@ -1039,17 +1039,11 @@
 			UserDetails.userPassportInfos = {};
 			UserDetails.userAddressInfos = {};
 
-			var visa = true;
-			if(document.getElementById("form_visa_ok").checked == false)
-			{
-				visa = false;
-			}
-
 			UserDetails["userName"] 								    = document.getElementById("form_name").value;
 			UserDetails["userFirstname"]                                = document.getElementById("form_firstname").value;
 			UserDetails["userNationality"]                              = document.getElementById("form_country").value;
 			UserDetails["userPassportInfos"]["passeportNumber"]         = document.getElementById("form_passport").value;
-			UserDetails["userPassportInfos"]["visaApplianceWarranty"]   = visa;
+			UserDetails["userPassportInfos"]["visaApplianceWarranty"]   = localStorage.getItem('visaApplianceWarranty');
 			UserDetails["userPassportInfos"]["passeportExpirationDate"] = document.getElementById("form_date_expiration").value;
 			UserDetails["userPassportInfos"]["passeportIssueDate"]      = document.getElementById("form_date_emission").value;
 			UserDetails["userAddressInfos"]["country"]                  = document.getElementById("form_country").value;
@@ -1062,6 +1056,23 @@
 
 			console.log("sendData => ");
 			console.log(JSON.stringify(UserDetails));
+			
+			localStorage.setItem("userName", UserDetails.userName);
+			localStorage.setItem("userFirstname", UserDetails.userFirstname);
+			localStorage.setItem("userNationality", UserDetails.userNationality);
+			localStorage.setItem("userSpecificRequest", UserDetails.userSpecificRequest);
+
+			localStorage.setItem("passeportNumber", UserDetails.userPassportInfos.passeportNumber);
+			localStorage.setItem("passeportIssueDate", UserDetails.userPassportInfos.passeportIssueDate);
+			localStorage.setItem("passeportExpirationDate", UserDetails.userPassportInfos.passeportExpirationDate);
+
+			localStorage.setItem("country", UserDetails.userAddressInfos.country);
+			localStorage.setItem("address", UserDetails.userAddressInfos.address);
+			localStorage.setItem("phone", UserDetails.userAddressInfos.phone);
+			localStorage.setItem("city", UserDetails.userAddressInfos.city);
+			localStorage.setItem("postalCode", UserDetails.userAddressInfos.postalCode);
+			localStorage.setItem("email", UserDetails.userAddressInfos.email);
+
 
 			const request = async () => {
 				const response = await fetch('http://localhost:8077/registration', {

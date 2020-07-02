@@ -651,28 +651,6 @@
                 </choice>
             </complexType>
         </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="activity.jsonParser.input+c86923f7-50ba-4e8c-8fc3-d228799c54a3+ActivityInputType"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonParser.input+c86923f7-50ba-4e8c-8fc3-d228799c54a3+ActivityInputType">
-            <complexType name="ActivityInputClassType">
-                <sequence>
-                    <element maxOccurs="1" minOccurs="1"
-                        name="jsonString" type="string"/>
-                </sequence>
-            </complexType>
-            <element name="ActivityInputClass" type="tns:ActivityInputClassType"/>
-        </schema>
-        <schema
-            targetNamespace="activity.jsonParser.output+c86923f7-50ba-4e8c-8fc3-d228799c54a3+ActivityOutputType"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonParser.output+c86923f7-50ba-4e8c-8fc3-d228799c54a3+ActivityOutputType">
-            <complexType name="ActivityOutputClassType">
-                <sequence>
-                    <element maxOccurs="1" minOccurs="1"
-                        name="xmlString" type="string"/>
-                </sequence>
-            </complexType>
-            <element name="ActivityOutputClass" type="tns:ActivityOutputClassType"/>
-        </schema>
         <wsdl:definitions
             targetNamespace="http://xmlns.example.com/20200430015124"
             xmlns:tns="http://xmlns.example.com/20200430015124"
@@ -688,7 +666,7 @@
         input="{http://www.jdata.fr/schemas/StripeObjectsDefinition}Customer" output="{http://www.jdata.fr/schemas/ProjectObjects}ID">
         <tibex:errorList>
             <tibex:error
-                error="{http://www.jdata.fr/schemas/FrameworkObjects}CustomedError" name="CustomedError"/>
+                error="{http://www.jdata.fr/schemas/FrameworkObjects}StripeError" name="StripeError"/>
         </tibex:errorList>
     </tibex:ProcessInterface>
     <tibex:ProcessTemplateConfigurations/>
@@ -890,8 +868,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="687"
-                                    xsi:type="notation:Bounds" y="321"/>
+                                    x="206"
+                                    xsi:type="notation:Bounds" y="374"/>
                                     </children>
                                     <children type="4002 bw.xml.parsexml">
                                     <children type="4017">
@@ -1001,119 +979,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
                                     height="40" width="40"
-                                    x="687"
-                                    xsi:type="notation:Bounds" y="219"/>
-                                    </children>
-                                    <children type="4002 bw.restjson.JsonParser">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
-                                    <layoutConstraint
-                                    height="40" width="40"
-                                    x="323"
-                                    xsi:type="notation:Bounds" y="219"/>
-                                    </children>
-                                    <children type="4002 bw.xml.parsexml">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
-                                    <layoutConstraint
-                                    height="40" width="40"
-                                    x="443"
-                                    xsi:type="notation:Bounds" y="219"/>
-                                    </children>
-                                    <children type="4002 bw.generalactivities.mapper">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.10"/>
-                                    <layoutConstraint
-                                    height="40" width="40"
-                                    x="582"
-                                    xsi:type="notation:Bounds" y="219"/>
+                                    x="206"
+                                    xsi:type="notation:Bounds" y="243"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1184,7 +1051,7 @@
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1192,6 +1059,7 @@
             <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.2"/>
             <bendpoints points="[0, 25, 1, -63]$[0, 87, 1, -1]" xsi:type="notation:RelativeBendpoints"/>
+            <targetAnchor id="(0.4634146341463415,0.16)" xsi:type="notation:IdentityAnchor"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
@@ -1236,39 +1104,6 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.6"/>
             <bendpoints points="[25, 0, -216, 0]$[217, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.8"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.9"/>
-            <bendpoints points="[-24, -1, 359, 0]$[-358, 0, 25, 1]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1332,7 +1167,7 @@
         <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns:OptionalErrorReport"
             name="_errorOptional" sca-bpel:internal="true"/>
-        <bpws:variable element="ns9:CustomedError"
+        <bpws:variable element="ns9:StripeError"
             name="ThrowAPIError-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns10:ErrorLinkHandlerFaultData"
             name="_error_ListCustomerByI" sca-bpel:internal="true"/>
@@ -1352,18 +1187,6 @@
             name="_error_CreateCustomer" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:ID" name="End-input"
             sca-bpel:internal="true" tibex:parameter="out"/>
-        <bpws:variable element="ns17:ActivityInputClass"
-            name="ParseError-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns18:ActivityOutputClass"
-            name="ParseError" sca-bpel:internal="true"/>
-        <bpws:variable element="ns6:ActivityErrorData"
-            name="_error_ParseError" sca-bpel:internal="true"/>
-        <bpws:variable element="ns12:xmlString" name="ParseXml-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:error" name="ParseXml" sca-bpel:internal="true"/>
-        <bpws:variable element="ns13:ActivityErrorData"
-            name="_error_ParseXml" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:error" name="Mapper-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:error" name="Mapper" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1378,14 +1201,11 @@
             <bpws:links>
                 <bpws:link name="StartToCustomerByEmail" tibex:linkType="SUCCESS"/>
                 <bpws:link name="SendHTTPRequestToEnd" tibex:linkType="SUCCESS"/>
-                <bpws:link name="CreateCustomerToParseJSON1" tibex:linkType="ERROR"/>
+                <bpws:link name="CreateCustomerToLog" tibex:linkType="ERROR"/>
                 <bpws:link name="MapFormatToEnd" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ParseXml1ToParseXml" tibex:linkType="SUCCESS"/>
                 <bpws:link name="LogToThrowAPIError" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ParseJSONToBuildData" tibex:linkType="SUCCESS"/>
-                <bpws:link name="ParseErrorToParseXml" tibex:linkType="SUCCESS"/>
-                <bpws:link name="ParseXmlToMapper" tibex:linkType="SUCCESS"/>
-                <bpws:link name="MapperToLog" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1439,8 +1259,7 @@
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="SendHTTPRequestToEnd"/>
-                        <bpws:source
-                            linkName="CreateCustomerToParseJSON1"
+                        <bpws:source linkName="CreateCustomerToLog"
                             tibex:faultDetailsVar="CreateCustomer" tibex:faultNameVar="FaultName">
                             <tibex:DesignExpression>
                                 <tibex:expression expression="##error##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
@@ -1510,11 +1329,11 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:throw faultName="ns9:CustomedError"
+            <bpws:throw faultName="ns9:StripeError"
                 faultVariable="ThrowAPIError-input" name="ThrowAPIError" tibex:xpdlId="aeed3c3e-fe99-4c77-bac8-4e273b7f7c0e">
                 <tibex:inputBindings>
                     <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.jdata.fr/schemas/FrameworkObjects&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;ThrowAPIError-input&quot; match=&quot;/&quot;>&lt;tns5:CustomedError>&lt;tns5:jobID>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/tns5:jobID>&lt;tns5:processInstanceID>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/tns5:processInstanceID>&lt;tns5:functionnalError>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;tns5:errorCode>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/tns5:errorCode>&lt;/xsl:if>&lt;tns5:errorMessage>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/tns5:errorMessage>&lt;/tns5:functionnalError>&lt;/tns5:CustomedError>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.jdata.fr/schemas/FrameworkObjects&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:template name=&quot;ThrowAPIError-input&quot; match=&quot;/&quot;>&lt;tns5:StripeError>&lt;tns5:jobID>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/tns5:jobID>&lt;tns5:processInstanceID>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/tns5:processInstanceID>&lt;/tns5:StripeError>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                 </tibex:inputBindings>
                 <bpws:targets>
                     <bpws:target linkName="LogToThrowAPIError"/>
@@ -1591,14 +1410,14 @@
                     name="Log"
                     tibex:xpdlId="0031662b-28e5-461c-99ad-05cfbd3206dc" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="MapperToLog"/>
+                        <bpws:target linkName="CreateCustomerToLog"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="LogToThrowAPIError"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns10=&quot;http://schemas.tibco.com/bw/plugins/http/5.0/httpExceptions&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Mapper&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns4:ActivityInput>&lt;msgCode>&lt;xsl:value-of select=&quot;&amp;quot;PAYMENT/STRIPE API/GET CUSTOMER BY ID&amp;quot;&quot;/>&lt;/msgCode>&lt;message>&lt;xsl:value-of select=&quot;$Mapper/tns3:message&quot;/>&lt;/message>&lt;/tns4:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns4:ActivityInput>&lt;msgCode>&lt;xsl:value-of select=&quot;&amp;quot;PAYMENT/STRIPE API/GET CUSTOMER BY ID&amp;quot;&quot;/>&lt;/msgCode>&lt;message>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/message>&lt;/tns4:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1613,104 +1432,6 @@
                                     <value controlBy="Application"
                                     role="Error"
                                     suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:activityExtension
-                    inputVariable="ParseError-input" name="ParseError"
-                    outputVariable="ParseError"
-                    tibex:xpdlId="c86923f7-50ba-4e8c-8fc3-d228799c54a3" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="CreateCustomerToParseJSON1"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="ParseErrorToParseXml"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;activity.jsonParser.input+c86923f7-50ba-4e8c-8fc3-d228799c54a3+ActivityInputType&quot; xmlns:tns10=&quot;http://schemas.tibco.com/bw/plugins/http/5.0/httpExceptions&quot; xmlns:tns11=&quot;http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;_error_CreateCustomer&quot;/>&#xa;    &lt;xsl:template name=&quot;ParseJSON1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns9:ActivityInputClass>&#xa;            &lt;xsl:choose>&#xa;                &lt;xsl:when test=&quot;string-length(xsd:string($_error_CreateCustomer/tns10:HttpClientException/httpMessage/binaryContent)) > 0&quot;>&#xa;                    &lt;jsonString>&#xa;                        &lt;xsl:value-of select=&quot;tib:base64-to-string(xsd:string($_error_CreateCustomer/tns10:HttpClientException/httpMessage/binaryContent))&quot;/>&#xa;                    &lt;/jsonString>&#xa;                &lt;/xsl:when>&#xa;                &lt;xsl:when test=&quot;string-length(xsd:string($_error_CreateCustomer/tns10:HttpServerException/httpMessage/binaryContent)) > 0&quot;>&#xa;                    &lt;jsonString>&#xa;                        &lt;xsl:value-of select=&quot;tib:base64-to-string(xsd:string($_error_CreateCustomer/tns10:HttpServerException/httpMessage/binaryContent))&quot;/>&#xa;                    &lt;/jsonString>&#xa;                &lt;/xsl:when>&#xa;                &lt;xsl:when test=&quot;$_error_CreateCustomer/tns10:HttpCommunicationException/msg&quot;>&#xa;                    &lt;jsonString>&#xa;                        &lt;xsl:value-of select=&quot;$_error_CreateCustomer/tns10:HttpCommunicationException/msg&quot;/>&#xa;                    &lt;/jsonString>&#xa;                &lt;/xsl:when>&#xa;                &lt;xsl:when test=&quot;$_error_CreateCustomer/tns11:ActivityTimedOutException&quot;>&#xa;                    &lt;jsonString>&#xa;                        &lt;xsl:value-of select=&quot;$_error_CreateCustomer/tns11:ActivityTimedOutException/msg&quot;/>&#xa;                    &lt;/jsonString>&#xa;                &lt;/xsl:when>&#xa;                &lt;xsl:otherwise>&#xa;                    &lt;jsonString>&#xa;                        &lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&#xa;                    &lt;/jsonString>&#xa;                &lt;/xsl:otherwise>&#xa;            &lt;/xsl:choose>&#xa;        &lt;/tns9:ActivityInputClass>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.restjson.JsonParser"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:restjson="http://ns.tibco.com/bw/palette/restjson" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/restjson#//JsonParser"/>
-                                    <value jsonInputStyle="None"
-                                    schemaType="Generic" xsi:type="restjson:JsonParser"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="ParseXml-input"
-                    name="ParseXml" outputVariable="ParseXml"
-                    tibex:xpdlId="9566a423-679e-4224-9280-acd593d1a495" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="ParseErrorToParseXml"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="ParseXmlToMapper"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://www.tibco.com/namespaces/tnt/plugins/parsexml&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseError&quot;/>&lt;xsl:template name=&quot;ParseXml-input&quot; match=&quot;/&quot;>&lt;tns7:xmlString>&lt;xsl:value-of select=&quot;concat('&amp;lt;error xmlns=&amp;quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&amp;quot; >', substring-before(substring($ParseError/xmlString, 7), '&amp;lt;/JSON>'), '&amp;lt;/error>')&quot;/>&lt;/tns7:xmlString>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.xml.parsexml"
-                            version="6.0.0.20121128"
-                            xmlns:StripeObjectsDefinition="http://www.jdata.fr/schemas/StripeObjectsDefinition"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:palettexml="http://ns.tibco.com/bw/palette/xmlpalette" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/xmlpalette#//ParseXml"/>
-                                    <value inputStyle="text"
-                                    outputElementQName="StripeObjectsDefinition:error" xsi:type="palettexml:ParseXml"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="Mapper-input"
-                    name="Mapper" outputVariable="Mapper"
-                    tibex:xpdlId="4d54a85a-30ad-432d-868b-a42342f1d77f" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="ParseXmlToMapper"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="MapperToLog"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseXml&quot;/>&lt;xsl:template name=&quot;Mapper-input&quot; match=&quot;/&quot;>&lt;tns3:error>&lt;xsl:if test=&quot;$ParseXml/tns3:message&quot;>&lt;tns3:message>&lt;xsl:value-of select=&quot;$ParseXml/tns3:message&quot;/>&lt;/tns3:message>&lt;/xsl:if>&lt;/tns3:error>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.generalactivities.mapper"
-                            version="6.0.0.001"
-                            xmlns:StripeObjectsDefinition="http://www.jdata.fr/schemas/StripeObjectsDefinition"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Mapper"/>
-                                    <value
-                                    inputQName="StripeObjectsDefinition:error" xsi:type="generalactivities:Mapper"/>
                                 </properties>
                             </activityConfig>
                         </bwext:BWActivity>

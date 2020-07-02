@@ -27,7 +27,9 @@
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
-    xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    xmlns:tibprop="http://ns.tibco.com/bw/property"
+    xmlns:tns="http://schemas.tibco.com/bw/plugins/http/5.0/httpExceptions"
+    xmlns:tns1="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <tibex:Types>
         <xs:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
@@ -664,7 +666,7 @@
         input="{http://www.jdata.fr/schemas/StripeObjectsDefinition}Subscription" output="{http://www.jdata.fr/schemas/ProjectObjects}ID">
         <tibex:errorList>
             <tibex:error
-                error="{http://www.jdata.fr/schemas/FrameworkObjects}CustomedError" name="CustomedError"/>
+                error="{http://www.jdata.fr/schemas/FrameworkObjects}StripeError" name="StripeError"/>
         </tibex:errorList>
     </tibex:ProcessInterface>
     <tibex:ProcessTemplateConfigurations/>
@@ -867,7 +869,7 @@
                                     <layoutConstraint
                                     height="40" width="40"
                                     x="199"
-                                    xsi:type="notation:Bounds" y="328"/>
+                                    xsi:type="notation:Bounds" y="444"/>
                                     </children>
                                     <children type="4002 bw.xml.parsexml">
                                     <children type="4017">
@@ -978,7 +980,7 @@
                                     <layoutConstraint
                                     height="40" width="40"
                                     x="199"
-                                    xsi:type="notation:Bounds" y="218"/>
+                                    xsi:type="notation:Bounds" y="337"/>
                                     </children>
                                     <children type="4002 bw.generalactivities.log">
                                     <children type="4017">
@@ -1054,6 +1056,43 @@
                                     x="606"
                                     xsi:type="notation:Bounds" y="328"/>
                                     </children>
+                                    <children type="4002 bw.generalactivities.bwassign">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.10"/>
+                                    <layoutConstraint
+                                    height="40" width="40"
+                                    x="199"
+                                    xsi:type="notation:Bounds" y="218"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1123,7 +1162,7 @@
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -1199,6 +1238,17 @@
             <element href="//0/@process/@activity/@activity/@links/@children.8"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.10"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.9"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -1223,6 +1273,10 @@
             namespace="http://www.tibco.com/namespaces/tnt/plugins/parsexml" prefix="tns7"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/file" prefix="tns8"/>
+        <tibex:namespaceItem
+            namespace="http://schemas.tibco.com/bw/pe/plugin/5.0/exceptions" prefix="tns10"/>
+        <tibex:namespaceItem
+            namespace="http://schemas.tibco.com/bw/plugins/http/5.0/httpExceptions" prefix="tns9"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.jdata.fr/schemas/StripeObjectsDefinition"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.jdata.fr/schemas/ProjectObjects"/>
@@ -1257,7 +1311,7 @@
         <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns:OptionalErrorReport"
             name="_errorOptional" sca-bpel:internal="true"/>
-        <bpws:variable element="ns9:CustomedError"
+        <bpws:variable element="ns9:StripeError"
             name="ThrowAPIError-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns10:ErrorLinkHandlerFaultData"
             name="_error_ListCustomerByI" sca-bpel:internal="true"/>
@@ -1275,8 +1329,9 @@
             name="_error_CreateSubscription" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:ActivityInput"
             name="LogBadStatus-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns9:CustomedError"
+        <bpws:variable element="ns9:StripeError"
             name="BadStatusError-input" sca-bpel:internal="true"/>
+        <bpws:variable name="ErrorMessage" type="xsd:string"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1298,6 +1353,7 @@
                 <bpws:link name="ParseJSONToBuildData" tibex:linkType="SUCCESS"/>
                 <bpws:link name="MapFormatToLog1" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="LogBadStatusToThrow" tibex:linkType="SUCCESS"/>
+                <bpws:link name="AssignToLog" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1421,11 +1477,11 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:throw faultName="ns9:CustomedError"
+            <bpws:throw faultName="ns9:StripeError"
                 faultVariable="ThrowAPIError-input" name="ThrowAPIError" tibex:xpdlId="aeed3c3e-fe99-4c77-bac8-4e273b7f7c0e">
                 <tibex:inputBindings>
                     <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.jdata.fr/schemas/FrameworkObjects&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;ThrowAPIError-input&quot; match=&quot;/&quot;>&lt;tns5:CustomedError>&lt;tns5:jobID>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/tns5:jobID>&lt;tns5:processInstanceID>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/tns5:processInstanceID>&lt;tns5:functionnalError>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;tns5:errorCode>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/tns5:errorCode>&lt;/xsl:if>&lt;tns5:errorMessage>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/tns5:errorMessage>&lt;/tns5:functionnalError>&lt;/tns5:CustomedError>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.jdata.fr/schemas/FrameworkObjects&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;ErrorMessage&quot;/>&lt;xsl:template name=&quot;ThrowAPIError-input&quot; match=&quot;/&quot;>&lt;tns5:StripeError>&lt;tns5:jobID>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/tns5:jobID>&lt;tns5:processInstanceID>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/tns5:processInstanceID>&lt;tns5:errorMessageJSON>&lt;xsl:value-of select=&quot;$ErrorMessage&quot;/>&lt;/tns5:errorMessageJSON>&lt;/tns5:StripeError>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                 </tibex:inputBindings>
                 <bpws:targets>
                     <bpws:target linkName="LogToThrowAPIError"/>
@@ -1509,14 +1565,14 @@
                     name="Log"
                     tibex:xpdlId="0031662b-28e5-461c-99ad-05cfbd3206dc" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="CustomerByEmailToLog"/>
+                        <bpws:target linkName="AssignToLog"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="LogToThrowAPIError"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns4:ActivityInput>&lt;msgCode>&lt;xsl:value-of select=&quot;&amp;quot;PAYMENT/STRIPE API/GET CUSTOMER BY ID&amp;quot;&quot;/>&lt;/msgCode>&lt;message>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/message>&lt;/tns4:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ErrorMessage&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns4:ActivityInput>&lt;msgCode>&lt;xsl:value-of select=&quot;&amp;quot;PAYMENT/STRIPE API/GET CUSTOMER BY ID&amp;quot;&quot;/>&lt;/msgCode>&lt;message>&lt;xsl:value-of select=&quot;$ErrorMessage&quot;/>&lt;/message>&lt;/tns4:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1571,17 +1627,48 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:throw faultName="ns9:CustomedError"
+            <bpws:throw faultName="ns9:StripeError"
                 faultVariable="BadStatusError-input"
                 name="BadStatusError" tibex:xpdlId="36a89a27-c3e6-47f0-aa0d-5e1e4e7e6078">
                 <tibex:inputBindings>
                     <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.jdata.fr/schemas/FrameworkObjects&quot; xmlns:tns3=&quot;http://www.jdata.fr/schemas/StripeObjectsDefinition&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;MapFormat&quot;/>&lt;xsl:template name=&quot;BadStatusError-input&quot; match=&quot;/&quot;>&lt;tns5:CustomedError>&lt;tns5:jobID>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/tns5:jobID>&lt;tns5:processInstanceID>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/tns5:processInstanceID>&lt;tns5:functionnalError>&lt;tns5:errorCode>&lt;xsl:value-of select=&quot;&amp;quot;BAD SUBSCRIPTION STATUS&amp;quot;&quot;/>&lt;/tns5:errorCode>&lt;tns5:errorMessage>&lt;xsl:value-of select=&quot;concat(&amp;quot;Bad Status after creation of a subscription : &amp;quot;, $MapFormat/tns3:status)&quot;/>&lt;/tns5:errorMessage>&lt;/tns5:functionnalError>&lt;/tns5:CustomedError>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.jdata.fr/schemas/FrameworkObjects&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:template name=&quot;BadStatusError-input&quot; match=&quot;/&quot;>&lt;tns5:StripeError>&lt;tns5:jobID>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/tns5:jobID>&lt;tns5:processInstanceID>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/tns5:processInstanceID>&lt;/tns5:StripeError>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                 </tibex:inputBindings>
                 <bpws:targets>
                     <bpws:target linkName="LogBadStatusToThrow"/>
                 </bpws:targets>
             </bpws:throw>
+            <bpws:extensionActivity>
+                <tibex:activityExtension inputVariable="ErrorMessage"
+                    name="SubcripError" outputVariable="ErrorMessage"
+                    tibex:xpdlId="bdced5cc-684d-473a-b4e0-6f5ce3ff616c" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="CustomerByEmailToLog"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="AssignToLog"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="if(string-length(string($_error_CreateSubscription/tns:HttpClientException/httpMessage/binaryContent))>0) then tib:base64-to-string(string($_error_CreateSubscription/tns:HttpClientException/httpMessage/binaryContent)) else if(string-length(string($_error_CreateSubscription/tns:HttpServerException/httpMessage/binaryContent))>0) then tib:base64-to-string(string($_error_CreateSubscription/tns:HttpServerException/httpMessage/binaryContent)) else if (string-length($_error_CreateSubscription/tns:HttpCommunicationException/msg) > 0) then $_error_CreateSubscription/tns:HttpCommunicationException/msg else $_error_CreateSubscription/tns1:ActivityTimedOutException/msg" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.generalactivities.bwassign"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//BWAssign"/>
+                                    <value
+                                    processVariable="ErrorMessage" xsi:type="generalactivities:BWAssign"/>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
         </bpws:flow>
     </bpws:scope>
 </bpws:process>

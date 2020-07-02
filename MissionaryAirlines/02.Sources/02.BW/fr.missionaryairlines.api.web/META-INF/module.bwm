@@ -36,6 +36,18 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_FjfVA5kHEeq8VIMVrZiLoA" bindingName="RestService2"/>
   </sca:service>
+  <sca:service xmi:id="_0fhS5JwVEeqRa8_V0yIn7w" name="paiement" promote="ComponentPaiement/paiement">
+    <sca:interface.wsdl xmi:id="_0fhS6JwVEeqRa8_V0yIn7w" interface="http://xmlns.example.com/20200522122011PLT#wsdl.interface(paiement)" scaext:wsdlLocation="../Processes/fr/missionaryairlines/api/web/Paiement.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_0fhS6ZwVEeqRa8_V0yIn7w" name="RestService3" path="/paiement" docBasePath="http://localhost:7777/fr.missionaryairlines.api.web" docResourcePath="Paiement" basePath="/" connector="fr.missionaryairlines.api.web.Payment" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/fr.missionaryairlines.api.web.Paiement-Paiement.json">
+      <operation xmi:id="_0fhS65wVEeqRa8_V0yIn7w" operationName="post" nickname="post-paiement" httpMethod="POST" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_0fhS7ZwVEeqRa8_V0yIn7w"/>
+      <advancedConfig xmi:id="_0fhS6pwVEeqRa8_V0yIn7w" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_0fhS7JwVEeqRa8_V0yIn7w" bindingName="RestService3"/>
+  </sca:service>
   <sca:property xmi:id="_1ezcIIouEeqmRao7E-_WLg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_1fFwAIouEeqmRao7E-_WLg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_1fL2oIouEeqmRao7E-_WLg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -102,5 +114,11 @@
   </sca:component>
   <sca:component xmi:id="_rNnFAJnYEeq3m-r_W99q9A" name="ComponentSavingRegistration" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_rNnFAZnYEeq3m-r_W99q9A" processName="fr.missionaryairlines.api.web.SavingRegistration"/>
+  </sca:component>
+  <sca:component xmi:id="_0fhS4JwVEeqRa8_V0yIn7w" name="ComponentPaiement" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_0fhS4ZwVEeqRa8_V0yIn7w" processName="fr.missionaryairlines.api.web.Paiement"/>
+    <sca:service xmi:id="_0fhS4pwVEeqRa8_V0yIn7w" name="paiement">
+      <sca:interface.wsdl xmi:id="_0fhS45wVEeqRa8_V0yIn7w" interface="http://xmlns.example.com/20200522122011PLT#wsdl.interface(paiement)" scaext:wsdlLocation="../Processes/fr/missionaryairlines/api/web/Paiement.bwp"/>
+    </sca:service>
   </sca:component>
 </sca:composite>

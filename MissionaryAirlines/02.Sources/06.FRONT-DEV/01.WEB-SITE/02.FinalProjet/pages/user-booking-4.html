@@ -517,24 +517,31 @@
 		userData.ProgramDetails.optionalServices = [{}];
 		userData.BankDetails = {};
 
-		userData["UserDetails"]["userName"] = decodeURIComponent((getUrlVars()["name"] + '').replace(/\+/g, '%20'));
-		userData["UserDetails"]["userFirstname"] = decodeURIComponent((getUrlVars()["firstname"] + '').replace(/\+/g, '%20'));
-		userData["UserDetails"]["userNationality"] = getUrlVars()["country_one"];
-		userData["UserDetails"]["userPassportInfos"]["passeportNumber"] = getUrlVars()["passport"];
-		userData["UserDetails"]["userPassportInfos"]["visaApplianceWarranty"] = getUrlVars()["visa"];
-		userData["UserDetails"]["userPassportInfos"]["passeportExpirationDate"] = getUrlVars()["date_emission"];
-		userData["UserDetails"]["userPassportInfos"]["passeportIssueDate"] = getUrlVars()["date_expiration"];
-		userData["UserDetails"]["userAddressInfos"]["country"] = getUrlVars()["country_two"];
-		userData["UserDetails"]["userAddressInfos"]["address"] = decodeURIComponent((getUrlVars()["street"] + '').replace(/\+/g, '%20'));
-		userData["UserDetails"]["userAddressInfos"]["phone"] = getUrlVars()["phone"];
-		userData["UserDetails"]["userAddressInfos"]["city"] = decodeURIComponent((getUrlVars()["city"] + '').replace(/\+/g, '%20'));
-		userData["UserDetails"]["userAddressInfos"]["postalCode"] = getUrlVars()["zip"];
-		userData["UserDetails"]["userAddressInfos"]["email"] = decodeURIComponent((getUrlVars()["email"] + '').replace(/\+/g, '%20'));
-		userData["UserDetails"]["userSpecificRequest"] = decodeURIComponent((getUrlVars()["specific_demand"] + '').replace(/\+/g, '%20'));
+		userData["UserDetails"]["userName"] 										= localStorage.getItem('userName');
+		userData["UserDetails"]["userFirstname"] 									= localStorage.getItem('userFirstname');
+		userData["UserDetails"]["userNationality"] 									= localStorage.getItem('userNationality');
+		userData["UserDetails"]["userPassportInfos"]["passeportNumber"] 			= localStorage.getItem('passeportNumber');
+		userData["UserDetails"]["userPassportInfos"]["visaApplianceWarranty"] 		= localStorage.getItem('visaApplianceWarranty');
+		userData["UserDetails"]["userPassportInfos"]["passeportExpirationDate"] 	= localStorage.getItem('passeportExpirationDate');
+		userData["UserDetails"]["userPassportInfos"]["passeportIssueDate"] 			= localStorage.getItem('passeportIssueDate');
+		userData["UserDetails"]["userAddressInfos"]["country"] 						= localStorage.getItem('country');
+		userData["UserDetails"]["userAddressInfos"]["address"] 						= localStorage.getItem('address');
+		userData["UserDetails"]["userAddressInfos"]["phone"] 						= localStorage.getItem('phone');
+		userData["UserDetails"]["userAddressInfos"]["city"] 						= localStorage.getItem('city');
+		userData["UserDetails"]["userAddressInfos"]["postalCode"] 					= localStorage.getItem('postalCode');
+		userData["UserDetails"]["userAddressInfos"]["email"] 						= localStorage.getItem('email');
+		userData["UserDetails"]["userSpecificRequest"] 								= localStorage.getItem('userSpecificRequest');
 
-		userData["ProgramDetails"]["chosenProgramID"] = getUrlVars()["prg"];
-		userData["ProgramDetails"]["optionalServices"][0]["amount"] = 0;
-		userData["ProgramDetails"]["optionalServices"][0]["ID"] = "1";
+		userData["ProgramDetails"]["chosenProgramID"] 								= currentProgramID;
+		
+		if(localStorage.getItem('optionalServices_visas') == "true"){
+			userData["ProgramDetails"]["optionalServices"][0]["amount"] = localStorage.getItem('optionalServices_visas_amount');
+			userData["ProgramDetails"]["optionalServices"][0]["ID"] = "1";
+		}else{
+			userData["ProgramDetails"]["optionalServices"][0]["amount"] = 0;
+			userData["ProgramDetails"]["optionalServices"][0]["ID"] = "0";
+		}
+		
 
 		function endRegistration() {
 			userData["BankDetails"]["userCardName"] = document.getElementById("card-name").value;
@@ -547,9 +554,9 @@
 			var d = new Date();
 
 			userData["ProgramDetails"]["chosenFinancialPlanID"] = periodicity;
-			userData["ProgramDetails"]["cancelAt"] = Math.floor(d.setMonth(d.getMonth() + parseInt(periodicity)) / 1000);
+			userData["ProgramDetails"]["cancelAt"] = Math.floor(d.setMonth(d.getMonth() + parseInt(periodicity)) / 1000); 
 
-			document.getElementById("amount_to_pay").innerHTML 	= parseInt(programData.totalPrice)/parseInt(periodicity);
+			document.getElementById("amount_to_pay").innerHTML 	= Math.round((parseInt(programData.totalPrice) + parseInt(localStorage.getItem('optionalServicesTotalPrice')) )/parseInt(periodicity));
 
 			console.log("endRegistration");
 		}

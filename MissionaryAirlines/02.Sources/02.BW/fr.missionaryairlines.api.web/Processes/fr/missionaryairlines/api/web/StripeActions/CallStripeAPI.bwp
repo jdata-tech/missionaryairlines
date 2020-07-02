@@ -186,7 +186,7 @@
         input="{http://www.jdata.fr/schemas/WebObjectsDefinition}PaymentRequest" output="{http://www.jdata.fr/schemas/WebObjectsDefinition}PaymentResponse">
         <tibex:errorList>
             <tibex:error
-                error="{http://www.jdata.fr/schemas/FrameworkObjects}CustomedError" name="CustomedError"/>
+                error="{http://www.jdata.fr/schemas/FrameworkObjects}StripeError" name="StripeError"/>
         </tibex:errorList>
     </tibex:ProcessInterface>
     <tibex:ProcessTemplateConfigurations/>
@@ -518,12 +518,12 @@
                         </children>
                         <children type="4022">
                             <children type="3022">
-                                <children type="4028">
-                                    <children type="3029">
-                                    <children type="4032">
+                                <children type="4029">
+                                    <children type="3031">
+                                    <children type="4033">
                                     <styles fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@faultHandlers/@catch.0"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll"/>
                                     <layoutConstraint
                                     height="34" width="34"
                                     xsi:type="notation:Bounds" y="68"/>
@@ -531,7 +531,7 @@
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
                                     </children>
-                                    <children type="3030">
+                                    <children type="3032">
                                     <children type="4005">
                                     <children type="3007">
                                     <children type="4002 com.tibco.bw.core.design.process.editor.Activity_4002_Rethrow">
@@ -570,12 +570,12 @@
                                     backgroundColor="16777215"
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity/@activities.0"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
                                     height="40"
                                     width="40"
-                                    x="35"
-                                    xsi:type="notation:Bounds" y="45"/>
+                                    x="18"
+                                    xsi:type="notation:Bounds" y="51"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -588,9 +588,9 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
-                                    <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity"/>
                                     <layoutConstraint
-                                    height="168" width="763" xsi:type="notation:Bounds"/>
+                                    height="169" width="859" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -599,7 +599,7 @@
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
-                                    <element href="//0/@process/@activity/@faultHandlers/@catch.0"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -609,7 +609,8 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity/@faultHandlers"/>
-                            <layoutConstraint height="200" width="769" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="200" width="920"
+                                x="22" xsi:type="notation:Bounds" y="331"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -767,6 +768,8 @@
         <bpws:variable element="ns1:Customer"
             name="UpdateCustomer-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ID" name="UpdateCustomer" sca-bpel:internal="true"/>
+        <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
+        <bpws:variable element="ns:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -778,16 +781,15 @@
     </bpws:extensions>
     <bpws:scope name="scope">
         <bpws:faultHandlers>
-            <bpws:catch faultElement="ns3:CustomedError"
-                faultName="ns3:CustomedError"
-                faultVariable="CustomedError" tibex:xpdlId="44ba3c9a-3a30-4545-a52a-753927c8fafc">
-                <bpws:scope name="scope1">
-                    <bpws:flow name="flow1">
+            <bpws:catchAll tibex:faultDetailsVar="FaultDetails"
+                tibex:faultNameVar="FaultName" tibex:xpdlId="16673ddf-f9bf-47dd-8ff3-b8d5eca32c15">
+                <bpws:scope name="scope2">
+                    <bpws:flow name="flow2">
                         <bpws:links/>
-                        <bpws:rethrow name="Rethrow" tibex:xpdlId="e79e7659-9fdd-468f-8db1-22f4dc17ffbf"/>
+                        <bpws:rethrow name="Rethrow" tibex:xpdlId="07565b79-0f39-4d07-94d5-1f6aba19c1a6"/>
                     </bpws:flow>
                 </bpws:scope>
-            </bpws:catch>
+            </bpws:catchAll>
         </bpws:faultHandlers>
         <bpws:flow name="flow">
             <bpws:links>

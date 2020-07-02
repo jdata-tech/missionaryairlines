@@ -661,7 +661,7 @@
         input="{http://www.jdata.fr/schemas/StripeObjectsDefinition}PaymentMethod" output="{http://www.jdata.fr/schemas/ProjectObjects}ID">
         <tibex:errorList>
             <tibex:error
-                error="{http://www.jdata.fr/schemas/FrameworkObjects}CustomedError" name="CustomedError"/>
+                error="{http://www.jdata.fr/schemas/FrameworkObjects}StripeError" name="StripeError"/>
         </tibex:errorList>
     </tibex:ProcessInterface>
     <tibex:ProcessTemplateConfigurations/>
@@ -1160,7 +1160,7 @@
         <bpws:variable element="ns:OptionalErrorReport"
             name="_errorOptional" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:ActivityInput" name="APIError-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns9:CustomedError"
+        <bpws:variable element="ns9:StripeError"
             name="ThrowAPIError-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:xmlString" name="BuildData-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns0:PaymentMethod" name="BuildData" sca-bpel:internal="true"/>
@@ -1343,11 +1343,11 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:throw faultName="ns9:CustomedError"
+            <bpws:throw faultName="ns9:StripeError"
                 faultVariable="ThrowAPIError-input" name="ThrowAPIError" tibex:xpdlId="aeed3c3e-fe99-4c77-bac8-4e273b7f7c0e">
                 <tibex:inputBindings>
                     <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.jdata.fr/schemas/FrameworkObjects&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;ThrowAPIError-input&quot; match=&quot;/&quot;>&lt;tns5:CustomedError>&lt;tns5:jobID>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/tns5:jobID>&lt;tns5:processInstanceID>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/tns5:processInstanceID>&lt;tns5:functionnalError>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;tns5:errorCode>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/tns5:errorCode>&lt;/xsl:if>&lt;tns5:errorMessage>&lt;xsl:value-of select=&quot;$_error/StackTrace&quot;/>&lt;/tns5:errorMessage>&lt;/tns5:functionnalError>&lt;/tns5:CustomedError>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.jdata.fr/schemas/FrameworkObjects&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:template name=&quot;ThrowAPIError-input&quot; match=&quot;/&quot;>&lt;tns5:StripeError>&lt;tns5:jobID>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/tns5:jobID>&lt;tns5:processInstanceID>&lt;xsl:value-of select=&quot;$_processContext/ProcessInstanceId&quot;/>&lt;/tns5:processInstanceID>&lt;/tns5:StripeError>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                 </tibex:inputBindings>
                 <bpws:targets>
                     <bpws:target linkName="APIErrorToThrow"/>
