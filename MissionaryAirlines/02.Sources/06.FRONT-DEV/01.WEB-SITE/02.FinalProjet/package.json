@@ -23,7 +23,7 @@
     "object-fit-images": "^3.2.4",
     "prismjs": "^1.17.1",
     "smooth-scroll": "^16.1.0",
-    "swiper": "^4.5.1"
+    "swiper": "^6.5.1"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
